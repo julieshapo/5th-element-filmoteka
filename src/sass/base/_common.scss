@@ -42,6 +42,12 @@ a {
   font-style: normal;
   color: inherit;
   text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
 }
 
 a:not([class]) {
