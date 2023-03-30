@@ -1,21 +1,25 @@
-<header class="header">
+<header class="header-main">
   <div class="container">
-    <div class="header-wrap">
-      <a href="" class="logo-icon">
+    <nav class="header-main__nav"></nav>
+      <a href="./index.html" class="header-main__link">
         <svg class="logo-icon">
           <use></use>
         </svg>
+        <span class="header-main__title">Filmoteka</span>
       </a>
-      <p>Filmoteka</p>
-      <nav>
-        <ul>
-          <li><a href="" class="main-page"></a>Home</li>
-          <li><a href="" class="library-page"></a>Library</li>
+        <ul class="header-main__nav-list">
+          <li>
+            <a href="./index.html" class="header-main__nav-list-item">Home</a></li>
+          <li><a href="" class="header-main__nav-list-item">Library</a></li>
         </ul>
       </nav>
-      <form action="">
-        <input type="text" />
-        <button type="submit">Search</button>
+      <form class="header-main__form">
+        <input class="header-main__form-input" type="text" name="searchQuery" placeholder="Movie search" autocomplete="off"/>
+        <button type="submit">
+          <svg class="" width="12" height="12">
+            <use></use>
+          </svg>
+        </button>
       </form>
     </div>
   </div>
