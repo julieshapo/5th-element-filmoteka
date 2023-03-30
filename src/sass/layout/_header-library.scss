@@ -123,3 +123,73 @@
     bottom: -4px;
   }
 }
+
+.overlay-main {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/header-main/hero-home-mob.jpg');
+
+  @include tablet {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-main/hero-home-tab.jpg');
+  }
+
+  @include desktop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/header-main/hero-home.jpg');
+  }
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-form-input {
+  position: relative;
+  width: 280px;
+  height: 20px;
+  border-bottom: 0.5px solid #ffffff;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  background-color: transparent;
+  @include tablet {
+    width: 336px;
+  }
+  @include desktop {
+    width: 394px;
+  }
+}
+
+.header-form-input::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.button-search {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  // background: transparent;
+  right: 24px;
+}
+
+.search-icon {
+  position: absolute;
+  // right: 0;
+  top: 10px;
+}
