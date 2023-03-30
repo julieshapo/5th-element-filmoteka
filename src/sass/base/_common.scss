@@ -45,11 +45,11 @@ a {
   outline: none;
 }
 
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
 a:focus,
 a:hover {
   text-decoration: none;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
 }
