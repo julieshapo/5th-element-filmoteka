@@ -1,21 +1,22 @@
-<header class="header">
+<header class="header overlay-main">
   <div class="container">
-    <nav class="header-nav"></nav>
-      <a href="./index.html" class="nav-link">
+    <nav class="header-nav">
+      <a href="./index.html" class="logo nav-link">
         <svg class="logo-icon" width="24" height="24">
-          <use></use>
+          <use href="./images/svg/symbol-defs.svg#icon-film"></use>
         </svg>
-        <span class="nav-title">Filmoteka</span>
+        <span class="nav-title logo-title">Filmoteka</span>
       </a>
         <ul class="nav-list">
           <li>
-            <a href="./index.html" class="nav-list-item">Home</a></li>
-          <li><a href="" class="nav-list-item">Library</a></li>
+            <a href="./index.html" class="nav-list-item current">Home</a></li>
+          <li><a href="./library-page.html" class="nav-list-item">My Library</a></li>
         </ul>
       </nav>
       <form class="header-form">
         <input class="header-form-input" type="text" name="searchQuery" placeholder="Movie search" autocomplete="off"/>
-        <button type="submit">
+        <button class="button-search" 
+        type="submit">
           <svg class="search-icon" width="12" height="12">
             <use></use>
           </svg>
