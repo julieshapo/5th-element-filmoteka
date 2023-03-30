@@ -38,7 +38,7 @@ function renderMarkupModalMovie() {
   return `<div class="movie-thumb">
       <img
         class="movie-img"
-        src="./images/no-photo/no-photo.jpg"
+        src="https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true"
         alt="hamster"
       />
     </div>
