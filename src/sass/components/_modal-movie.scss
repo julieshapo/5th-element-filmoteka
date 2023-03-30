@@ -2,7 +2,7 @@
   padding: 48px 20px 40px 20px;
   margin: 20px auto;
   width: 280px;
-  background-color: #fff;
+  background-color: $colorModalBg;
 
   @include tablet {
     position: absolute;
@@ -49,11 +49,12 @@
 }
 
 .movie-title {
-  font-family: 'Roboto';
   font-weight: 500;
   font-size: 20px;
   line-height: 1.15;
   margin-bottom: 20px;
+
+  color: $colorTextDark;
 
   @include desktop {
     font-size: 30px;
@@ -77,46 +78,45 @@
 }
 
 .movie-info-text {
-  font-family: 'Roboto';
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.33;
-  color: #8C8C8C;
+  color: $colorModalTextSecondary;
 }
 
 .movie-info-value {
-  font-family: 'Roboto';
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.33;
+
+  color: $colorTextDark;
 }
 
 .movie-info-rating {
-  color: #fff;
-  background-color: #FF6B01;
+  color: $colorTextLight;
+  background-color: $colorTextAccent;
   padding: 1px 10px;
   border-radius: 5px;
 }
 
 .movie-info-slash {
-  color: #8C8C8C;
+  color: $colorModalTextSecondary;
 }
 
 .mobie-about {
   margin-bottom: 8px;
-  font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  text-transform: uppercase
+  text-transform: uppercase;
+
+  color: $colorTextDark;
 }
 
 .movie-desc {
   margin-bottom: 20px;
-  font-family: 'Roboto';
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.67;
+
+  color: $colorTextDark;
 
   @include tablet {
     width: 264px;
@@ -137,13 +137,12 @@
 }
 
 .movie-btn {
-  font-family: 'Roboto';
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid #000;
+  background-color: $colorModalBg;
+  border: 1px solid $colorTextDark;
+  color: $colorTextDark;
   border-radius: 5px;
   height: 44px;
   width: 110px;
