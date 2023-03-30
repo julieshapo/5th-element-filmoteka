@@ -1,9 +1,13 @@
 const spinner = document.querySelector('.js-spinner');
 
-function showSpinner() {
+// Функция показывает спинер
+
+export function showSpinner() {
   spinner.classList.remove('visually-hidden');
 };
 
-function hideSpinner() {
+// Функция прячет спинер
+
+export function hideSpinner() {
   spinner.classList.add('visually-hidden');
 };
