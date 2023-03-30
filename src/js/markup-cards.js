@@ -8,9 +8,8 @@ export function createMarkupOneCard(data) {
         <div class="card__content">
             <div class="card__title">${data.title}</div>
             <div class="card__genres">
-                <div>${genres} </div>
+                <div>${genres} | ${data.year}</div>
             </div>
-            <div class="card__year">${data.year}</div>
         </div>
     </div>
     `;
