@@ -10,6 +10,7 @@ p {
 
 ul,
 ol {
+  list-style: none;
   margin: 0;
   padding-left: 0;
   list-style: none;
@@ -29,4 +30,8 @@ img {
   height: auto;
 
   width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
