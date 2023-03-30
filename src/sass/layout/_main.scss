@@ -1,0 +1,44 @@
+.section{
+    padding: 20px 0 40px 0;
+    @include tablet{
+        padding: 60px 0;
+    }
+  }
+  
+  
+  .film-gallery{
+    list-style: none;
+    padding: 0;
+    display: block;
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 32px;
+        justify-content: center;
+        align-content: center;
+    }
+    @include desktop {
+        column-gap: 16px;
+    }
+  }
+  
+  .film-item{
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellowgreen;
+    width: 280px;
+    height: 443px;
+    @include tablet{
+        margin-left: 0;
+        margin-right: 0;
+        width: calc((100% - 32px)/2);
+        height: 495px;
+        max-width: 336px;
+    }
+    @include desktop(){
+      width: calc((100% - 32px)/3);
+      height: 495px;
+  }
+  }
