@@ -1,0 +1,42 @@
+.library_films {
+  background-color: #ffffff;
+  padding: 20px 0 40px 0;
+  @include tablet {
+    padding: 60px 0;
+  }
+}
+
+.library_films-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    align-content: center;
+  }
+  @include desktop {
+    gap: 32px 16px;
+  }
+}
+
+.library_films-item {
+  background-color: yellowgreen;
+  width: 280px;
+  height: 438px;
+  @include tablet {
+    width: calc((100% - 32px) / 2);
+    height: 495px;
+    max-width: 336px;
+  }
+  @include desktop() {
+    width: calc((100% - 32px) / 3);
+    height: 634px;
+    max-width: 395px;
+  }
+}
