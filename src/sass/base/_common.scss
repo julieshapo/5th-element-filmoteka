@@ -1,1 +1,82 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: $colorModalBg;
+    line-height: 1.3;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    font-style: normal;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (min-width: $mobile) {
+        width: $mobile;
+      }
+    
+      @media screen and (min-width: $tablet) {
+        width: $tablet;
+        padding: 0 32px;
+      }
+    
+      @media screen and (min-width: $desktop) {
+        width: $desktop;
+        padding: 0 32px;
+}
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
