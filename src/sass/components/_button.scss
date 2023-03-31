@@ -31,26 +31,7 @@
       height: 44px;
   }
 }
-.header-button {
-  width: 148px;
-  height: 42px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  cursor: pointer;
-  color: $colorBtnLight;
-  border-color: $colorBtnLight;
-  background-color: transparent;
 
-  &:first-child {
-    margin-right: 16px;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $colorBtnLight;
-    border: none;
-  }
-}
 
 //MODAL BOX
 
