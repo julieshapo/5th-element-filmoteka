@@ -1,4 +1,5 @@
-// Функция которую которая покажет модалку при клике по карточке в списке фильмов  
+import { refs } from './refs';
+// Функция которую которая покажет модалку при клике по карточке в списке фильмов
 
 // function onClickMovie() {
 //   modal.classList.remove('visually-hidden');
@@ -7,30 +8,29 @@
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
-const modal = document.querySelector('.js-modal');
-
 function modalClose() {
-  modal.classList.add('visually-hidden');
+  refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
-};
+}
 
 // Функция закрытия модалки при нажатии по бекдропу
 
-modal.addEventListener('click', onClodeModalClick);
+refs.modal.addEventListener('click', onClodeModalClick);
 
 function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
-  };
-};
+  }
+}
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
 function onCloseModalKey(e) {
-  if (e.code !== "Escape") {
-    return
-  } modalClose();
-};
+  if (e.code !== 'Escape') {
+    return;
+  }
+  modalClose();
+}
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
@@ -90,9 +90,7 @@ function renderMarkupModalMovie() {
           add to queue
         </button>
       </div>
-    </div>`
+    </div>`;
 }
 
-const modalMovie = document.querySelector('.modal-movie');
-
-modalMovie.innerHTML = renderMarkupModalMovie();
+refs.modalMovie.innerHTML = renderMarkupModalMovie();
