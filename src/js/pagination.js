@@ -1,5 +1,5 @@
 import { Pagination } from 'tui-pagination';
-import refs from './refs';
+import { refs } from './refs';
 
 const TUI_PAGES_VISIBLE = 5;
 
