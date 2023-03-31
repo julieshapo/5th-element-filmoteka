@@ -1,5 +1,36 @@
 //HEADER-LIBRARY
+.header-button{
+  box-sizing: border-box;
 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorBtnLight;
+
+  border: 1px solid $colorBtnLight;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+
+  color: #FFFFFF;
+
+  width: 130px;
+  height: 44px;
+  &:hover,
+  &:focus {
+    background-color: $colorBtnAccent;
+    border: none;
+  }
+  @include tablet{
+      width: 152px;
+      height: 44px;
+  }
+}
 .header-button {
   width: 148px;
   height: 42px;
