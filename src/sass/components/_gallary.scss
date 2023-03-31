@@ -1,56 +1,18 @@
 .container {
-  max-width: max-content;
-  padding: 0 20px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-
-  @media screen and (min-width: 768px) {
-    max-width: 704px;
-    padding: 0 32px;
-    margin-bottom: 60px;
-  }
-  @media screen and (min-width: 1280px) {
-    max-width: 1215px;
-  }
+  padding: 20px;
 }
 
 .film-gallery {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-
-  @media screen and (max-width: 767.9px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: -15px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+  grid-gap: 20px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .film-item {
   cursor: pointer;
-  transform: scale(1);
-  transition: transform 250ms linear;
-
-  @media screen and (max-width: 767px) {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    margin: 15px;
-    flex-basis: calc((100% - 2 * 30px) / 2);
-  }
-  @media screen and (min-width: 1280px) {
-    flex-basis: calc((100% - 3 * 30px) / 3);
-  }
 }
 
 .film-item:hover,
@@ -73,16 +35,16 @@
 
 img {
   border-radius: 5px;
-  margin-bottom: 10px;
-  width: 276px;
-  height: 402px;
-  @media screen and (min-width: 768px) {
-    width: 336px;
-    height: 455px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 395px;
-    height: 574px;
+  object-fit: cover;
+  height: 455px;
+
+  box-shadow: rgb(0 0 0 / 7%) 0px 1px 2px, rgb(0 0 0 / 7%) 0px 2px 4px,
+    rgb(0 0 0 / 7%) 0px 4px 8px, rgb(0 0 0 / 7%) 0px 8px 16px,
+    rgb(0 0 0 / 7%) 0px 16px 32px, rgb(0 0 0 / 7%) 0px 32px 64px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
   }
 }
 
@@ -98,6 +60,7 @@ img:hover {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  padding: 1px 5px;
 
   @media screen and (min-width: 1280px) {
     font-size: 20px;
