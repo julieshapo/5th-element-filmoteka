@@ -3,4 +3,5 @@ export const refs = {
   spinner: document.querySelector('.js-spinner'),
   modal: document.querySelector('.js-modal'),
   modalMovie: document.querySelector('.modal-movie'),
+  headerForm: document.querySelector('.header-form'),
 };
