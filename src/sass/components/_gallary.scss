@@ -42,7 +42,7 @@
   transform: scale(1.03);
 }
 
-img {
+.film-item img {
   border-radius: 5px;
   margin-bottom: 10px;
   width: 276px;
@@ -57,7 +57,7 @@ img {
   }
 }
 
-img:hover {
+.film-item img:hover {
   display: block;
   box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
 }
