@@ -19,6 +19,7 @@
   }
   @include desktop {
     gap: 32px 16px;
+    justify-content: flex-start;
   }
 }
 
