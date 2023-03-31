@@ -9,12 +9,12 @@
   .film-gallery{
     list-style: none;
     padding: 0;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     @include tablet {
-        display: flex;
-        flex-wrap: wrap;
         column-gap: 32px;
-        justify-content: center;
         align-content: center;
     }
     @include desktop {
@@ -23,13 +23,9 @@
   }
   
   .film-item{
-    margin-top: 0;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: yellowgreen;
     width: 280px;
-    height: 443px;
+    height: 438px;
     @include tablet{
         margin-left: 0;
         margin-right: 0;
@@ -39,6 +35,7 @@
     }
     @include desktop(){
       width: calc((100% - 32px)/3);
-      height: 495px;
+      height: 634px;
+      max-width: 395px;
   }
   }
