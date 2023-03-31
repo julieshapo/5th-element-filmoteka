@@ -36,28 +36,3 @@ async function TrendingMovie() {
 };
 
 TrendingMovie();
-
-//Desctop
-//gap 32 16
-//width 394
-//height 634
-
-//height 574
-
-//Tablet
-//gap 32
-//width 336
-//height 494
-//radius 5
-
-//height 455
-
-//Mobile
-//gap 20
-//width 280
-//height 443
-//radius 5
-
-//height 402
-
-//image жанр рік
