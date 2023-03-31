@@ -58,4 +58,3 @@ export async function getArrayofMovies(array) {
   const resultData = await Promise.all(arrayOfMovies);
   return resultData;
 }
-
