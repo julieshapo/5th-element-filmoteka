@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import axios from 'axios';
+import {getMoviesByName} from './api-fetch'
 
 const API_KEY = '169863a84bc27c731fc45c45dd4a4a7e';
 
@@ -17,20 +18,23 @@ function onFormSubmit(event) {
   }
 }
 
-async function getMoviesByName(name) {
-  try {
-    const params = {
-      api_key: API_KEY,
-      query: name,
-      page: 1,
-      language: 'en-US',
-    };
-    const response = await axios.get(
-      'https://api.themoviedb.org/3/search/movie',
-      { params }
-    );
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
+
+
+
+// async function getMoviesByName(name) {
+//   try {
+//     const params = {
+//       api_key: API_KEY,
+//       query: name,
+//       page: 1,
+//       language: 'en-US',
+//     };
+//     const response = await axios.get(
+//       'https://api.themoviedb.org/3/search/movie',
+//       { params }
+//     );
+//     return response.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
