@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_KEY = '169863a84bc27c731fc45c45dd4a4a7e';
 
 //Запит фільму за ключовим словом:
-async function getMoviesByName(name) {
+export async function getMoviesByName(name) {
   try {
     const params = {
       api_key: API_KEY,
@@ -22,7 +22,7 @@ async function getMoviesByName(name) {
 }
 
 //Запит на список найпопулярніших фільмів
-async function getMoviesTrending(page) {
+export async function getMoviesTrending(page) {
   try {
     const params = {
       api_key: API_KEY,
@@ -40,7 +40,7 @@ async function getMoviesTrending(page) {
 }
 
 //Запит повної інформації про кінофільм
-async function getMovieFullInfo(movie_id) {
+export async function getMovieFullInfo(movie_id) {
   try {
     const params = {
       api_key: API_KEY,
