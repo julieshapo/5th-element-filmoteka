@@ -191,12 +191,12 @@
   position: relative;
   width: 24px;
   height: 24px;
-  // background: transparent;
+  background: transparent;
+  border: none;
   right: 24px;
 }
 
 .search-icon {
   position: absolute;
-  // right: 0;
-  top: 10px;
+  top: 4px;
 }
