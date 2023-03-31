@@ -6,27 +6,28 @@ refs.filmGallery.addEventListener('click', onClickMovie);
 
 function onClickMovie(e) {
   const parent = e.target.closest('li');
-  const { id } = parent.dataset || {};
-
-async function showMovieInfo() {
-  try {
-    const results = await getMovieFullInfo(id);
-
-      const poster = results.poster_path
-      ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
-      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
-      
-      refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster);
-
-    } catch (error) {
-        console.log(error.message);
-    };
-  };
-  
-  showMovieInfo();
+  const { id } = parent?.dataset || {};
+  if (!id) {
+    return
+  }
+  showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
 };
+
+// Функция делает запрос за полной инфо по фильму и отображет ее в модалке
+
+async function showMovieInfo(id) {
+  try {
+    const results = await getMovieFullInfo(id);
+    const poster = results.poster_path
+      ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
+      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+      refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster);
+    } catch (error) {
+    console.log(error.message);
+    };
+  };
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
