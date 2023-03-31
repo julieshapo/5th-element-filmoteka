@@ -1,13 +1,13 @@
-const spinner = document.querySelector('.js-spinner');
+import { refs } from './refs';
 
 // Функция показывает спинер
 
 export function showSpinner() {
-  spinner.classList.remove('visually-hidden');
-};
+  refs.spinner.classList.remove('visually-hidden');
+}
 
 // Функция прячет спинер
 
 export function hideSpinner() {
-  spinner.classList.add('visually-hidden');
-};
+  refs.spinner.classList.add('visually-hidden');
+}
