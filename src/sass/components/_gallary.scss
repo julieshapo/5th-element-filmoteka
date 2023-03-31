@@ -1,75 +1,46 @@
-.container {
-  max-width: max-content;
-  padding: 0 20px;
-  margin: 0 auto;
-  margin-bottom: 40px;
+// .film-gallery {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   display: flex;
 
-  @media screen and (min-width: 768px) {
-    max-width: 704px;
-    padding: 0 32px;
-    margin-bottom: 60px;
-  }
-  @media screen and (min-width: 1280px) {
-    max-width: 1215px;
-  }
-}
+//   @media screen and (max-width: 767.9px) {
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-.film-gallery {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     // margin: -15px;
+//   }
+// }
 
-  @media screen and (max-width: 767.9px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+// .film-item {
+//   cursor: pointer;
+//   transform: scale(1);
+//   transition: transform 250ms linear;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: -15px;
-  }
-}
-
-.film-item {
-  cursor: pointer;
-  transform: scale(1);
-  transition: transform 250ms linear;
-
-  @media screen and (max-width: 767px) {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    margin: 15px;
-    flex-basis: calc((100% - 2 * 30px) / 2);
-  }
-  @media screen and (min-width: 1280px) {
-    flex-basis: calc((100% - 3 * 30px) / 3);
-  }
-}
+//   @media screen and (max-width: 767px) {
+//     &:not(:last-child) {
+//       margin-bottom: 20px;
+//     }
+//   }
+//   @media screen and (min-width: 768px) {
+//     margin: 15px;
+//     flex-basis: calc((100% - 2 * 30px) / 2);
+//   }
+//   @media screen and (min-width: 1280px) {
+//     flex-basis: calc((100% - 3 * 30px) / 3);
+//   }
+// }
 
 .film-item:hover,
 .film-item:focus {
   transform: scale(1.03);
 }
-
-// .thumb {
-//   height: 398px;
-//   width: 280px;
-//   overflow: hidden;
-
-//   @media screen and (min-width: 768px) {
-//     width: 294px;
-//   }
-//   @media screen and (min-width: 1024px) {
-//     width: 274px;
-//   }
-// }
 
 img {
   border-radius: 5px;

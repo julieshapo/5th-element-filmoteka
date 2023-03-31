@@ -10,7 +10,7 @@ function createMarkupOneCard(array) {
     <li data-id=${item.id} class="film-item">
     <div class="thumb">
             <img
-              src="https://image.tmdb.org/t/p/w500${item.backdrop_path}"
+              src="https://image.tmdb.org/t/p/w500${item.poster_path}"
               alt="${item.title}
               class="film-label"
             />
