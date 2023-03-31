@@ -19,11 +19,12 @@
   }
   @include desktop {
     gap: 32px 16px;
+    justify-content: flex-start;
   }
 }
 
 .film-item {
-  background-color: rgb(209, 225, 177);
+  background-color: #fff;
   width: 280px;
   height: 438px;
   @include tablet {

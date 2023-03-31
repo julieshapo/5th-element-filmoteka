@@ -11,7 +11,7 @@ export function createMarkupOneCard(array) {
     <li data-id=${item.id} class="film-item">
     <div class="thumb">
             <img
-              src="https://image.tmdb.org/t/p/w500${item.backdrop_path}"
+              src="https://image.tmdb.org/t/p/w500${item.poster_path}"
               alt="${item.title}
               class="film-label"
             />
@@ -38,28 +38,3 @@ async function TrendingMovie() {
 }
 
 TrendingMovie();
-
-//Desctop
-//gap 32 16
-//width 394
-//height 634
-
-//height 574
-
-//Tablet
-//gap 32
-//width 336
-//height 494
-//radius 5
-
-//height 455
-
-//Mobile
-//gap 20
-//width 280
-//height 443
-//radius 5
-
-//height 402
-
-//image жанр рік

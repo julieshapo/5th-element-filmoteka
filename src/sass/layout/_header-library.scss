@@ -191,6 +191,7 @@
   position: absolute;
   top: 4px;
 }
+
 .search-error {
   font-size: 14px;
   line-height: 1.16;
@@ -200,4 +201,8 @@
   justify-content: center;
   margin-top: 20px;
   display: none;
+}
+
+.logo-icon {
+  transform: translateY(-2px);
 }
