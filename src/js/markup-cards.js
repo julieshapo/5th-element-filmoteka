@@ -1,4 +1,4 @@
-import { getTrending } from './api-fetch';
+import { getMoviesTrending } from './api-fetch';
 
 function createMarkupOneCard(array) {
 
