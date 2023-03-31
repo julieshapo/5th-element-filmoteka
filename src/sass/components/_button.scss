@@ -1,25 +1,37 @@
 //HEADER-LIBRARY
+.header-button{
+  box-sizing: border-box;
 
-.header-button {
-  width: 148px;
-  height: 42px;
-  border: 1px solid transparent;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorBtnLight;
+
+  border: 1px solid $colorBtnLight;
   border-radius: 5px;
   cursor: pointer;
-  color: $colorBtnLight;
-  border-color: $colorBtnLight;
   background-color: transparent;
 
-  &:first-child {
-    margin-right: 16px;
-  }
+  color: #FFFFFF;
 
+  width: 130px;
+  height: 44px;
   &:hover,
   &:focus {
     background-color: $colorBtnAccent;
     border: none;
   }
+  @include tablet{
+      width: 152px;
+      height: 44px;
+  }
 }
+
 
 //MODAL BOX
 
