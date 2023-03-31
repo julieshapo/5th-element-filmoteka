@@ -102,12 +102,19 @@
 
 //MAIN PAGE
 
-logo {
-  stroke: $colorModalBg;
+.logo-icon {
 
   &:hover,
   &:focus {
-    stroke: $colorBtnAccent;
+    color: $colorBtnAccent;
+  }
+}
+
+.nav-title {
+
+  &:hover,
+  &:focus {
+    color: $colorBtnAccent;
   }
 }
 
@@ -178,4 +185,9 @@ logo {
     background-color: $colorBtnAccent;
     border: none;
   }
+}
+
+.is-active-library {
+  background-color: $colorBtnAccent;
+  border: none;
 }
