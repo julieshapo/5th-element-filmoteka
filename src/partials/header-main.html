@@ -7,21 +7,31 @@
         </svg>
         <span class="nav-title logo-title">Filmoteka</span>
       </a>
-        <ul class="nav-list">
-          <li>
-            <a href="./index.html" class="nav-list-item current">Home</a></li>
-          <li><a href="./library-page.html" class="nav-list-item">My Library</a></li>
-        </ul>
-      </nav>
-      <form class="header-form">
-        <input class="header-form-input" type="text" name="searchQuery" placeholder="Movie search" autocomplete="off"/>
-        <button class="button-search" 
-        type="submit">
-          <svg class="search-icon" width="12" height="12">
-            <use href="./images/svg/symbol-defs.svg#icon-search" ></use>
-          </svg>
-        </button>
-      </form>
-    </div>
+      <ul class="nav-list">
+        <li>
+          <a href="./index.html" class="nav-list-item current">Home</a>
+        </li>
+        <li>
+          <a href="./library-page.html" class="nav-list-item">My Library</a>
+        </li>
+      </ul>
+    </nav>
+    <form class="header-form">
+      <input
+        class="header-form-input"
+        type="text"
+        name="searchQuery"
+        placeholder="Movie search"
+        autocomplete="off"
+      />
+      <button class="button-search" type="submit">
+        <svg class="search-icon" width="12" height="12">
+          <use href="./images/svg/symbol-defs.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
+    <p class="search-error">
+      Search result not successful. Enter the correct movie name and try again.
+    </p>
   </div>
 </header>

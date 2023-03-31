@@ -1,12 +1,13 @@
 import { getMoviesTrending } from './api-fetch';
 
-function createMarkupOneCard(array) {
-    return array.map(item => {
-        const geners = 'no geners';
-        const date = item.release_date ?? item.first_air_date ?? null;
-        const year = date ? date.slice(0, 4) : 'Unknown year';
+export function createMarkupOneCard(array) {
+  return array
+    .map(item => {
+      const geners = 'no geners';
+      const date = item.release_date ?? item.first_air_date ?? null;
+      const year = date ? date.slice(0, 4) : 'Unknown year';
 
-        return `
+      return `
     <li data-id=${item.id} class="film-item">
     <div class="thumb">
             <img
@@ -20,20 +21,21 @@ function createMarkupOneCard(array) {
             <p class="film-genre">${geners} | ${year}</p>
           </div>          
     </li>
-    `
-    }).join('');
-};
+    `;
+    })
+    .join('');
+}
 
 const filmGallery = document.querySelector('.js-film-gallery');
 
 async function TrendingMovie() {
-    try {
-        const { results } = await getMoviesTrending();
-        filmGallery.innerHTML = createMarkupOneCard(results);
-    } catch (error) {
-        console.log(error.message);
-    };
-};
+  try {
+    const { results } = await getMoviesTrending();
+    filmGallery.innerHTML = createMarkupOneCard(results);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 
 TrendingMovie();
 
