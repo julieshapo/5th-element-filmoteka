@@ -1,5 +1,5 @@
 .section {
-  background-color: #ffffff;
+  // background-color: #ffffff;
   padding: 20px 0 40px 0;
   @include tablet {
     padding: 60px 0;
@@ -24,7 +24,7 @@
 }
 
 .film-item {
-  background-color: #fff;
+  background-color: transparent;
   width: 280px;
   height: 438px;
   @include tablet {

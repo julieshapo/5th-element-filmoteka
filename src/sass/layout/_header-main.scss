@@ -1,0 +1,24 @@
+.darktheme__button {
+  position: relative;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  transition: transform var(--main-effect);
+
+  &:hover {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 25px;
+  }
+}
+.darkTheme {
+  transition: background-color 500ms cubic-bezier(0.175, 0.82, 0.165, 1);
+  color: #ffffff;
+  background-color: rgba(22, 20, 20, 0.94);
+  height: 100%;
+  scroll-behavior: smooth;
+}
