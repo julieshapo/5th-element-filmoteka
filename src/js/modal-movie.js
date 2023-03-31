@@ -1,5 +1,6 @@
 import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
+
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 
 refs.filmGallery.addEventListener('click', onClickMovie);
@@ -15,7 +16,7 @@ function onClickMovie(e) {
   window.addEventListener('keydown', onCloseModalKey);
 };
 
-// Функция делает запрос за полной инфо по фильму и отображет ее в модалке
+// Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
 async function showMovieInfo(id) {
   try {
@@ -23,7 +24,7 @@ async function showMovieInfo(id) {
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
       : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
-      refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster);
+    refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster);
     } catch (error) {
     console.log(error.message);
     };
