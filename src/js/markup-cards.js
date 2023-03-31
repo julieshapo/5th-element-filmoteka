@@ -1,8 +1,8 @@
 import { getMoviesTrending } from './api-fetch';
 
 function createMarkupOneCard(array) {
-
     return array.map(item => {
+        const geners = 'no geners';
         const date = item.release_date ?? item.first_air_date ?? null;
         const year = date ? date.slice(0, 4) : 'Unknown year';
 
@@ -14,7 +14,7 @@ function createMarkupOneCard(array) {
         <div class="card__content">
             <p class="card__title">${item.title}</p>
             <div class="card__genres">
-                <p>${year}</p>
+                <p>${geners} | ${year}</p>
             </div>
         </div>
     </li>
