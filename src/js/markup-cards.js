@@ -1,20 +1,40 @@
-export function createMarkupOneCard(data) {
-    const genres = data.genres.map(genre => `${genre}`).join(', ');
-    const markup = `
-    <div class="card">
+import { getMoviesTrending } from './api-fetch';
+
+function createMarkupOneCard(array) {
+    return array.map(item => {
+        const geners = 'no geners';
+        const date = item.release_date ?? item.first_air_date ?? null;
+        const year = date ? date.slice(0, 4) : 'Unknown year';
+
+        return `
+    <li data-id=${item.id} class="film-item">
         <div class="card__image">
-            <img src="${data.image}" alt="${data.title}">
+            <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" alt="${item.title}">
         </div>
         <div class="card__content">
-            <div class="card__title">${data.title}</div>
+            <p class="card__title">${item.title}</p>
             <div class="card__genres">
-                <div>${genres} | ${data.year}</div>
+                <p>${geners} | ${year}</p>
             </div>
         </div>
-    </div>
-    `;
-    return markup;
-}
+    </li>
+    `
+    }).join('');
+};
+
+const filmGallery = document.querySelector('.js-film-gallery');
+
+async function TrendingMovie() {
+    try {
+        const { results } = await getMoviesTrending();
+        filmGallery.innerHTML = createMarkupOneCard(results);
+    } catch (error) {
+        console.log(error.message);
+    };
+};
+
+TrendingMovie();
+
 //Desctop
 //gap 32 16
 //width 394
