@@ -56,6 +56,23 @@ export async function getMovieFullInfo(movie_id) {
   }
 }
 
+//Запит трейлеру фільма
+async function getMovieTrailer(movie_id) {
+  try {
+    const params = {
+      api_key: API_KEY,
+      language: 'en-US',
+      page: 1,
+    };
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movie_id}/videos?`,
+      { params }
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
 // const MAIN_URL = 'https://api.themoviedb.org/3';
 
 // export async function getTrending(page = 1) {
