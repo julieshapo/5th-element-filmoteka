@@ -20,7 +20,7 @@ function createMarkupOneCard(array) {
               class="film-label"
             />
           </div>
-          <div>
+          <div class="film-wrap">
             <p class="film-title">${item.title}</p>
             <p class="film-genre">${geners} | ${year}</p>
           </div>          
