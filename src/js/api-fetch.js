@@ -22,7 +22,7 @@ export async function getMoviesByName(name) {
 }
 
 //Запит на список найпопулярніших фільмів
-export async function getMoviesTrending(page) {
+export async function getMoviesTrending(page = 1) {
   try {
     const params = {
       api_key: API_KEY,

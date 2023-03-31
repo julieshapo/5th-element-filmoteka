@@ -8,15 +8,17 @@ function createMarkupOneCard(array) {
 
         return `
     <li data-id=${item.id} class="film-item">
-        <div class="card__image">
-            <img src="https://image.tmdb.org/t/p/w500${item.backdrop_path}" alt="${item.title}">
-        </div>
-        <div class="card__content">
-            <p class="card__title">${item.title}</p>
-            <div class="card__genres">
-                <p>${geners} | ${year}</p>
-            </div>
-        </div>
+    <div class="thumb">
+            <img
+              src="https://image.tmdb.org/t/p/w500${item.backdrop_path}"
+              alt="${item.title}
+              class="film-label"
+            />
+          </div>
+          <div>
+            <p class="film-title">${item.title}</p>
+            <p class="film-genre">${geners} | ${year}</p>
+          </div>          
     </li>
     `
     }).join('');
