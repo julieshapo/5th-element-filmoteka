@@ -1,6 +1,10 @@
 import { getMoviesTrending } from './api-fetch';
 import { refs } from './refs';
 
+TrendingMovie();
+
+// Функция которая ожидает и перебирает массив и возвращает разметку карточек фильмов
+
 function createMarkupOneCard(array) {
     return array.map(item => {
         const geners = 'no geners';
@@ -25,7 +29,7 @@ function createMarkupOneCard(array) {
     }).join('');
 };
 
-TrendingMovie();
+// Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов 
 
 async function TrendingMovie() {
   try {
