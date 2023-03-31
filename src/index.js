@@ -1,10 +1,9 @@
 import './sass/index.scss';
-
+import './js/create-gallery-markup';
 import './js/refs';
 import './js/search-input';
 import './js/api-fetch';
 import './js/loader-spinner';
-import './js/markup-cards';
 import './js/modal-movie';
 import './js/pagination';
 import './js/smooth-scroll';

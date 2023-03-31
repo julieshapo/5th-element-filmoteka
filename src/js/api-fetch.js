@@ -1,61 +1,70 @@
 import axios from "axios";
 
+let page;
+let query;
+
+const BASE_URL = 'https://api.themoviedb.org/3';
+
 const API_KEY = '169863a84bc27c731fc45c45dd4a4a7e';
 
-const MAIN_URL = 'https://api.themoviedb.org/3';
+async function fetchPopularMovies(page) {
+  const url = new URL(`${BASE_URL}/trending/movie/week`);
+  url.searchParams.append('api_key', API_KEY);
+  url.searchParams.append('page', page);
 
-
-export async function getTrending(page = 1) {
-  const url = `${MAIN_URL}/trending/all/day?api_key=${API_KEY}&language=en-US&page=${page}`;
-  return await axios
-    .get(url)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => console.log(error));
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  return data;
 }
 
-export async function getByKeyword(query, page) {
-  const url = `${MAIN_URL}/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}`;
-  return await axios
-    .get(url)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => console.log(error));
+console.log(fetchPopularMovies(3));
+
+
+async function fetchMoviesByQuery(query, page) {
+  const url = new URL(`${BASE_URL}/search/movie`);
+  url.searchParams.append('api_key', API_KEY);
+  url.searchParams.append('query', query);
+  url.searchParams.append('page', page);
+
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
 
-export async function getInfoMovie(movie_id) {
-  const url = `${MAIN_URL}/movie/${movie_id}?api_key=${API_KEY}&language=en-US`;
-  return await axios
-    .get(url)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => {});
+async function fetchMovieById(id) {
+  const url = new URL(`${BASE_URL}/movie/${id}`);
+  url.searchParams.append('api_key', API_KEY);
+
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
 
-export async function getVideos(movie_id) {
-  const url = `${MAIN_URL}/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`;
-  return await axios
-    .get(url)
-    .then(response => {
-      return response.data.results;
-    })
-    .catch(error => {});
+async function fetchTrailerById(id) {
+  const url = new URL(`${BASE_URL}/movie/${id}/videos`);
+  url.searchParams.append('api_key', API_KEY);
+
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
 }
 
-export async function getArrayofMovies(array) {
-  const arrayOfMovies = array.map(async movie_id => {
-    return await axios
-      .get(`${MAIN_URL}/movie/${movie_id}?api_key=${API_KEY}&language=en-US`)
-      .then(response => {
-        return response.data;
-      })
-      .catch(error => console.log(error));
-  });
+async function fetchGenres() {
+  const url = new URL(`${BASE_URL}/genre/movie/list`);
+  url.searchParams.append('api_key', API_KEY);
 
-  const resultData = await Promise.all(arrayOfMovies);
-  return resultData;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.genres;
 }
 
+export {
+  fetchPopularMovies,
+  fetchMoviesByQuery,
+  fetchMovieById,
+  fetchTrailerById,
+  fetchGenres,
+  BASE_URL,
+  API_KEY,
+};
