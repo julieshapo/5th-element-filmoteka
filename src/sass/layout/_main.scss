@@ -1,42 +1,42 @@
-.section{
-    background-color: #ffffff;
-    padding: 20px 0 40px 0;
-    @include tablet{
-        padding: 60px 0;
-    }
+.section {
+  background-color: #ffffff;
+  padding: 20px 0 40px 0;
+  @include tablet {
+    padding: 60px 0;
   }
-  
-  
-  .film-gallery{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    @include tablet {
-        gap: 32px;
-        align-content: center;
-    }
-    @include desktop {
-        gap: 32px 16px;
-    }
+}
+
+.film-gallery {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  @include tablet {
+    gap: 32px;
+    align-content: center;
   }
-  
-  .film-item{
-    background-color: yellowgreen;
-    width: 280px;
-    height: 438px;
-    @include tablet{
-        margin-left: 0;
-        margin-right: 0;
-        width: calc((100% - 32px)/2);
-        height: 495px;
-        max-width: 336px;
-    }
-    @include desktop(){
-      width: calc((100% - 32px)/3);
-      height: 634px;
-      max-width: 395px;
+  @include desktop {
+    gap: 32px 16px;
   }
+}
+
+.film-item {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  width: 280px;
+  height: 438px;
+  @include tablet {
+    margin-left: 0;
+    margin-right: 0;
+    width: calc((100% - 32px) / 2);
+    height: 495px;
+    max-width: 336px;
   }
+  @include desktop() {
+    width: calc((100% - 32px) / 3);
+    height: 634px;
+    max-width: 395px;
+  }
+}
