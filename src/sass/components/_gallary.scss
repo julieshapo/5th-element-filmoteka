@@ -85,3 +85,6 @@
   transition: transform 300ms ease-in-out;
   transform: scale(1.1);
 }
+.film-item {
+   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, .8);
+}
