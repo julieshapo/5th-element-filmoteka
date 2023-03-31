@@ -4,4 +4,5 @@ export const refs = {
   modal: document.querySelector('.js-modal'),
   modalMovie: document.querySelector('.modal-movie'),
   headerForm: document.querySelector('.header-form'),
+  filmGallery: document.querySelector('.js-film-gallery'),
 };

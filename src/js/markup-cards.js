@@ -1,4 +1,5 @@
 import { getMoviesTrending } from './api-fetch';
+import { refs } from './refs';
 
 function createMarkupOneCard(array) {
     return array.map(item => {
@@ -24,15 +25,13 @@ function createMarkupOneCard(array) {
     }).join('');
 };
 
-const filmGallery = document.querySelector('.js-film-gallery');
+TrendingMovie();
 
 async function TrendingMovie() {
-    try {
-        const { results } = await getMoviesTrending();
-        filmGallery.innerHTML = createMarkupOneCard(results);
-    } catch (error) {
-        console.log(error.message);
-    };
+  try {
+    const { results } = await getMoviesTrending();
+      refs.filmGallery.innerHTML = createMarkupOneCard(results);
+  } catch (error) {
+      console.log(error.message);
+  };
 };
-
-TrendingMovie();
