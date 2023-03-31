@@ -111,3 +111,4 @@ async function getMovieFullInfo(movie_id) {
 //   const resultData = await Promise.all(arrayOfMovies);
 //   return resultData;
 // }
+
