@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { genresFormat, genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
+import { markupWatched } from './watched-local-storage';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
@@ -8,7 +9,7 @@ if (!refs.filmGallery) {
 }
 refs.filmGallery.addEventListener('click', onClickMovie);
 
-function onClickMovie(e) {
+export function onClickMovie(e) {
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
   if (!id) {
@@ -37,6 +38,7 @@ async function showMovieInfo(id) {
 // Функция которую нужно вызвать что бы закрыть модалку
 
 function modalClose() {
+  markupWatched();
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
 }
