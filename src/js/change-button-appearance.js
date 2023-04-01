@@ -1,37 +1,71 @@
 
 import { watched, queue } from './local-storage';
+//Функція робить кнопку недоступною якщо додаєм фільм який вже є в масиві watched або queue
+//або хочемо видалити фільм якого немає в масиві watched або queue  (і навпаки) 
+export function btnSetArtibute(el, id) { //el - це елемент розмітки(кнопка по котрій був клік)
+    if (el === btnWatchedEl) { //робота з watched; 
+        if (watched.includes(id)) { //якщо id фільму є в масиві watched:
+            //перевіряємо чи на кнопці є клас remove-watched-js  
+            if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
+                btnWatchedEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
+            } else { //кнопка "Add to watched"
+                btnWatchedEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
+            }
+        } else { //якщо id фільму немає в масиві watched:
+            if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
+                btnWatchedEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
+            } else { //кнопка "Add to watched"
+                btnWatchedEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
+            }
+        }
 
-
-export function changeBtnAppearance(el, id) {
-    //el - це елемент розмітки(кнопка по котрій був клік)
+    } else if (el === btnQueueEl) { //робота з queue;
+        if (queue.includes(id)) { //якщо id фільму є в масиві queue:
+            //перевіряємо чи на кнопці є клас remove-queue-js  
+            if (btnQueueEl.classList.contains('remove-queue-js')) { //кнопка "Remove queue"
+                btnQueueEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
+            } else { //кнопка "Add to queue"
+                btnQueueEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
+            }
+        } else { //якщо id фільму немає в масиві queue
+            if (btnQueueEl.classList.contains('remove-queue-js')) { //це кнопка "Remove queue"
+                btnQueueEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
+            } else { //це кнопка "Add to queue"
+                btnQueueEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
+            }
     
-    //Константи лишити тут чи перенести в refs.js
-    const btnWatched = document.querySelector('[data-movie="watched"]');
-    const btnQueue = document.querySelector('[data-movie="queue"]');
-
-    if (el === btnWatched) { //перевіряємо чи клік був по кнопці watched
-        if (btnWatched.classList.contains('remove-watched-js')) 
-        { //перевіряємо чи клас remove-watched-js вже є на кнопці
-            if (watched.includes(id)) { //перевіряємо чи id фільму є в масиві watched
-            btnWatched.classList.toggle('remove-watched-js');}
-            btnWatched.classList.toggle('remove-watched-js');
-            btnWatched.textContent = 'Add to watched';
-        } else {
-            btnWatched.classList.toggle('remove-watched-js');
-            btnWatched.textContent = 'Remove watched';
         }
-    } else if (el === btnQueue) {
-        if (btnQueue.classList.contains('remove-queue-js')) {
-            btnQueue.classList.toggle('remove-queue-js');
-            btnQueue.textContent = 'Add to queue';
-        } else {
-            btnQueue.classList.toggle('remove-queue-js');
-            btnQueue.textContent = 'Remove queue';
-        }
-        btnQueue.classList.toggle('remove-queue-js');
-        btnQueue.textContent = 'Remove queue';
- }
+    }
 }
 
-//Одночасно з лоадером, який відображається під час завантажень
-//Сьогодні хвилин за 20 мжна було-б домовитись про заливку на гітхаб функції після того перейду до стилів це мабуть перейде на завтра.І зможу до чогось підключатись.
+// функція додає чи знімає клас .remove-watched-js з кнопки el та змінює текст на кнопці
+export function changeBtnAppearance(el) {
+    //el - це елемент розмітки(кнопка по котрій був клік)
+    
+    //Константи лишити тут чи перенести в refs.js ?
+    const btnWatchedEl = document.querySelector('[data-movie="watched"]');
+    const btnQueueEl = document.querySelector('[data-movie="queue"]');
+
+    if (el === btnWatchedEl) { //перевіряємо чи клік був по кнопці watched
+        
+        //перевіряємо чи на кнопці є клас remove-watched-js, 
+        if (btnWatchedEl.classList.contains('remove-watched-js')) { 
+                //текст змінюємо на "Add to watched" та додаємо клас .remove-watched-js
+                btnWatchedEl.classList.toggle('remove-watched-js');
+                btnWatchedEl.textContent = 'Add to watched';
+        } else { //кнопка 'Add to watched', 
+            // додаємо клас .remove-watched-js і змінюємо текст на кнопці на "Remove watched
+            btnWatchedEl.classList.toggle('remove-watched-js');
+            btnWatchedEl.textContent = 'Remove watched';
+        }
+    }
+    else if (el === btnQueueEl) { //перевіряємо чи клік був по кнопці Queue
+        if (btnQueueEl.classList.contains('remove-queue-js')) {
+            btnQueueEl.classList.toggle('remove-queue-js');
+            btnQueueEl.textContent = 'Add to queue';
+        } else {
+            btnQueueEl.classList.toggle('remove-queue-js');
+            btnQueueEl.textContent = 'Remove queue';
+        }
+    }
+}
