@@ -31,6 +31,7 @@
   }
 }
 .logo-title {
+  transform: translateY(2px);
   display: none;
   @include tablet {
     font-family: 'Roboto';
@@ -213,4 +214,33 @@
 .logo-icon {
   stroke: inherit;
   transform: translateY(-2px);
+}
+
+
+.logo-icon {
+
+  animation: 1s linear 0s normal none infinite running rot;
+  -webkit-animation: 2s linear 0s normal none infinite running rot;
+
+}
+
+@keyframes rot {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rot {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+
 }
