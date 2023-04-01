@@ -22,6 +22,12 @@
   @include tablet {
     height: 35px;
     gap: 10px;
+    stroke: #ffffff;
+  }
+  &:hover,
+  &:focus {
+    stroke: $colorBtnAccent;
+    color: $colorBtnAccent;
   }
 }
 .logo-title {
@@ -189,6 +195,7 @@
 
 .search-icon {
   position: absolute;
+
   top: 4px;
 }
 
@@ -204,5 +211,6 @@
 }
 
 .logo-icon {
+  stroke: inherit;
   transform: translateY(-2px);
 }

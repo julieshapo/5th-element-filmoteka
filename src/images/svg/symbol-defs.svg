@@ -52,8 +52,7 @@
 <symbol id="icon-film" viewBox="0 0 32 32">
 <path
         fill="none"
-        stroke="#fff"
-        style="stroke: var(--color1, #fff)"
+        stroke="inherit"
         stroke-linejoin="round"
         stroke-linecap="round"
         stroke-miterlimit="4"
