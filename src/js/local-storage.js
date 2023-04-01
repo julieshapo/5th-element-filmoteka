@@ -1,9 +1,11 @@
+import { watched, queue } from "./buttons";
+
 export function getWatchedLS() {
-  return JSON.parse(localStorage.getItem('watched'));
+  watched = JSON.parse(localStorage.getItem('watched')) || [];
 }
 
 export function getQueueLS() {
-  return JSON.parse(localStorage.getItem('queue'));
+  queue = JSON.parse(localStorage.getItem('queue')) || [];
 }
 
 export function setWatchedLS(array) {
