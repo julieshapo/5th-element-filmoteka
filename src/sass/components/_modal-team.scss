@@ -7,9 +7,9 @@
 }
 
 .modal-team {
-  padding: 20px;
+  padding: 20px 30px;
   margin: 20px auto;
-  width: 300px;
+  width: 250px;
   border-radius: 15px;
   background: $colorModalBg;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -20,28 +20,34 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
+  @include mobile {
+    width: 450px;
+  }
   @include tablet {
-    width: 720px;
+    width: 650px;
     top: 50vh;
   }
   @include desktop {
-    width: 1000px;
-    top: 60vh;
+    width: 800px;
+    top: 105vh;
   }
 }
 
 .modal-team-close {
-  width: 30px;
-  height: 30px;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   border-radius: 50%;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 16px;
+  top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.team-close:hover,
+.team-close:focus {
+  transform: rotate(90deg);
+  color: $colorTextAccent;
 }
 
 .is-hidden {
@@ -63,19 +69,18 @@
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   margin: 0 auto;
   justify-content: center;
   @include desktop {
-    gap: 30px;
   }
 }
 
 .team-photo {
   display: block;
-  border-radius: 20%;
-  height: 120px;
-  width: 100%;
+  border-radius: 5%;
+  height: 180px;
+  width: 120%;
   object-fit: cover;
 }
 
