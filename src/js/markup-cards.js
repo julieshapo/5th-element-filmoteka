@@ -37,7 +37,7 @@ async function TrendingMovie() {
   try {
     const { results } = await getMoviesTrending();
 
-    filmGallery.innerHTML = createMarkupOneCard(results);
+    refs.filmGallery.innerHTML = createMarkupOneCard(results);
   } catch (error) {
     console.log(error.message);
   }
