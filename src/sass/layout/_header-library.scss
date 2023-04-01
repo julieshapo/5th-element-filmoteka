@@ -218,7 +218,7 @@
 .logo-icon {
   animation: 1s linear 0s normal none infinite running rot;
   -webkit-animation: 2s linear 0s normal none infinite running rot;
-  animation-iteration-count: 3;
+  animation-iteration-count: 1.5;
 }
 
 @keyframes rot {
