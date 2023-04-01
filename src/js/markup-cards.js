@@ -1,4 +1,9 @@
 import { getMoviesTrending } from './api-fetch';
+import { refs } from './refs';
+
+TrendingMovie();
+
+// Функция которая ожидает и перебирает массив и возвращает разметку карточек фильмов
 
 export function createMarkupOneCard(array) {
   return array
@@ -16,7 +21,7 @@ export function createMarkupOneCard(array) {
               class="film-label"
             />
           </div>
-          <div>
+          <div class="film-wrap">
             <p class="film-title">${item.title}</p>
             <p class="film-genre">${geners} | ${year}</p>
           </div>          
@@ -26,11 +31,12 @@ export function createMarkupOneCard(array) {
     .join('');
 }
 
-const filmGallery = document.querySelector('.js-film-gallery');
+// Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов 
 
 async function TrendingMovie() {
   try {
     const { results } = await getMoviesTrending();
+
     filmGallery.innerHTML = createMarkupOneCard(results);
   } catch (error) {
     console.log(error.message);
