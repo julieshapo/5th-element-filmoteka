@@ -4,7 +4,7 @@ import { getMovieFullInfo } from './api-fetch';
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
 export let watched = JSON.parse(localStorage.getItem('watched')) || [];
-let queue = [];
+export let queue = JSON.parse(localStorage.getItem('queue')) || [];
 console.log(watched);
 
 refs.modalMovie.addEventListener('click', onClickBtn);
@@ -33,15 +33,12 @@ export function onClickBtn(e) {
 export async function addToWatched(id) {
   try {
     const results = await getMovieFullInfo(id);
-    console.log(results);
 
     const findFilm = watched.find(item => item.id === Number(id));
     const findIndex = watched.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      watched.splice(findIndex, 1);
-      console.log(watched);
-      localStorage.setItem('watched', JSON.stringify(watched));
+      return;
     } else {
       watched.push(results);
       console.log(watched);
@@ -63,11 +60,11 @@ export async function addToQueue(id) {
     const findIndex = queue.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      queue.splice(findIndex, 1);
-      console.log(queue);
+      return;
     } else {
       queue.push(results);
       console.log(queue);
+      localStorage.setItem('queue', JSON.stringify(queue));
     }
   } catch (error) {
     console.log(error.message);
