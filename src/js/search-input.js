@@ -9,6 +9,9 @@ const form = document.querySelector('.header-form');
 const input = document.querySelector('.header-form-input');
 const filmGallery = document.querySelector('.js-film-gallery');
 const searchError = document.querySelector('.search-error');
+if (!form) {
+  return;
+}
 form.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(event) {

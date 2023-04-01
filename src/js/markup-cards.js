@@ -42,11 +42,9 @@ export function createMarkupOneCard(array) {
 async function TrendingMovie() {
   try {
     const { results } = await getMoviesTrending();
-
     if (!refs.filmGallery) {
       return;
     }
-
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
   } catch (error) {
     console.log(error.message);

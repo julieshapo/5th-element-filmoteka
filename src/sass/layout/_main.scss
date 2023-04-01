@@ -85,3 +85,19 @@
 .film-title {
   text-transform: uppercase;
 }
+
+body.darkTheme {
+  background-color: rgba(22, 20, 20, 0.94);
+
+  .film-title {
+    color: $colorTextLight;
+  }
+  
+  .film-item {
+    background-color: rgba(22, 20, 20, 0.94);
+  }
+
+  .film-wrap {
+    background-color: rgba(22, 20, 20, 0.94);
+  }
+}
