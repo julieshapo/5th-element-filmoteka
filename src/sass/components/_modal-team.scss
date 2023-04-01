@@ -34,17 +34,20 @@
 }
 
 .modal-team-close {
-  width: 30px;
-  height: 30px;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   border-radius: 50%;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 16px;
+  top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.team-close:hover,
+.team-close:focus {
+  transform: rotate(90deg);
+  color: $colorTextAccent;
 }
 
 .is-hidden {

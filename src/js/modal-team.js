@@ -26,7 +26,7 @@ const teamArray = [
     name: 'Andriy <br> Savon',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/andrew.jpg?raw=true',
   },
   {
     name: 'Dmytro <br /> Melnyk',
@@ -67,7 +67,7 @@ const teamArray = [
     name: 'Yaroslav <br> Marinich',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/Yaroslav Marinich.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/yaroslav.jpg?raw=true',
     github: 'https://github.com/Yaroslav-Marinich',
   },
   {
@@ -102,7 +102,7 @@ const teamArray = [
     name: 'Igor <br> Kalchyn',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor_K.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor_k.jpg?raw=true',
     github: 'https://github.com/KalchIgor',
   },
 ];
