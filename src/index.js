@@ -13,5 +13,7 @@ import './js/queue-local-storage';
 import './js/watched-local-storage';
 import './js/modal-team';
 import './js/buttons';
+import './js/modal-btn-watched';
+import './js/modal-btn-queue';
 
 import './js/change-theme';
