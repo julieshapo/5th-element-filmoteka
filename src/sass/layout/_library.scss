@@ -9,13 +9,23 @@
 }
 
 .no-watched-text {
+  position: absolute;
+  top: 270px;
+  right: 750px;
+
   text-align: center;
-  color: #ff001b;
-  font-size: 20px;
+  color: #000;
+  text-shadow: 1px 1px 1px rgb(214, 116, 4);
+  font-size: 30px;
+  font-weight: 700;
   line-height: 1.16;
 }
 
 .no-watched-btn {
+  position: absolute;
+  top: 330px;
+  right: 750px;
+
   display: block;
   margin: 12px auto 0;
   box-sizing: border-box;
@@ -24,23 +34,25 @@
 
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 12px;
   line-height: 1.33;
 
   text-align: center;
   text-transform: uppercase;
-  color: $colorTextAccentCurrent;
+  background-color: $colorBtnAccent;
+  color: $colorBtnLight;
 
   border: 1px solid $colorBtnAccent;
   border-radius: 5px;
   cursor: pointer;
-  background-color: transparent;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    color: $colorBtnLight;
-    background-color: $colorBtnAccent;
+    color: $colorTextDark;
+    background-color: $colorBtnLight;
     border: 1px solid inherit;
+    transform: scale(1.02);
   }
 }
