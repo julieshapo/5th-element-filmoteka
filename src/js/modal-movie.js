@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { genresFormat, genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
@@ -21,10 +22,11 @@ function onClickMovie(e) {
 async function showMovieInfo(id) {
   try {
     const results = await getMovieFullInfo(id);
+    const geners = genresFormatModal(results.genres).join(', ');
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
       : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
-    refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster);
+    refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
     } catch (error) {
     console.log(error.message);
     };
@@ -58,7 +60,7 @@ function onCloseModalKey(e) {
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
-function renderMarkupModalMovie(object, poster) {
+function renderMarkupModalMovie(object, poster, geners) {
   return `<div class="movie-thumb">
       <img
         class="movie-img"
@@ -97,7 +99,7 @@ function renderMarkupModalMovie(object, poster) {
             <p class="movie-info-value">${object.original_title}</p>
           </li>
           <li>
-            <p class="movie-info-value">тут должен быть жанр</p>
+            <p class="movie-info-value">${geners}</p>
           </li>
         </ul>
       </div>

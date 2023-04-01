@@ -1,4 +1,5 @@
 import { getMoviesTrending } from './api-fetch';
+import { genresFormat } from './geners';
 import { refs } from './refs';
 
 TrendingMovie();
@@ -8,7 +9,7 @@ TrendingMovie();
 export function createMarkupOneCard(array) {
   return array
     .map(item => {
-      const geners = 'no geners';
+      const geners = genresFormat(item.genre_ids).join(', ');
       const date = item.release_date ?? item.first_air_date ?? null;
       const year = date ? date.slice(0, 4) : 'Unknown year';
 
