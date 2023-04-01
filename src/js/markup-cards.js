@@ -22,7 +22,7 @@ export function createMarkupOneCard(array) {
     <li data-id=${item.id} class="film-item">
     <div class="thumb">
             <img
-              src="https://image.tmdb.org/t/p/w500${poster}"
+              src="${poster}"
               alt="${item.title}
               class="film-label"
             />
