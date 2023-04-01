@@ -105,11 +105,11 @@ function renderMarkupModalMovie(object, poster) {
       <p class="movie-desc">
         ${object.overview ?? '- - -'}
       </p>
-      <div class="movie-btn-wrap">
-        <button data-movie="watched" class="movie-btn" type="button">
+      <div data-id="${object.id}" class="movie-btn-wrap">
+        <button data-add="watched" class="movie-btn" type="button">
           add to Watched
         </button>
-        <button data-movie="queue" class="movie-btn" type="button">
+        <button data-add="queue" class="movie-btn" type="button">
           add to queue
         </button>
       </div>
