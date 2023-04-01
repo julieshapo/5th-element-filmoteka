@@ -25,8 +25,13 @@
     top: 50vh;
   }
   @include desktop {
+<<<<<<< Updated upstream
     width: 960px;
     top: 60vh;
+=======
+    width: 1000px;
+    top: 105vh;
+>>>>>>> Stashed changes
   }
 }
 
@@ -63,19 +68,19 @@
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   margin: 0 auto;
   justify-content: center;
   @include desktop {
-    gap: 30px;
+    gap: 60px;
   }
 }
 
 .team-photo {
   display: block;
-  border-radius: 20%;
-  height: 120px;
-  width: 100%;
+  border-radius: 5%;
+  height: 180px;
+  width: 120%;
   object-fit: cover;
 }
 

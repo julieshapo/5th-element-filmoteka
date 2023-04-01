@@ -12,14 +12,14 @@ const teamArray = [
     name: 'Juliya <br> Shapovalenko',
     position: 'Team Leader',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/julia2.jpg?raw=true',
     github: 'https://github.com/julieshapo',
   },
   {
     name: 'Ruslan <br> Podosinovikov',
     position: 'Scrum Master',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/ruslan2.jpg?raw=true',
     github: 'https://github.com/nikopolzp',
   },
   {
@@ -32,77 +32,77 @@ const teamArray = [
     name: 'Dmytro <br /> Melnyk',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/Dmytro.jpg?raw=true',
     github: 'https://github.com/Melnyk675',
   },
   {
-    name: 'Vladyslav',
+    name: 'Vladyslav <br /> Matsala',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/vladyslav.jpg?raw=true',
     github: 'https://github.com/mentallaboratories',
   },
   {
     name: 'Igor <br> Gromadskiy',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igoor.jpg?raw=true',
     github: 'https://github.com/IG00RA',
   },
   {
     name: 'Denys <br> Kondratenko',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/denys2.jpg?raw=true',
     github: 'https://github.com/Denys-Kondratenko',
   },
   {
     name: 'Anastasia <br> Korotenko',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/anastasiya_2.jpg?raw=true',
     github: 'https://github.com/Anastasiako6',
   },
   {
     name: 'Yaroslav <br> Marinich',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/Yaroslav Marinich.jpg?raw=true',
     github: 'https://github.com/Yaroslav-Marinich',
   },
   {
     name: 'Kateryna <br> Verveda',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/katya.jpg?raw=true',
     github: 'https://github.com/katushka211',
   },
   {
     name: 'Volodymyr <br> Zabiyaka',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/Volodymyr.jpg?raw=true',
     github: 'https://github.com/VolZa',
   },
   {
     name: 'Inna <br> Artysiuk',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/inna2.jpg?raw=true',
     github: 'https://github.com/Inna-Artysiuk',
   },
   {
     name: 'Vasyl <br> Kozhukh',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/vasyl2.jpg?raw=true',
     github: 'https://github.com/Kozhukh-Vasyl',
   },
   {
     name: 'Igor <br> Kalchyn',
     position: 'Developer',
     photo:
-      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
+      'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor_K.jpg?raw=true',
     github: 'https://github.com/KalchIgor',
   },
 ];
