@@ -7,9 +7,9 @@
 }
 
 .modal-team {
-  padding: 20px 40px;
+  padding: 20px 30px;
   margin: 20px auto;
-  width: 280px;
+  width: 250px;
   border-radius: 15px;
   background: $colorModalBg;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -20,18 +20,16 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
+  @include mobile {
+    width: 450px;
+  }
   @include tablet {
-    width: 700px;
+    width: 650px;
     top: 50vh;
   }
   @include desktop {
-<<<<<<< Updated upstream
-    width: 960px;
-    top: 60vh;
-=======
-    width: 1000px;
+    width: 800px;
     top: 105vh;
->>>>>>> Stashed changes
   }
 }
 
@@ -72,7 +70,6 @@
   margin: 0 auto;
   justify-content: center;
   @include desktop {
-    gap: 60px;
   }
 }
 
