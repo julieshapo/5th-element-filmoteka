@@ -72,3 +72,44 @@
 .footer__link:focus {
   color: #ff6b08;
 }
+
+.footer__icon-heart{
+
+
+  -webkit-animation: pulsing 2.5s infinite;
+  animation: pulsing 2.5s infinite;
+
+  @-webkit-keyframes pulsing {
+    0% {
+      -webkit-transform: scale(2, 2);
+      transform: scale(2, 2);
+    }
+
+    50% {
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+
+    100% {
+      -webkit-transform: scale(2, 2);
+      transform: scale(2, 2);
+    }
+  }
+
+  @keyframes pulsing {
+    0% {
+      -webkit-transform: scale(2, 2);
+      transform: scale(2, 2);
+    }
+
+    50% {
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+
+    100% {
+      -webkit-transform: scale(2, 2);
+      transform: scale(2, 2);
+    }
+  }
+}
