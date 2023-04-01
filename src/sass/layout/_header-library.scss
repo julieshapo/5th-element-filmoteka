@@ -213,7 +213,7 @@
 
 .logo-icon {
   stroke: inherit;
-  transform: translateY(-2px);
+ 
 }
 
 
@@ -221,6 +221,7 @@
 
   animation: 1s linear 0s normal none infinite running rot;
   -webkit-animation: 2s linear 0s normal none infinite running rot;
+  animation-iteration-count: 5;
 
 }
 
