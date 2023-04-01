@@ -1,5 +1,6 @@
-import { Pagination } from 'tui-pagination';
+import Pagination from 'tui-pagination';
 import { refs } from './refs';
+import 'tui-pagination/dist/tui-pagination.min.css';
 
 const TUI_PAGES_VISIBLE = 5;
 
@@ -18,5 +19,14 @@ export function createPagination(totalItems, visiblePages) {
     refs.pagination.style.display = 'none';
   }
 
-  return pagination;
+  return pagination.getCurrentPage();
 }
+
+// paganation.on('beforeMove', event => {
+//   const currentPage = event.page;
+
+//   if (currentPage === 10) {
+//     return false;
+//     // return true;
+//   }
+// });
