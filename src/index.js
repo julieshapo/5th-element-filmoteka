@@ -12,6 +12,6 @@ import './js/notification';
 import './js/queue-local-storage';
 import './js/watched-local-storage';
 import './js/modal-team';
-import './js/refs';
+import './js/buttons';
 
 import './js/change-theme';
