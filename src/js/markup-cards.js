@@ -12,11 +12,15 @@ export function createMarkupOneCard(array) {
       const date = item.release_date ?? item.first_air_date ?? null;
       const year = date ? date.slice(0, 4) : 'Unknown year';
 
+      const poster = item.poster_path
+      ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
+      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+
       return `
     <li data-id=${item.id} class="film-item">
     <div class="thumb">
             <img
-              src="https://image.tmdb.org/t/p/w500${item.poster_path}"
+              src="https://image.tmdb.org/t/p/w500${poster}"
               alt="${item.title}
               class="film-label"
             />
