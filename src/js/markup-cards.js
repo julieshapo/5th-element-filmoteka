@@ -29,7 +29,7 @@ export function createMarkupOneCard(array) {
     `;
     })
     .join('');
-}
+};
 
 // Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов 
 
@@ -41,6 +41,4 @@ async function TrendingMovie() {
   } catch (error) {
     console.log(error.message);
   }
-}
-
-TrendingMovie();
+};
