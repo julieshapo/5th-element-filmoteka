@@ -1,3 +1,46 @@
 .no-watched {
   display: none;
 }
+
+.no-watched-img {
+  width: 700px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.no-watched-text {
+  text-align: center;
+  color: #ff001b;
+  font-size: 20px;
+  line-height: 1.16;
+}
+
+.no-watched-btn {
+  display: block;
+  margin: 12px auto 0;
+  box-sizing: border-box;
+  padding: 14px 36px 12px;
+  max-width: 205px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorTextAccentCurrent;
+
+  border: 1px solid $colorBtnAccent;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $colorBtnLight;
+    background-color: $colorBtnAccent;
+    border: 1px solid inherit;
+  }
+}
