@@ -22,8 +22,11 @@
 }
 
 .film-item {
+
+  background-color: transparent;
+  width: 280px;
+  height: 438px;
   border-radius: 5px;
-  background-color: $colorModalBg;
   transition: transform 300ms linear, box-shadow 300ms linear;
 
   @include tablet {
