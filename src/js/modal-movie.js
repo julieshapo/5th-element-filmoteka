@@ -3,19 +3,21 @@ import { genresFormat, genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
-
+if (!refs.filmGallery) {
+  return;
+}
 refs.filmGallery.addEventListener('click', onClickMovie);
 
 function onClickMovie(e) {
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
   if (!id) {
-    return
+    return;
   }
   showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
-};
+}
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
@@ -27,17 +29,17 @@ async function showMovieInfo(id) {
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
       : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
-    } catch (error) {
+  } catch (error) {
     console.log(error.message);
-    };
-  };
+  }
+}
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
 function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
-};
+}
 
 // Функция закрытия модалки при нажатии по бекдропу
 
@@ -47,7 +49,7 @@ function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
   }
-};
+}
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
@@ -56,7 +58,7 @@ function onCloseModalKey(e) {
     return;
   }
   modalClose();
-};
+}
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
@@ -88,12 +90,16 @@ function renderMarkupModalMovie(object, poster, geners) {
         <ul class="movie-info-list">
           <li>
             <p class="movie-info-value">
-              <span class="movie-info-rating">${object.vote_average.toFixed(1)}</span>
+              <span class="movie-info-rating">${object.vote_average.toFixed(
+                1
+              )}</span>
               <span class="movie-info-slash">/</span> ${object.vote_count}
             </p>
           </li>
           <li>
-            <p class="movie-info-value">${object.popularity.toFixed(1) ?? '-'}</p>
+            <p class="movie-info-value">${
+              object.popularity.toFixed(1) ?? '-'
+            }</p>
           </li>
           <li>
             <p class="movie-info-value">${object.original_title}</p>
@@ -116,4 +122,4 @@ function renderMarkupModalMovie(object, poster, geners) {
         </button>
       </div>
     </div>`;
-};
+}
