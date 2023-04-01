@@ -85,25 +85,16 @@
   //   height: 216px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url('../images/header/library-header-mob.jpg');
 
   @include tablet {
-    background-image: linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)
-      ),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/header/library-header-tab.jpg');
   }
 
   @include desktop {
-    background-image: linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)
-      ),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/header/library-header-desk.jpg');
   }
 
@@ -200,6 +191,18 @@
   position: absolute;
   top: 4px;
 }
+
+.search-error {
+  font-size: 14px;
+  line-height: 1.16;
+  align-items: center;
+  text-align: center;
+  color: #ff001b;
+  justify-content: center;
+  margin-top: 20px;
+  display: none;
+}
+
 .logo-icon {
   transform: translateY(-2px);
 }
