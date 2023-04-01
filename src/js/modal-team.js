@@ -1,1 +1,1 @@
-import { BasicLightBox } from "basiclightbox";
+import { BasicLightBox } from 'basiclightbox';
