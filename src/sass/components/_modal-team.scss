@@ -1,0 +1,101 @@
+.backdrop-team {
+  padding: 20px 10px 25px;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.modal-team {
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 15px;
+  background: $colorModalBg;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 105vh;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms linear;
+  @include tablet {
+    width: 720px;
+    top: 50vh;
+  }
+  @include desktop {
+    width: 1000px;
+    top: 48vh;
+  }
+}
+
+.modal-team-close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  .modal-team {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.modal-team-title {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: $colorTextAccent;
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 auto;
+  justify-content: center;
+  @include desktop {
+    gap: 30px;
+  }
+}
+
+.team-photo {
+  display: block;
+  border-radius: 20%;
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.team-name {
+  text-align: center;
+  color: $colorTextDark;
+  font-size: 15px;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.team-position {
+  text-align: center;
+  color: $colorModalTextSecondary;
+}
+
+.team-list-item {
+  width: 120px;
+  height: auto;
+  @include desktop {
+    width: 150px;
+  }
+}
