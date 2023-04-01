@@ -1,6 +1,8 @@
 const darkThemeBtn = document.querySelector('.toggle-darktheme-btn');
 const header = document.querySelector('.header');
-
+if (!darkThemeBtn) {
+  return;
+}
 darkThemeBtn.addEventListener('click', () => {
   console.log('click');
   if (document.body.classList.contains('darkTheme')) {
