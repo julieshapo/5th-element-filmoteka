@@ -1,10 +1,11 @@
-import { refs } from "./refs";
+import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
 
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
-let watched = [];
+export let watched = JSON.parse(localStorage.getItem('watched')) || [];
 let queue = [];
+console.log(watched);
 
 refs.modalMovie.addEventListener('click', onClickBtn);
 
@@ -17,14 +18,14 @@ export function onClickBtn(e) {
 
   switch (add) {
     case 'watched':
-      addToWatched(id)
+      addToWatched(id);
       break;
-    
+
     case 'queue':
-      addToQueue(id)
+      addToQueue(id);
       break;
-  };
-};
+  }
+}
 
 // Функция добаляет обьект фильма в массив "watched" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "watched"
@@ -32,6 +33,7 @@ export function onClickBtn(e) {
 export async function addToWatched(id) {
   try {
     const results = await getMovieFullInfo(id);
+    console.log(results);
 
     const findFilm = watched.find(item => item.id === Number(id));
     const findIndex = watched.findIndex(item => item.id === Number(id));
@@ -39,14 +41,16 @@ export async function addToWatched(id) {
     if (findFilm) {
       watched.splice(findIndex, 1);
       console.log(watched);
+      localStorage.setItem('watched', JSON.stringify(watched));
     } else {
       watched.push(results);
       console.log(watched);
+      localStorage.setItem('watched', JSON.stringify(watched));
     }
-    } catch (error) {
+  } catch (error) {
     console.log(error.message);
-    };
-};
+  }
+}
 
 // Функция добаляет обьект фильма в массив "queue" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "queue"
@@ -65,7 +69,7 @@ export async function addToQueue(id) {
       queue.push(results);
       console.log(queue);
     }
-    } catch (error) {
+  } catch (error) {
     console.log(error.message);
-    };
-};
+  }
+}
