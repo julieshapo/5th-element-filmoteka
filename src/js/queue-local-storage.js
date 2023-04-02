@@ -30,5 +30,7 @@ export function markupQueue() {
   if (!libraryList) {
     return;
   }
+  imgPlug.style.display = 'none';
+
   libraryList.innerHTML = createMarkupOneCard(queue);
 }
