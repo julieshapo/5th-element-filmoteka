@@ -5,6 +5,7 @@ const refs = {
   closeTeamModalBtn: document.querySelector('[data-modal-close]'),
   teamModal: document.querySelector('[data-modal]'),
   teamList: document.querySelector('.team-list'),
+  body: document.querySelector('body'),
 };
 
 const teamArray = [
@@ -136,6 +137,7 @@ refs.closeTeamModalBtn.addEventListener('click', toggleModal);
 function toggleModal() {
   document.body.classList.toggle('modal-open');
   refs.teamModal.classList.toggle('is-hidden');
+  refs.body.classList.toggle('no-scroll');
 }
 
 refs.openTeamModalBtn.addEventListener('click', onTeamBtnClick);
