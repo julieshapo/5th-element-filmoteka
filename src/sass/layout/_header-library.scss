@@ -185,11 +185,11 @@
     box-shadow: 0 0 0 3px #ff001b;
     border-radius: 5px;
 
-  &:focus {
-    outline: none;
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px 5px rgba(222, 156, 151, 0.2);
-
+    &:focus {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px 5px rgba(222, 156, 151, 0.2);
+    }
   }
 }
 
@@ -227,7 +227,6 @@
   position: absolute;
   // top: 4px;
   margin-bottom: 6px;
-
 }
 .search-error,
 .search-error2 {
