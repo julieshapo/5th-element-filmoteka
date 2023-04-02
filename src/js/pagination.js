@@ -26,15 +26,15 @@ export function createPagination(totalItems, option, firstPage) {
           template = `<a href="#" class="tui-page-btn tui-${Object.values(
             type
           )}">
-            <span class="tui-ico-${Object.values(type)}">
-            ${Object.values(type)}</span></a>`;
+            <span class="tui-ico-${Object.values(type)}">1</span></a>`;
         }
         if (keys === 'last') {
           template = `<a href="#" class="tui-page-btn tui-${Object.values(
             type
           )}">
-            <span class="tui-ico-${Object.values(type)}">
-            ${Object.values(type)}</span></a>`;
+            <span class="tui-ico-${Object.values(
+              type
+            )}">${totalItems}</span></a>`;
         }
         if (keys === 'next') {
           template = `<a href="#" class="tui-page-btn tui-${Object.values(
@@ -48,7 +48,9 @@ export function createPagination(totalItems, option, firstPage) {
             type
           )}">
             <span class="tui-ico-${Object.values(type)}">
-            ${Object.values(type)}</span></a>`;
+            <svg class="logo-icon" width="24" height="24">
+          <use href="/symbol-defs.31a6e949.svg#icon-film"></use>
+        </svg></span></a>`;
         }
         if (!template) {
           return;
