@@ -5,56 +5,36 @@ import { renderSearchFilms, name } from './search-input';
 import { TrendingMovie } from './markup-cards';
 
 const TUI_PAGES_VISIBLE = 5;
-export let currentPage = 1;
+const TUI_ITEM_PER_PAGE = 20;
 
-export function createPagination(totalItems, itemsPerPage, option) {
+let currentPage = 1;
+
+export function createPagination(totalItems, option, firstPage) {
   const options = {
     page: currentPage,
-    itemsPerPage,
+    itemsPerPage: TUI_ITEM_PER_PAGE,
     centerAlign: true,
     totalItems,
     visiblePages: TUI_PAGES_VISIBLE,
-    // visiblePages: visiblePages < 5 ? visiblePages : TUI_PAGES_VISIBLE,
   };
 
   pagination = new Pagination(refs.pagination, options);
 
-  // currentPage = pagination.getCurrentPage();
+  if (firstPage === 1) {
+    pagination.reset();
+  }
   if (option === 1) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
-      renderSearchFilms(name, currentPage);
-      console.log(currentPage);
-      // if (currentPage === 10) {
-      //   return false;
-      //   // return true;
-      // }
+      renderSearchFilms(name, currentPage, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
   if (option === 2) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
       TrendingMovie(currentPage);
-      console.log(currentPage);
-      // if (currentPage === 10) {
-      //   return false;
-      //   // return true;
-      // }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
-  // if (visiblePages > 1) {
-  //   refs.pagination.style.display = 'block';
-  // } else {
-  //   refs.pagination.style.display = 'none';
-  // }
 }
-
-// paganation.on('beforeMove', event => {
-//   const currentPage = event.page;
-
-//   if (currentPage === 10) {
-//     return false;
-//     // return true;
-//   }
-// });

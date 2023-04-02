@@ -1,7 +1,7 @@
 import { getMoviesTrending } from './api-fetch';
 import { genresFormat } from './geners';
 import { refs } from './refs';
-import { currentPage, createPagination } from './pagination';
+import { createPagination } from './pagination';
 
 TrendingMovie();
 
@@ -46,8 +46,7 @@ export async function TrendingMovie(currentPage) {
       return;
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
-    createPagination(total_results, 21, 2);
-    console.log(total_results);
+    createPagination(total_results, 2, 0);
   } catch (error) {
     console.log(error.message);
   }
