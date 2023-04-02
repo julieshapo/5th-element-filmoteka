@@ -21,7 +21,6 @@ export function onClickBtn(e) {
   switch (add) {
     case 'watched':
       addToWatched(id);
-
       break;
 
     case 'queue':
@@ -35,8 +34,8 @@ export function onClickBtn(e) {
 
 export async function addToWatched(id) {
   try {
-    const results = await getMovieFullInfo(id);
-
+    const results = await getMovieFullInfo(id);   
+    const btnWatchedEl = document.querySelector('[data-add="watched"]');  
     const findFilm = watched.find(item => item.id === Number(id));
     const findIndex = watched.findIndex(item => item.id === Number(id));
 
@@ -44,10 +43,14 @@ export async function addToWatched(id) {
       watched.splice(findIndex, 1);
       setWatchedLS(watched);
       markupWatched();
+      btnWatchedEl.textContent = 'Add to watched';
+      btnWatchedEl.classList.remove('btn-remove');
     } else {
       watched.push(results);
       setWatchedLS(watched);
       markupWatched();
+      btnWatchedEl.textContent = 'Remove watched';
+      btnWatchedEl.classList.add('btn-remove');
     }
   } catch (error) {
     console.log(error.message);
@@ -61,6 +64,7 @@ export async function addToQueue(id) {
   try {
     const results = await getMovieFullInfo(id);
 
+    const btnQueueEl = document.querySelector('[data-add="queue"]'); 
     const findFilm = queue.find(item => item.id === Number(id));
     const findIndex = queue.findIndex(item => item.id === Number(id));
 
@@ -68,10 +72,14 @@ export async function addToQueue(id) {
       queue.splice(findIndex, 1);
       setQueueLS(queue);
       markupQueue();
+      btnQueueEl.textContent = 'Add to queue';
+      btnQueueEl.classList.remove('btn-remove');
     } else {
       queue.push(results);
       setQueueLS(queue);
       markupQueue();
+      btnQueueEl.textContent = 'Remove queue';
+      btnQueueEl.classList.add('btn-remove');
     }
   } catch (error) {
     console.log(error.message);
