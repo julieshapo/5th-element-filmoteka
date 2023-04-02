@@ -38,7 +38,6 @@ async function showMovieInfo(id) {
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
-  markupWatched();
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
 }
