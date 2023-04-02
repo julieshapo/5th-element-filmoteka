@@ -1,13 +1,9 @@
 import { refs } from './refs';
 
-// Функция показывает спинер
-
-export function showSpinner() {
-  refs.spinner.classList.remove('visually-hidden');
-}
-
-// Функция прячет спинер
-
-export function hideSpinner() {
-  refs.spinner.classList.add('visually-hidden');
-}
+ window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
