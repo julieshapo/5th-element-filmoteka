@@ -53,9 +53,9 @@ function onClodeModalClick(e) {
 
 // Функция которая закрывает модалку при нажатии на крестик
 
-refs.modalMovie.addEventListener('click', onTrailerBtnClick);
+refs.modalMovie.addEventListener('click', onBtnClickClose);
 
-function onTrailerBtnClick(e) {
+function onBtnClickClose(e) {
   const {btn} = e.target.dataset
   if (btn === 'close') {
     return
