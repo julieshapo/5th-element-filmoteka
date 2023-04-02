@@ -19,6 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  stroke: #ffffff;
+
   @include tablet {
     height: 35px;
     gap: 10px;
@@ -168,7 +170,7 @@
   cursor: pointer;
   transition: transform 300ms linear, box-shadow 300ms linear;
   box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
- 
+
   @include tablet {
     width: 336px;
   }
@@ -208,7 +210,7 @@
   &:hover,
   &:focus {
     outline: none;
-    transform: scale(1.5); 
+    transform: scale(1.5);
   }
 }
 
