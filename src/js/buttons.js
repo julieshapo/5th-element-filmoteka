@@ -24,8 +24,8 @@ export function onClickBtn(e) {
     case 'queue':
       addToQueue(id);
       break;
-  }
-}
+  };
+};
 
 // Функция добаляет обьект фильма в массив "watched" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "watched"
@@ -46,8 +46,8 @@ export async function addToWatched(id) {
     }
   } catch (error) {
     console.log(error.message);
-  }
-}
+  };
+};
 
 // Функция добаляет обьект фильма в массив "queue" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "queue"
@@ -68,5 +68,5 @@ export async function addToQueue(id) {
     }
   } catch (error) {
     console.log(error.message);
-  }
+  };
 };
