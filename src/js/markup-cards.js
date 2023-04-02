@@ -39,14 +39,14 @@ export function createMarkupOneCard(array) {
 
 // Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов
 
-async function TrendingMovie() {
+export async function TrendingMovie(currentPage) {
   try {
-    const { results, total_results } = await getMoviesTrending();
+    const { results, total_results } = await getMoviesTrending(currentPage);
     if (!refs.filmGallery) {
       return;
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
-    createPagination(total_results, 21);
+    createPagination(total_results, 21, 2);
     console.log(total_results);
   } catch (error) {
     console.log(error.message);

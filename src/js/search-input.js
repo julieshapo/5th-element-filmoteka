@@ -36,7 +36,7 @@ export async function renderSearchFilms(name, currentPage) {
         return (searchError.style.display = 'flex');
       }
       filmGallery.innerHTML = createMarkupOneCard(response.results);
-      createPagination(response.total_results, 21);
+      createPagination(response.total_results, 21, 1);
       console.log(currentPage);
     }
   } catch (error) {
