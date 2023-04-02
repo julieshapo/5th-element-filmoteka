@@ -18,7 +18,7 @@ export function createPagination(totalItems, option, firstPage) {
     visiblePages: TUI_PAGES_VISIBLE,
   };
 
-  pagination = new Pagination(refs.pagination, options);
+  const pagination = new Pagination(refs.pagination, options);
 
   if (firstPage === 1) {
     pagination.reset();
