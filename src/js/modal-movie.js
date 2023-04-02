@@ -1,7 +1,6 @@
 import { refs } from './refs';
 import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
-import { markupWatched } from './watched-local-storage';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
