@@ -16,6 +16,23 @@ export function createPagination(totalItems, option, firstPage) {
     centerAlign: true,
     totalItems,
     visiblePages: TUI_PAGES_VISIBLE,
+    template: {
+      page: '<a href="#" class="page-btn">{{page}}</a>',
+      currentPage:
+        '<strong class="page-btn page-btn-is-selected">{{page}}</strong>',
+      moveButton:
+        '<a href="#" class="page-btn castom-btn-{{type}}">' +
+        '<span class="custom-ico-{{type}}">{{totalItems}}</span>' +
+        '</a>',
+      disabledMoveButton:
+        '<span class="page-btn tui-is-disabled castom-btn-{{type}}">' +
+        '<span class="custom-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="page-btn castom-{{type}}-is-ellip">' +
+        '<span class="custom-ico-ellip">...</span>' +
+        '</a>',
+    },
   };
 
   pagination = new Pagination(refs.pagination, options);

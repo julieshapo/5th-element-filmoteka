@@ -1,0 +1,70 @@
+// .page-btn {
+//   width: 28px;
+//   color: #333;
+//   vertical-align: middle;
+//   border: 1px solid #ddd;
+//   border-width: 1px 0;
+//   margin-left: 0;
+//   padding: 8px 0 6px;
+//   font-size: 12px;
+//   font-weight: 400;
+//   line-height: 1;
+//   text-decoration: none;
+//   display: inline-block;
+//   position: relative;
+// }
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+.page-btn {
+  width: 14px;
+  height: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-btn-is-selected {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: #ff6b08;
+  border-radius: 5px;
+}
+.castom-btn-first {
+}
+.castom-btn-prev {
+}
+.castom-btn-next {
+}
+.castom-btn-last {
+}
+.custom-ico-last {
+}
+.custom-ico-ellip {
+}
+
+.castom-next-is-ellip {
+  position: absolute;
+  top: 9px;
+  right: 31px;
+}
+.castom-prev-is-ellip {
+  position: absolute;
+  top: 9px;
+  left: 31px;
+}
