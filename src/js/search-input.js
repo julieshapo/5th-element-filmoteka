@@ -25,7 +25,10 @@ function onFormSubmit(event) {
   name = input.value.trim();
   input.value = name;
   renderSearchFilms(name, 1, 1);
-  Notiflix.Notify.warning('Put fdshrnjmutdky  dtjyj');
+
+  return Notiflix.Notify.warning(
+    'Sorry, there are no movies matching your search query. Please try again'
+  );
 }
 
 export async function renderSearchFilms(name, currentPage, firstPage) {
