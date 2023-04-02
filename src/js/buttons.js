@@ -1,6 +1,8 @@
 import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
 import { setWatchedLS, setQueueLS } from './local-storage';
+import { markupWatched } from './watched-local-storage';
+import { markupQueue } from './queue-local-storage';
 
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
@@ -19,13 +21,14 @@ export function onClickBtn(e) {
   switch (add) {
     case 'watched':
       addToWatched(id);
+
       break;
 
     case 'queue':
       addToQueue(id);
       break;
-  };
-};
+  }
+}
 
 // Функция добаляет обьект фильма в массив "watched" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "watched"
@@ -40,14 +43,16 @@ export async function addToWatched(id) {
     if (findFilm) {
       watched.splice(findIndex, 1);
       setWatchedLS(watched);
+      markupWatched();
     } else {
       watched.push(results);
       setWatchedLS(watched);
+      markupWatched();
     }
   } catch (error) {
     console.log(error.message);
-  };
-};
+  }
+}
 
 // Функция добаляет обьект фильма в массив "queue" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "queue"
@@ -62,11 +67,13 @@ export async function addToQueue(id) {
     if (findFilm) {
       queue.splice(findIndex, 1);
       setQueueLS(queue);
+      markupQueue();
     } else {
       queue.push(results);
       setQueueLS(queue);
+      markupQueue();
     }
   } catch (error) {
     console.log(error.message);
-  };
-};
+  }
+}
