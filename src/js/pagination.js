@@ -18,12 +18,18 @@ export function createPagination(totalItems, option, firstPage) {
     visiblePages: TUI_PAGES_VISIBLE,
     template: {
       page: '<a href="#" class="page-btn">{{page}}</a>',
+      // moveButton:
+      //   '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      //   '<span class="tui-first-{{type}}">1</span>' +
+      //   `<span class="tui-total-{{type}}">${totalItems}</span>` +
+      //   '<svg class="logo-icon" width="24" height="24">' +
+      //   '<use href="../images/svg/symbol-defs.svg#icon-film">' +
+      //   '</use>' +
+      //   '</svg>' +
+      //   '</a>',
+
       currentPage:
         '<strong class="page-btn page-btn-is-selected">{{page}}</strong>',
-      moveButton:
-        '<a href="#" class="page-btn castom-btn-{{type}}">' +
-        '<span class="custom-ico-{{type}}">{{totalItems}}</span>' +
-        '</a>',
       disabledMoveButton:
         '<span class="page-btn tui-is-disabled castom-btn-{{type}}">' +
         '<span class="custom-ico-{{type}}">{{type}}</span>' +
