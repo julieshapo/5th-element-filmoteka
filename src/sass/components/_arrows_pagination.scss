@@ -54,6 +54,9 @@
   position: relative;
   bottom: 3px;
 }
+.tui-pagination .tui-is-selected .tui-pagination {
+  background-color: #ff6b08;
+}
 // .tui-first {
 //   width: 15px;
 //   height: 15px;

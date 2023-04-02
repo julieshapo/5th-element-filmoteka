@@ -18,15 +18,43 @@ export function createPagination(totalItems, option, firstPage) {
     visiblePages: TUI_PAGES_VISIBLE,
     template: {
       page: '<a href="#" class="page-btn">{{page}}</a>',
-      // moveButton:
-      //   '<a href="#" class="tui-page-btn tui-{{type}}">' +
-      //   '<span class="tui-first-{{type}}">1</span>' +
-      //   `<span class="tui-total-{{type}}">${totalItems}</span>` +
-      //   '<svg class="logo-icon" width="24" height="24">' +
-      //   '<use href="../images/svg/symbol-defs.svg#icon-film">' +
-      //   '</use>' +
-      //   '</svg>' +
-      //   '</a>',
+      moveButton: type => {
+        let template = '';
+
+        const keys = Object.values(type).join('');
+        if (keys === 'first') {
+          template = `<a href="#" class="tui-page-btn tui-${Object.values(
+            type
+          )}">
+            <span class="tui-ico-${Object.values(type)}">
+            ${Object.values(type)}</span></a>`;
+        }
+        if (keys === 'last') {
+          template = `<a href="#" class="tui-page-btn tui-${Object.values(
+            type
+          )}">
+            <span class="tui-ico-${Object.values(type)}">
+            ${Object.values(type)}</span></a>`;
+        }
+        if (keys === 'next') {
+          template = `<a href="#" class="tui-page-btn tui-${Object.values(
+            type
+          )}">
+            <span class="tui-ico-${Object.values(type)}">
+            ${Object.values(type)}</span></a>`;
+        }
+        if (keys === 'prev') {
+          template = `<a href="#" class="tui-page-btn tui-${Object.values(
+            type
+          )}">
+            <span class="tui-ico-${Object.values(type)}">
+            ${Object.values(type)}</span></a>`;
+        }
+        if (!template) {
+          return;
+        }
+        return template;
+      },
 
       currentPage:
         '<strong class="page-btn page-btn-is-selected">{{page}}</strong>',
