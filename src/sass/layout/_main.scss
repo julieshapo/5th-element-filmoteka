@@ -78,6 +78,11 @@
   }
 }
 
+.film-wrap {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
 .film-genre {
   color: $colorTextAccent;
 }
@@ -92,12 +97,14 @@ body.darkTheme {
   .film-title {
     color: $colorTextLight;
   }
-  
+
   .film-item {
     background-color: rgba(22, 20, 20, 0.94);
   }
 
   .film-wrap {
+    margin-left: 5px;
+    margin-bottom: 5px;
     background-color: rgba(22, 20, 20, 0.94);
   }
 }

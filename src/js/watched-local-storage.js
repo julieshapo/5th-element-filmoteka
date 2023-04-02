@@ -8,7 +8,8 @@ import { btnQueue } from './queue-local-storage';
 
 export const btnWatched = document.querySelector('.js-watched');
 const libraryList = document.querySelector('.js-library_gallery');
-const imgPlug = document.querySelector('.no-watched');
+const imgWatchedPlug = document.querySelector('.no-watched');
+const imgQueuePlug = document.querySelector('.no-queue');
 
 if (!libraryList) {
   return;
@@ -37,8 +38,10 @@ export function markupWatched() {
   if (!libraryList) {
     return;
   } else if (watched.length === 0) {
-    imgPlug.style.display = 'block';
+    imgWatchedPlug.style.display = 'block';
   }
+  imgQueuePlug.style.display = 'none';
+
   libraryList.innerHTML = createMarkupOneCard(watched);
 }
 

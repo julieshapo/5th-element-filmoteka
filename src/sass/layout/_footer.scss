@@ -113,3 +113,15 @@
     }
   }
 }
+
+body.darkTheme {
+  background-color: rgba(22, 20, 20, 0.94);
+
+  .footer-title {
+    color: $colorTextLight;
+  }
+
+  .footer-section {
+    background-color: rgba(22, 20, 20, 0.94);
+  }
+}
