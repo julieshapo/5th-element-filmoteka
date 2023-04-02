@@ -159,7 +159,7 @@ function renderMarkupModalMovie(object, poster, geners) {
     </svg>
       </button>
       <button data-btn="close" class="modal-movie-close" type="button">
-        <svg class="close-svg" width="20" height="20" viewBox="6 3 30 30" style="width: 40px; height: 35px">
+        <svg class="close-svg" width="28" height="28" viewBox="0 0 30 30" >
     <use xlink:href="./images/svg/symbol-defs.svg#menu-close" />
     <path d="M23.734 10.304l-1.504-1.504-5.963 5.962-5.962-5.962-1.504 1.504 5.962 5.962-5.962 5.963 1.504 1.504 5.962-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.962z"></path>
 </symbol>
@@ -168,3 +168,4 @@ function renderMarkupModalMovie(object, poster, geners) {
       </div>
     </div>`;
 };
+

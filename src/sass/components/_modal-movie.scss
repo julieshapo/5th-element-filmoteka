@@ -190,19 +190,9 @@
 // }
 
 .modal-movie-close {
-  // width: 30px;
-  // height: 30px;
   position: absolute;
-  top: 12px;
-  right: 5px;
-
-  padding: 0;
-  margin: 0;
-
-  display: inline-flex;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  top: 5px;
+  right: 3px;
 
   background-color: transparent;
   border: 1px solid transparent;
@@ -216,8 +206,5 @@
 .modal-movie-close:hover,
 .modal-movie-close:focus {
   fill: $colorTextAccent;
-  transform: rotate(180deg);
-}
-
-.close-svg {
+  transform: rotate(90deg);
 }
