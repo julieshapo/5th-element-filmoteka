@@ -25,7 +25,7 @@
   }
   @include tablet {
     width: 650px;
-    top: 50vh;
+    top: 105vh;
   }
   @include desktop {
     width: 800px;
@@ -43,11 +43,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-close:hover,
-.team-close:focus {
+
+.modal-team-close:hover,
+.modal-team-close:focus {
   transform: rotate(90deg);
-  color: $colorTextAccent;
+  fill: $colorTextAccent;
+}
+
+.team-close {
+  display: inline-block;
 }
 
 .is-hidden {
@@ -64,6 +71,7 @@
   text-align: center;
   font-size: 30px;
   color: $colorTextAccent;
+  text-transform: uppercase;
 }
 
 .team-list {
@@ -78,7 +86,6 @@
 
 .team-photo {
   display: block;
-  border-radius: 5%;
   height: 180px;
   width: 120%;
   object-fit: cover;
@@ -94,13 +101,39 @@
 
 .team-position {
   text-align: center;
-  color: $colorModalTextSecondary;
+  color: $colorTextAccent;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .team-list-item {
   width: 120px;
   height: auto;
+  transition: transform 300ms linear, box-shadow 300ms linear;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
+  border-radius: 5px;
   @include desktop {
     width: 150px;
   }
+  &:hover,
+  &:focus {
+    transform: scale(1.01) rotate(0.5deg);
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.github {
+  fill: $colorTextDark;
+  display: inline-flex;
+  object-fit: contain;
+  &:hover,
+  &:focus {
+    fill: $colorTextAccent;
+  }
+}
+
+.github-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
