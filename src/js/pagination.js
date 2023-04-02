@@ -40,7 +40,7 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
   if (option === 3) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
-      markupWatched();
+      markupWatched(currentPage);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }

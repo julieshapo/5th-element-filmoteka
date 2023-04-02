@@ -3,12 +3,16 @@ import axios from 'axios';
 import { getMoviesByName } from './api-fetch';
 import { createMarkupOneCard } from './markup-cards';
 import { createPagination } from './pagination';
+import Notiflix from 'notiflix';
+
+const ITEMS_PER_PAGES = 20;
 
 const form = document.querySelector('.header-form');
 const input = document.querySelector('.header-form-input');
 const filmGallery = document.querySelector('.js-film-gallery');
 const searchError = document.querySelector('.search-error');
-import Notiflix from 'notiflix';
+
+// let firstFunctionRun = 0;
 
 export let name = '';
 
@@ -20,7 +24,6 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
   const queryVal = event.currentTarget.elements.searchQuery.value.trim();
-  console.log(queryVal);
   if (queryVal === '') {
     return Notiflix.Notify.warning('Please, enter your search request');
   }
@@ -30,7 +33,6 @@ function onFormSubmit(event) {
   name = input.value.trim();
   input.value = name;
   renderSearchFilms(name, 1, 1);
-  console.log(event);
 }
 
 export async function renderSearchFilms(name, currentPage, firstPage) {
@@ -44,7 +46,8 @@ export async function renderSearchFilms(name, currentPage, firstPage) {
         );
       }
       filmGallery.innerHTML = createMarkupOneCard(response.results);
-      createPagination(response.total_results, 1, firstPage);
+
+      createPagination(response.total_results, 1, firstPage, ITEMS_PER_PAGES);
     }
   } catch (error) {
     console.log(error.message);
