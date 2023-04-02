@@ -38,7 +38,6 @@ async function showMovieInfo(id) {
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
-  markupWatched();
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
 }
@@ -71,9 +70,6 @@ function renderMarkupModalMovie(object, poster, geners) {
         src="${poster}"
         alt="${object.title}"
       />
-      <button data-btn="watchTrailer" class="trailerBtn" type="button">
-          Watched trailer
-        </button>
     </div>
     <div class="movie-wrap">
       <h2 class="movie-title">${object.title}</h2>
@@ -125,6 +121,8 @@ function renderMarkupModalMovie(object, poster, geners) {
         <button data-add="queue" class="movie-btn" type="button">
           add to queue
         </button>
+        <button data-btn="watch-trailer" class="trailer-btn" type="button">
+      </button>
       </div>
     </div>`;
 }
