@@ -4,6 +4,7 @@ import { refs } from './refs';
 import { createPagination } from './pagination';
 import { genresArray } from './watched-local-storage';
 
+
 TrendingMovie();
 
 // Функция которая ожидает и перебирает массив и возвращает разметку карточек фильмов
@@ -11,7 +12,10 @@ TrendingMovie();
 export function createMarkupOneCard(array) {
   return array
     .map(item => {
-      const geners = genresFormat(item.genre_ids || genresArray()).join(', ');
+      const genresFormatGetId = item.genres?.map(genre => genre.id);
+      const geners = genresFormat(item.genre_ids || genresFormatGetId).join(
+        ', '
+      );
       const date = item.release_date ?? item.first_air_date ?? null;
       const year = date ? date.slice(0, 4) : 'Unknown year';
 

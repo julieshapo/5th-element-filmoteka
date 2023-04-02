@@ -13,14 +13,6 @@ if (!libraryList) {
 }
 libraryList.addEventListener('click', onClickMovie);
 
-export function genresArray() {
-  if (!queue[0]) {
-    return;
-  } else {
-    return queue[0].genres.map(genre => genre.id);
-  }
-}
-
 if (!btnQueue) {
   return;
 }
