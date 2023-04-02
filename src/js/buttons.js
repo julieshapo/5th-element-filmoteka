@@ -1,11 +1,11 @@
 import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
+import { setWatchedLS, setQueueLS } from './local-storage';
 
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
 export let watched = JSON.parse(localStorage.getItem('watched')) || [];
 export let queue = JSON.parse(localStorage.getItem('queue')) || [];
-console.log(watched);
 
 refs.modalMovie.addEventListener('click', onClickBtn);
 
@@ -24,8 +24,8 @@ export function onClickBtn(e) {
     case 'queue':
       addToQueue(id);
       break;
-  }
-}
+  };
+};
 
 // Функция добаляет обьект фильма в массив "watched" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "watched"
@@ -38,16 +38,16 @@ export async function addToWatched(id) {
     const findIndex = watched.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      return;
+      watched.splice(findIndex, 1);
+      setQueueLS(watched);
     } else {
       watched.push(results);
-      console.log(watched);
-      localStorage.setItem('watched', JSON.stringify(watched));
+      setWatchedLS(watched);
     }
   } catch (error) {
     console.log(error.message);
-  }
-}
+  };
+};
 
 // Функция добаляет обьект фильма в массив "queue" если его там нет, и проверяет если он там есть - удаляет
 // P.S. Вызывается по клику кнопки "queue"
@@ -60,13 +60,13 @@ export async function addToQueue(id) {
     const findIndex = queue.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      return;
+      queue.splice(findIndex, 1);
+      setQueueLS(queue);
     } else {
       queue.push(results);
-      console.log(queue);
-      localStorage.setItem('queue', JSON.stringify(queue));
+      setQueueLS(queue);
     }
   } catch (error) {
     console.log(error.message);
-  }
-}
+  };
+};
