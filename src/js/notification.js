@@ -31,7 +31,7 @@ Notiflix.Notify.init({
     background: 'rgb(104, 34, 34)',
     textColor: '#fff',
     childClassName: 'notiflix-notify-failure',
-    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    notiflixIconColor: '#fff',
     fontAwesomeClassName: 'fas fa-times-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
     backOverlayColor: 'rgba(255,85,73,0.2)',
@@ -44,14 +44,5 @@ Notiflix.Notify.init({
     fontAwesomeClassName: 'fas fa-exclamation-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,1)',
     backOverlayColor: 'rgba(238,191,49,0.2)',
-  },
-  info: {
-    background: '#26c0d3',
-    textColor: '#fff',
-    childClassName: 'notiflix-notify-info',
-    notiflixIconColor: 'rgba(0,0,0,0.2)',
-    fontAwesomeClassName: 'fas fa-info-circle',
-    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
-    backOverlayColor: 'rgba(38,192,211,0.2)',
   },
 });
