@@ -30,9 +30,6 @@ export function createPagination(totalItems, itemsPerPage) {
     // }
   });
 
-  if (currentPage === 1) {
-  }
-
   // if (visiblePages > 1) {
   //   refs.pagination.style.display = 'block';
   // } else {
