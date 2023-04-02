@@ -19,3 +19,20 @@ export const genres = [
   { id: 10752, name: 'War' },
   { id: 37, name: 'Western' },
 ];
+
+// Функция форматирует жанры с массива
+
+export function genresFormat(array) {
+  return genres.reduce((acc, item) => {
+    if (array.includes(item.id)) {
+      acc.push(item.name);
+    }
+    return acc;
+  }, []);
+};
+
+// Функция форматирует жанры с обьекта
+
+export function genresFormatModal(object) {
+  return object.map(item => item.name)
+};

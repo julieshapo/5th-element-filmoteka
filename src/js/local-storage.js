@@ -1,12 +1,11 @@
-export const watched = getWatchedLS() || [];
-export const queue = getQueueLS() || [];
+import { watched, queue } from "./buttons";
 
 export function getWatchedLS() {
-  return JSON.parse(localStorage.getItem('watched'));
+  watched = JSON.parse(localStorage.getItem('watched')) || [];
 }
 
 export function getQueueLS() {
-  return JSON.parse(localStorage.getItem('queue'));
+  queue = JSON.parse(localStorage.getItem('queue')) || [];
 }
 
 export function setWatchedLS(array) {
@@ -15,20 +14,4 @@ export function setWatchedLS(array) {
 
 export function setQueueLS(array) {
   localStorage.setItem('queue', JSON.stringify(array));
-}
-
-export function addToWatched(id) {
-  if (watched.includes(id)) {
-    return;
-  }
-  watched.push(id);
-  setWatchedLS(watched);
-}
-
-export function addToQueue(id) {
-  if (queue.includes(id)) {
-    return;
-  }
-  queue.push(id);
-  setWatchedLS(queue);
 }

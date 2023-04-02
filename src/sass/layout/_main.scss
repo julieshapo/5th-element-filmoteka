@@ -1,44 +1,103 @@
-.section{
-    padding: 20px 0 40px 0;
-    @include tablet{
-        padding: 60px 0;
-    }
+.section {
+  padding: 20px 0 40px 0;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+}
+
+.film-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include tablet {
+    gap: 32px;
+  }
+
+  @include desktop {
+    gap: 32px 16px;
+    justify-content: flex-start;
+  }
+}
+
+.film-item {
+  border-radius: 5px;
+  background-color: $colorModalBg;
+  transition: transform 300ms linear, box-shadow 300ms linear;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
+
+  @include tablet {
+    width: calc((100% - 32px) / 2);
+  }
+
+  @include desktop() {
+    width: calc((100% - 32px) / 3);
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01) rotate(0.5deg);
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.thumb {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  @include tablet {
+    margin-bottom: 8px;
+    width: 336px;
+    height: 466px;
+  }
+
+  @include desktop {
+    margin-bottom: 12px;
+    width: 395px;
+    height: 574px;
+  }
+}
+
+.film-label {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.film-title,
+.film-genre {
+  color: $colorTextDark;
+  font-weight: 500;
+  line-height: 1.33;
+
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.film-genre {
+  color: $colorTextAccent;
+}
+
+.film-title {
+  text-transform: uppercase;
+}
+
+body.darkTheme {
+  background-color: rgba(22, 20, 20, 0.94);
+
+  .film-title {
+    color: $colorTextLight;
   }
   
-  
-  .film-gallery{
-    list-style: none;
-    padding: 0;
-    display: block;
-    @include tablet {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 32px;
-        justify-content: center;
-        align-content: center;
-    }
-    @include desktop {
-        column-gap: 16px;
-    }
+  .film-item {
+    background-color: rgba(22, 20, 20, 0.94);
   }
-  
-  .film-item{
-    margin-top: 0;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: yellowgreen;
-    width: 280px;
-    height: 443px;
-    @include tablet{
-        margin-left: 0;
-        margin-right: 0;
-        width: calc((100% - 32px)/2);
-        height: 495px;
-        max-width: 336px;
-    }
-    @include desktop(){
-      width: calc((100% - 32px)/3);
-      height: 495px;
+
+  .film-wrap {
+    background-color: rgba(22, 20, 20, 0.94);
   }
-  }
+}
