@@ -38,34 +38,34 @@
 //     }
 // }
 
-// функція додає чи знімає клас .remove-watched-js з кнопки el та змінює текст на кнопці
-export function changeBtnAppearance(el) {
-    //el - це елемент розмітки(кнопка по котрій був клік)
+// // функція додає чи знімає клас .remove-watched-js з кнопки el та змінює текст на кнопці
+// export function changeBtnAppearance(el) {
+//     //el - це елемент розмітки(кнопка по котрій був клік)
     
-    //Константи лишити тут чи перенести в refs.js ?
-    const btnWatchedEl = document.querySelector('[data-movie="watched"]');
-    const btnQueueEl = document.querySelector('[data-movie="queue"]');
+//     //Константи лишити тут чи перенести в refs.js ?
+//     const btnWatchedEl = document.querySelector('[data-movie="watched"]');
+//     const btnQueueEl = document.querySelector('[data-movie="queue"]');
 
-    if (el === btnWatchedEl) { //перевіряємо чи клік був по кнопці watched
+//     if (el === btnWatchedEl) { //перевіряємо чи клік був по кнопці watched
         
-        //перевіряємо чи на кнопці є клас remove-watched-js, 
-        if (btnWatchedEl.classList.contains('remove-watched-js')) { 
-                //текст змінюємо на "Add to watched" та додаємо клас .remove-watched-js
-                btnWatchedEl.classList.toggle('remove-watched-js');
-                btnWatchedEl.textContent = 'Add to watched';
-        } else { //кнопка 'Add to watched', 
-            // додаємо клас .remove-watched-js і змінюємо текст на кнопці на "Remove watched
-            btnWatchedEl.classList.toggle('remove-watched-js');
-            btnWatchedEl.textContent = 'Remove watched';
-        }
-    }
-    else if (el === btnQueueEl) { //перевіряємо чи клік був по кнопці Queue
-        if (btnQueueEl.classList.contains('remove-queue-js')) {
-            btnQueueEl.classList.toggle('remove-queue-js');
-            btnQueueEl.textContent = 'Add to queue';
-        } else {
-            btnQueueEl.classList.toggle('remove-queue-js');
-            btnQueueEl.textContent = 'Remove queue';
-        }
-    }
-}
+//         //перевіряємо чи на кнопці є клас remove-watched-js, 
+//         if (btnWatchedEl.classList.contains('remove-watched-js')) { 
+//                 //текст змінюємо на "Add to watched" та додаємо клас .remove-watched-js
+//                 btnWatchedEl.classList.toggle('remove-watched-js');
+//                 btnWatchedEl.textContent = 'Add to watched';
+//         } else { //кнопка 'Add to watched', 
+//             // додаємо клас .remove-watched-js і змінюємо текст на кнопці на "Remove watched
+//             btnWatchedEl.classList.toggle('remove-watched-js');
+//             btnWatchedEl.textContent = 'Remove watched';
+//         }
+//     }
+//     else if (el === btnQueueEl) { //перевіряємо чи клік був по кнопці Queue
+//         if (btnQueueEl.classList.contains('remove-queue-js')) {
+//             btnQueueEl.classList.toggle('remove-queue-js');
+//             btnQueueEl.textContent = 'Add to queue';
+//         } else {
+//             btnQueueEl.classList.toggle('remove-queue-js');
+//             btnQueueEl.textContent = 'Remove queue';
+//         }
+//     }
+// }
