@@ -16,7 +16,7 @@ export function createMarkupOneCard(array) {
 
       const poster = item.poster_path
         ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
-        : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+        : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
 
       return `
     <li data-id=${item.id} class="film-item">
