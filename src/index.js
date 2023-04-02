@@ -1,5 +1,5 @@
 import './sass/index.scss';
-
+import 'animate.css';
 import './js/refs';
 import './js/search-input';
 import './js/api-fetch';
