@@ -1,42 +1,42 @@
 
-import { watched, queue } from './local-storage';
-//Функція робить кнопку недоступною якщо додаєм фільм який вже є в масиві watched або queue
-//або хочемо видалити фільм якого немає в масиві watched або queue  (і навпаки) 
-export function btnSetArtibute(el, id) { //el - це елемент розмітки(кнопка по котрій був клік)
-    if (el === btnWatchedEl) { //робота з watched; 
-        if (watched.includes(id)) { //якщо id фільму є в масиві watched:
-            //перевіряємо чи на кнопці є клас remove-watched-js  
-            if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
-                btnWatchedEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
-            } else { //кнопка "Add to watched"
-                btnWatchedEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
-            }
-        } else { //якщо id фільму немає в масиві watched:
-            if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
-                btnWatchedEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
-            } else { //кнопка "Add to watched"
-                btnWatchedEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
-            }
-        }
+// import { watched, queue } from './local-storage';
+// //Функція робить кнопку недоступною якщо додаєм фільм який вже є в масиві watched або queue
+// //або хочемо видалити фільм якого немає в масиві watched або queue  (і навпаки) 
+// export function btnSetArtibute(el, id) { //el - це елемент розмітки(кнопка по котрій був клік)
+//     if (el === btnWatchedEl) { //робота з watched; 
+//         if (watched.includes(id)) { //якщо id фільму є в масиві watched:
+//             //перевіряємо чи на кнопці є клас remove-watched-js  
+//             if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
+//                 btnWatchedEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
+//             } else { //кнопка "Add to watched"
+//                 btnWatchedEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
+//             }
+//         } else { //якщо id фільму немає в масиві watched:
+//             if (btnWatchedEl.classList.contains('remove-watched-js')) { //кнопка "Remove watched"
+//                 btnWatchedEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
+//             } else { //кнопка "Add to watched"
+//                 btnWatchedEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
+//             }
+//         }
 
-    } else if (el === btnQueueEl) { //робота з queue;
-        if (queue.includes(id)) { //якщо id фільму є в масиві queue:
-            //перевіряємо чи на кнопці є клас remove-queue-js  
-            if (btnQueueEl.classList.contains('remove-queue-js')) { //кнопка "Remove queue"
-                btnQueueEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
-            } else { //кнопка "Add to queue"
-                btnQueueEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
-            }
-        } else { //якщо id фільму немає в масиві queue
-            if (btnQueueEl.classList.contains('remove-queue-js')) { //це кнопка "Remove queue"
-                btnQueueEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
-            } else { //це кнопка "Add to queue"
-                btnQueueEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
-            }
+//     } else if (el === btnQueueEl) { //робота з queue;
+//         if (queue.includes(id)) { //якщо id фільму є в масиві queue:
+//             //перевіряємо чи на кнопці є клас remove-queue-js  
+//             if (btnQueueEl.classList.contains('remove-queue-js')) { //кнопка "Remove queue"
+//                 btnQueueEl.setAttribute("disabled", false); //можна видаляти (кнопка активна)
+//             } else { //кнопка "Add to queue"
+//                 btnQueueEl.setAttribute("disabled", true); //вже є, не вставляти (кнопка пасивна)
+//             }
+//         } else { //якщо id фільму немає в масиві queue
+//             if (btnQueueEl.classList.contains('remove-queue-js')) { //це кнопка "Remove queue"
+//                 btnQueueEl.setAttribute("disabled", true); //нічого видаляти (кнопка пасивна)
+//             } else { //це кнопка "Add to queue"
+//                 btnQueueEl.setAttribute("disabled", false); //можна додавати (кнопка активна)
+//             }
     
-        }
-    }
-}
+//         }
+//     }
+// }
 
 // функція додає чи знімає клас .remove-watched-js з кнопки el та змінює текст на кнопці
 export function changeBtnAppearance(el) {
