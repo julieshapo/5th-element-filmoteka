@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
-
+import { watched, queue } from './buttons';
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
   return;
@@ -63,6 +63,25 @@ function onCloseModalKey(e) {
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
 function renderMarkupModalMovie(object, poster, geners) {
+  let watchedBtnTxt="";
+  let watchedBtnClass ="";
+  let queueBtnTxt="";
+  let queueBtnClass="";
+  const findFilmInWatched = watched.find(item => item.id === Number(object.id));
+  const findFilmInQueue = queue.find(item => item.id === Number(object.id));
+
+  
+
+  if (findFilmInWatched) {
+    watchedBtnTxt = "Remove watched";
+    watchedBtnClass = "btn-remove";
+  } else { watchedBtnTxt = "Add to watched"; }
+  if (findFilmInQueue) {
+    queueBtnTxt = "Remove queue";
+    queueBtnClass = "btn-remove";
+  } else { queueBtnTxt = "Add to queue"; }
+
+
   return `<div class="movie-thumb">
       <img
         class="movie-img"
@@ -114,14 +133,15 @@ function renderMarkupModalMovie(object, poster, geners) {
         ${object.overview ?? '- - -'}
       </p>
       <div data-id="${object.id}" class="movie-btn-wrap">
-        <button data-add="watched" class="movie-btn" type="button">
-          add to Watched
+        <button data-add="watched" class="movie-btn ${watchedBtnClass}" type="button">
+          ${watchedBtnTxt}
         </button>
-        <button data-add="queue" class="movie-btn" type="button">
-          add to queue
+        <button data-add="queue" class="movie-btn ${queueBtnClass}" type="button">
+          ${queueBtnTxt}
         </button>
         <button data-btn="watch-trailer" class="trailer-btn" type="button">
       </button>
       </div>
     </div>`;
+
 }
