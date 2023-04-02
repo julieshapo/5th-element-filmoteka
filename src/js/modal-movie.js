@@ -28,7 +28,7 @@ async function showMovieInfo(id) {
     const geners = genresFormatModal(results.genres).join(', ');
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
-      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
