@@ -1,25 +1,40 @@
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
 import 'tui-pagination/dist/tui-pagination.min.css';
+import { getMoviesByName } from './api-fetch';
+import { renderSearchFilms, name } from './search-input';
 
 const TUI_PAGES_VISIBLE = 5;
+let currentPage = 1;
 
-export function createPagination(totalItems, visiblePages) {
+export function createPagination(totalItems, itemsPerPage) {
   const options = {
-    itemsPerPage: 9,
-    totalItems: totalItems,
-    visiblePages: visiblePages < 5 ? visiblePages : TUI_PAGES_VISIBLE,
+    page: currentPage,
+    itemsPerPage,
+    centerAlign: true,
+    totalItems,
+    visiblePages: TUI_PAGES_VISIBLE,
+    // visiblePages: visiblePages < 5 ? visiblePages : TUI_PAGES_VISIBLE,
   };
 
   const pagination = new Pagination(refs.pagination, options);
 
-  if (visiblePages > 1) {
-    refs.pagination.style.display = 'block';
-  } else {
-    refs.pagination.style.display = 'none';
-  }
+  // currentPage = pagination.getCurrentPage();
+  pagination.on('beforeMove', event => {
+    currentPage = event.page;
+    renderSearchFilms(name, currentPage);
+    console.log(currentPage);
+    // if (currentPage === 10) {
+    //   return false;
+    //   // return true;
+    // }
+  });
 
-  return pagination.getCurrentPage();
+  // if (visiblePages > 1) {
+  //   refs.pagination.style.display = 'block';
+  // } else {
+  //   refs.pagination.style.display = 'none';
+  // }
 }
 
 // paganation.on('beforeMove', event => {

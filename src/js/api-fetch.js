@@ -3,12 +3,12 @@ import axios from 'axios';
 const API_KEY = '169863a84bc27c731fc45c45dd4a4a7e';
 
 //Запит фільму за ключовим словом:
-export async function getMoviesByName(name) {
+export async function getMoviesByName(name, currentPage) {
   try {
     const params = {
       api_key: API_KEY,
       query: name,
-      page: 1,
+      page: currentPage,
       language: 'en-US',
     };
     const response = await axios.get(
