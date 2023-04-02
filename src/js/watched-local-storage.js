@@ -4,8 +4,9 @@ import { watched } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
 import { onClickMovie, modalClose } from './modal-movie';
 import { refs } from './refs';
+import { btnQueue } from './queue-local-storage';
 
-const btnWatched = document.querySelector('.js-watched');
+export const btnWatched = document.querySelector('.js-watched');
 const libraryList = document.querySelector('.js-library_gallery');
 const imgPlug = document.querySelector('.no-watched');
 
@@ -28,6 +29,11 @@ if (!btnWatched) {
 btnWatched.addEventListener('click', markupWatched);
 
 export function markupWatched() {
+  btnQueue.style.backgroundColor = '';
+  btnQueue.style.border = '';
+  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.border = 'none';
+
   if (!libraryList) {
     return;
   } else if (watched.length === 0) {
@@ -37,3 +43,7 @@ export function markupWatched() {
 }
 
 document.addEventListener('DOMContentLoaded', markupWatched);
+document.addEventListener('DOMContentLoaded', () => {
+  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.border = 'none';
+});
