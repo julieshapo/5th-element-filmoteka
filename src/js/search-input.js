@@ -8,6 +8,7 @@ const form = document.querySelector('.header-form');
 const input = document.querySelector('.header-form-input');
 const filmGallery = document.querySelector('.js-film-gallery');
 const searchError = document.querySelector('.search-error');
+import Notiflix from 'notiflix';
 
 export let name = '';
 
@@ -24,6 +25,10 @@ function onFormSubmit(event) {
   name = input.value.trim();
   input.value = name;
   renderSearchFilms(name, 1, 1);
+
+  return Notiflix.Notify.warning(
+    'Sorry, there are no movies matching your search query. Please try again'
+  );
 }
 
 export async function renderSearchFilms(name, currentPage, firstPage) {
