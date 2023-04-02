@@ -1,6 +1,9 @@
 import { getMoviesTrending } from './api-fetch';
 import { genresFormat } from './geners';
 import { refs } from './refs';
+import { createPagination } from './pagination';
+import { genresArray } from './watched-local-storage';
+
 
 TrendingMovie();
 
@@ -41,13 +44,14 @@ export function createMarkupOneCard(array) {
 
 // Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов
 
-async function TrendingMovie() {
+export async function TrendingMovie(currentPage) {
   try {
-    const { results } = await getMoviesTrending();
+    const { results, total_results } = await getMoviesTrending(currentPage);
     if (!refs.filmGallery) {
       return;
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
+    createPagination(total_results, 2, 0);
   } catch (error) {
     console.log(error.message);
   }
