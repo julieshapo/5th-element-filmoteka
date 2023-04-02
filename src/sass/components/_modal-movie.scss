@@ -195,32 +195,21 @@
 // }
 
 .modal-movie-close {
-  width: 28px;
-  height: 28px;
   position: absolute;
-  top: 16px;
-  right: 16px;
-
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 5px;
+  right: 3px;
 
   background-color: transparent;
   border: 1px solid transparent;
 
-  color: $colorTextDark;
+  fill: $colorTextDark;
 
-  // transition: color $transDuration $cubic, transform $transDuration $cubic;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-movie-close:hover,
 .modal-movie-close:focus {
-  color: $colorTextAccent;
-  // transform: rotate(90deg);
-}
-
-.close-svg {
+  fill: $colorTextAccent;
+  transform: rotate(90deg);
 }
