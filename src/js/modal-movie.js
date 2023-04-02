@@ -69,7 +69,9 @@ function renderMarkupModalMovie(object, poster, geners) {
         src="${poster}"
         alt="${object.title}"
       />
-      <button class="youtube">youtube</button>
+      <button data-btn="watchTrailer" class="trailerBtn" type="button">
+          Watched trailer
+        </button>
     </div>
     <div class="movie-wrap">
       <h2 class="movie-title">${object.title}</h2>
