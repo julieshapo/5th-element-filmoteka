@@ -17,7 +17,7 @@ export function onClickMovie(e) {
   showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
-}
+};
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
@@ -31,15 +31,15 @@ async function showMovieInfo(id) {
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
-  }
-}
+  };
+};
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
-}
+};
 
 // Функция закрытия модалки при нажатии по бекдропу
 
@@ -48,8 +48,20 @@ refs.modal.addEventListener('click', onClodeModalClick);
 function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
+  };
+};
+
+// Функция которая закрывает модалку при нажатии на крестик
+
+refs.modalMovie.addEventListener('click', onBtnClickClose);
+
+function onBtnClickClose(e) {
+  const {btn} = e.target.dataset
+  if (btn === 'close') {
+    return
   }
-}
+  modalClose();
+};
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
@@ -58,7 +70,7 @@ function onCloseModalKey(e) {
     return;
   }
   modalClose();
-}
+};
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
@@ -146,7 +158,7 @@ function renderMarkupModalMovie(object, poster, geners) {
 </symbol>
     </svg>
       </button>
-      <button class="modal-movie-close" type="button">
+      <button data-btn="close" class="modal-movie-close" type="button">
         <svg class="close-svg" width="20" height="20" viewBox="6 3 30 30" style="width: 40px; height: 35px">
     <use xlink:href="./images/svg/symbol-defs.svg#menu-close" />
     <path d="M23.734 10.304l-1.504-1.504-5.963 5.962-5.962-5.962-1.504 1.504 5.962 5.962-5.962 5.963 1.504 1.504 5.962-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.962z"></path>
@@ -155,5 +167,4 @@ function renderMarkupModalMovie(object, poster, geners) {
       </button>
       </div>
     </div>`;
-
-}
+};
