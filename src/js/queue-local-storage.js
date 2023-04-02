@@ -1,11 +1,36 @@
-// import { setQueueLS } from "./local-storage";
+// в локал сторіджі дані по фільмам бібліотеки треба зберігати як масив обєктів з усіма необхідними властивостями,
+// а не масив просто айдішників.
+import { queue } from './buttons';
+import { createMarkupOneCard } from './markup-cards';
+import { onClickMovie } from './modal-movie';
 
-// const queueBtn = document.getElementById('#js-queue');
+const btnQueue = document.querySelector('.js-queue');
+const libraryList = document.querySelector('.js-library_gallery');
+const imgPlug = document.querySelector('.no-watched');
 
-// queueBtn.addEventListener('click', displayQueue)
+if (!libraryList) {
+  return;
+}
+libraryList.addEventListener('click', onClickMovie);
 
-// function displayQueue(e){
+export function genresArray() {
+  if (!queue[0]) {
+    return;
+  } else {
+    return queue[0].genres.map(genre => genre.id);
+  }
+}
 
-// setQueueLS([{name:'dd',value:'dddd'}]);
+if (!btnQueue) {
+  return;
+}
+btnQueue.addEventListener('click', markupQueue);
 
-// }
+export function markupQueue() {
+  if (!libraryList) {
+    return;
+  }
+  imgPlug.style.display = 'none';
+
+  libraryList.innerHTML = createMarkupOneCard(queue);
+}

@@ -1,6 +1,7 @@
 import { refs } from './refs';
-import { genresFormat, genresFormatModal } from './geners';
+import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
+import { markupWatched } from './watched-local-storage';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
@@ -8,7 +9,7 @@ if (!refs.filmGallery) {
 }
 refs.filmGallery.addEventListener('click', onClickMovie);
 
-function onClickMovie(e) {
+export function onClickMovie(e) {
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
   if (!id) {
@@ -27,7 +28,7 @@ async function showMovieInfo(id) {
     const geners = genresFormatModal(results.genres).join(', ');
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
-      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
@@ -36,7 +37,8 @@ async function showMovieInfo(id) {
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
-function modalClose() {
+export function modalClose() {
+  markupWatched();
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
 }
@@ -69,6 +71,9 @@ function renderMarkupModalMovie(object, poster, geners) {
         src="${poster}"
         alt="${object.title}"
       />
+      <button data-btn="watchTrailer" class="trailerBtn" type="button">
+          Watched trailer
+        </button>
     </div>
     <div class="movie-wrap">
       <h2 class="movie-title">${object.title}</h2>

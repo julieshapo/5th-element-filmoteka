@@ -47,10 +47,10 @@
   }
 }
 
-.footer__gap{
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
+.footer__gap {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .footer__icon {
@@ -62,6 +62,8 @@
 // }
 
 .footer__link {
+  border: none;
+  background-color: transparent;
   color: inherit;
   text-decoration: underline;
   cursor: pointer;
@@ -73,9 +75,7 @@
   color: #ff6b08;
 }
 
-.footer__icon-heart{
-
-
+.footer__icon-heart {
   -webkit-animation: pulsing 2.5s infinite;
   animation: pulsing 2.5s infinite;
 

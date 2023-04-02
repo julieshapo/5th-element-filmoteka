@@ -1,10 +1,11 @@
-import { refs } from "./refs";
+import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
+import { setWatchedLS, setQueueLS } from './local-storage';
 
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
-let watched = [];
-let queue = [];
+export let watched = JSON.parse(localStorage.getItem('watched')) || [];
+export let queue = JSON.parse(localStorage.getItem('queue')) || [];
 
 refs.modalMovie.addEventListener('click', onClickBtn);
 
@@ -17,11 +18,11 @@ export function onClickBtn(e) {
 
   switch (add) {
     case 'watched':
-      addToWatched(id)
+      addToWatched(id);
       break;
-    
+
     case 'queue':
-      addToQueue(id)
+      addToQueue(id);
       break;
   };
 };
@@ -38,14 +39,14 @@ export async function addToWatched(id) {
 
     if (findFilm) {
       watched.splice(findIndex, 1);
-      console.log(watched);
+      setWatchedLS(watched);
     } else {
       watched.push(results);
-      console.log(watched);
+      setWatchedLS(watched);
     }
-    } catch (error) {
+  } catch (error) {
     console.log(error.message);
-    };
+  };
 };
 
 // Функция добаляет обьект фильма в массив "queue" если его там нет, и проверяет если он там есть - удаляет
@@ -60,12 +61,12 @@ export async function addToQueue(id) {
 
     if (findFilm) {
       queue.splice(findIndex, 1);
-      console.log(queue);
+      setQueueLS(queue);
     } else {
       queue.push(results);
-      console.log(queue);
+      setQueueLS(queue);
     }
-    } catch (error) {
+  } catch (error) {
     console.log(error.message);
-    };
+  };
 };

@@ -24,7 +24,7 @@ export const genres = [
 
 export function genresFormat(array) {
   return genres.reduce((acc, item) => {
-    if (array.includes(item.id)) {
+    if (array?.includes(item.id)) {
       acc.push(item.name);
     }
     return acc;
@@ -34,5 +34,5 @@ export function genresFormat(array) {
 // Функция форматирует жанры с обьекта
 
 export function genresFormatModal(object) {
-  return object.map(item => item.name)
+  return object?.map(item => item.name)
 };

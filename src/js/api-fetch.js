@@ -57,7 +57,7 @@ export async function getMovieFullInfo(movie_id) {
 }
 
 //Запит трейлеру фільма
-async function getMovieTrailer(movie_id) {
+export async function getMovieTrailer(movie_id) {
   try {
     const params = {
       api_key: API_KEY,
