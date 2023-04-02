@@ -1,7 +1,9 @@
 import { getMoviesTrending } from './api-fetch';
 import { genresFormat } from './geners';
 import { refs } from './refs';
+import { createPagination } from './pagination';
 import { genresArray } from './watched-local-storage';
+
 
 TrendingMovie();
 
@@ -10,13 +12,16 @@ TrendingMovie();
 export function createMarkupOneCard(array) {
   return array
     .map(item => {
-      const geners = genresFormat(item.genre_ids || genresArray()).join(', ');
+      const genresFormatGetId = item.genres?.map(genre => genre.id);
+      const geners = genresFormat(item.genre_ids || genresFormatGetId).join(
+        ', '
+      );
       const date = item.release_date ?? item.first_air_date ?? null;
       const year = date ? date.slice(0, 4) : 'Unknown year';
 
       const poster = item.poster_path
         ? `https://image.tmdb.org/t/p/w500/${item.poster_path}`
-        : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+        : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
 
       return `
     <li data-id=${item.id} class="film-item">
@@ -39,13 +44,14 @@ export function createMarkupOneCard(array) {
 
 // Функция которая ожидает ответа от апи и вставляет разметку в галерею фильмов
 
-async function TrendingMovie() {
+export async function TrendingMovie(currentPage) {
   try {
-    const { results } = await getMoviesTrending();
+    const { results, total_results } = await getMoviesTrending(currentPage);
     if (!refs.filmGallery) {
       return;
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
+    createPagination(total_results, 2, 0);
   } catch (error) {
     console.log(error.message);
   }

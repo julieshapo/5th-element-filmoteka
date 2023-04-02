@@ -15,5 +15,7 @@ import './js/modal-team';
 import './js/buttons';
 import './js/modal-btn-watched';
 import './js/modal-btn-queue';
+import './js/trailer';
+import './js/geners';
 
 import './js/change-theme';

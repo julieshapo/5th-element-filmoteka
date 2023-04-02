@@ -2,22 +2,25 @@
 // а не масив просто айдішників.
 import { watched } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
-import { onClickMovie } from './modal-movie';
+import { onClickMovie, modalClose } from './modal-movie';
+import { refs } from './refs';
+import { btnQueue } from './queue-local-storage';
 
-const btnWatched = document.querySelector('.js-watched');
+export const btnWatched = document.querySelector('.js-watched');
 const libraryList = document.querySelector('.js-library_gallery');
-const imgPlug = document.querySelector('.no-watched');
+const imgWatchedPlug = document.querySelector('.no-watched');
+const imgQueuePlug = document.querySelector('.no-queue');
 
 if (!libraryList) {
   return;
 }
 libraryList.addEventListener('click', onClickMovie);
 
-export function genresArray() {
-  if (!watched[0]) {
-    return;
-  } else {
-    return watched[0].genres.map(genre => genre.id);
+refs.modal.addEventListener('click', onClodeModalClick);
+
+function onClodeModalClick(e) {
+  if (e.target === e.currentTarget) {
+    modalClose();
   }
 }
 
@@ -27,12 +30,23 @@ if (!btnWatched) {
 btnWatched.addEventListener('click', markupWatched);
 
 export function markupWatched() {
+  btnQueue.style.backgroundColor = '';
+  btnQueue.style.border = '';
+  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.border = 'none';
+
   if (!libraryList) {
     return;
   } else if (watched.length === 0) {
-    imgPlug.style.display = 'block';
+    imgWatchedPlug.style.display = 'block';
   }
+  imgQueuePlug.style.display = 'none';
+
   libraryList.innerHTML = createMarkupOneCard(watched);
 }
 
 document.addEventListener('DOMContentLoaded', markupWatched);
+document.addEventListener('DOMContentLoaded', () => {
+  btnWatched.style.backgroundColor = '#ff6b02';
+  btnWatched.style.border = 'none';
+});

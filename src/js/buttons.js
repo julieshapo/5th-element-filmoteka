@@ -1,11 +1,13 @@
 import { refs } from './refs';
 import { getMovieFullInfo } from './api-fetch';
+import { setWatchedLS, setQueueLS } from './local-storage';
+import { markupWatched } from './watched-local-storage';
+import { markupQueue } from './queue-local-storage';
 
 // Массивы в которые пушаться обьекты фильма при нажатии на кнопки "watched" и "queue"
 
 export let watched = JSON.parse(localStorage.getItem('watched')) || [];
 export let queue = JSON.parse(localStorage.getItem('queue')) || [];
-console.log(watched);
 
 refs.modalMovie.addEventListener('click', onClickBtn);
 
@@ -19,6 +21,7 @@ export function onClickBtn(e) {
   switch (add) {
     case 'watched':
       addToWatched(id);
+
       break;
 
     case 'queue':
@@ -38,11 +41,13 @@ export async function addToWatched(id) {
     const findIndex = watched.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      return;
+      watched.splice(findIndex, 1);
+      setWatchedLS(watched);
+      markupWatched();
     } else {
       watched.push(results);
-      console.log(watched);
-      localStorage.setItem('watched', JSON.stringify(watched));
+      setWatchedLS(watched);
+      markupWatched();
     }
   } catch (error) {
     console.log(error.message);
@@ -60,11 +65,13 @@ export async function addToQueue(id) {
     const findIndex = queue.findIndex(item => item.id === Number(id));
 
     if (findFilm) {
-      return;
+      queue.splice(findIndex, 1);
+      setQueueLS(queue);
+      markupQueue();
     } else {
       queue.push(results);
-      console.log(queue);
-      localStorage.setItem('queue', JSON.stringify(queue));
+      setQueueLS(queue);
+      markupQueue();
     }
   } catch (error) {
     console.log(error.message);

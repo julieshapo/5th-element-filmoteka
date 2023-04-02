@@ -1,7 +1,6 @@
 import { refs } from './refs';
-import { genresFormat, genresFormatModal } from './geners';
+import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
-import { markupWatched } from './watched-local-storage';
 
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
@@ -28,7 +27,7 @@ async function showMovieInfo(id) {
     const geners = genresFormatModal(results.genres).join(', ');
     const poster = results.poster_path
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
-      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.jpg?raw=true';
+      : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
@@ -37,8 +36,7 @@ async function showMovieInfo(id) {
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
-function modalClose() {
-  markupWatched();
+export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
 }
@@ -71,7 +69,6 @@ function renderMarkupModalMovie(object, poster, geners) {
         src="${poster}"
         alt="${object.title}"
       />
-      <button class="youtube">youtube</button>
     </div>
     <div class="movie-wrap">
       <h2 class="movie-title">${object.title}</h2>
@@ -123,6 +120,8 @@ function renderMarkupModalMovie(object, poster, geners) {
         <button data-add="queue" class="movie-btn" type="button">
           add to queue
         </button>
+        <button data-btn="watch-trailer" class="trailer-btn" type="button">
+      </button>
       </div>
     </div>`;
 }
