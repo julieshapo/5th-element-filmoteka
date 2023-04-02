@@ -20,6 +20,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  stroke: #ffffff;
+
   @include tablet {
     height: 35px;
     gap: 10px;
@@ -152,7 +154,7 @@
 
 .header-form-input {
   position: relative;
-  width: 100%;
+  min-width: 280px;
   height: 20px;
   border-bottom: 0.5px solid #ffffff;
   border-top: 0;
@@ -167,18 +169,27 @@
   color: #ffffff;
   margin-bottom: 4px;
   cursor: pointer;
-  transition: box-shadow 150ms ease;
+  transition: transform 300ms linear, box-shadow 300ms linear;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
+
   @include tablet {
     width: 336px;
   }
   @include desktop {
     width: 394px;
   }
+
   &:hover,
   &:focus {
     outline: none;
     box-shadow: 0 0 0 3px #ff001b;
     border-radius: 5px;
+
+  &:focus {
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px 5px rgba(222, 156, 151, 0.2);
+
   }
 }
 
@@ -196,8 +207,8 @@
 
 .button-search {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: transparent;
   border: none;
   right: 24px;
@@ -214,8 +225,9 @@
 
 .search-icon {
   position: absolute;
-
   // top: 4px;
+  margin-bottom: 6px;
+
 }
 .search-error,
 .search-error2 {
