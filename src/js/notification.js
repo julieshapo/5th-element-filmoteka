@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 Notiflix.Notify.init({
   width: '300px',
   position: 'center-top',
-  distance: '10px',
+  distance: '140px',
   opacity: 0.9,
   borderRadius: '2px',
   rtl: false,
@@ -40,9 +40,9 @@ Notiflix.Notify.init({
     background: 'rgb(104, 34, 34)',
     textColor: '#fff',
     childClassName: 'notiflix-notify-warning',
-    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    notiflixIconColor: '#fff',
     fontAwesomeClassName: 'fas fa-exclamation-circle',
-    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+    fontAwesomeIconColor: 'rgba(0,0,0,1)',
     backOverlayColor: 'rgba(238,191,49,0.2)',
   },
   info: {

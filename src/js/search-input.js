@@ -19,16 +19,18 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
+  queryVal = event.currentTarget.elements.searchQuery.value.trim();
+  console.log(queryVal);
+  if (queryVal === '') {
+    return Notiflix.Notify.warning('Please, enter your search request');
+  }
   if (name === input.value) {
     return;
   }
   name = input.value.trim();
   input.value = name;
   renderSearchFilms(name, 1, 1);
-
-  return Notiflix.Notify.warning(
-    'Sorry, there are no movies matching your search query. Please try again'
-  );
+  console.log(event);
 }
 
 export async function renderSearchFilms(name, currentPage, firstPage) {
@@ -37,7 +39,9 @@ export async function renderSearchFilms(name, currentPage, firstPage) {
       searchError.style.display = 'none';
       const response = await getMoviesByName(name, currentPage);
       if (response.results.length < 1) {
-        return (searchError.style.display = 'flex');
+        return Notiflix.Notify.failure(
+          'Sorry, there are no movies matching your search query. Please try again'
+        );
       }
       filmGallery.innerHTML = createMarkupOneCard(response.results);
       createPagination(response.total_results, 1, firstPage);
