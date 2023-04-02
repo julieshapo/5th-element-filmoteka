@@ -40,3 +40,14 @@
 //   }
 // };
 
+import { refs } from './refs';
+
+refs.modalMovie.addEventListener('click', onTrailerBtnClick);
+
+function onTrailerBtnClick(e) {
+  const {btn} = e.target.dataset
+  if (!btn) {
+    return
+  }
+  console.log('тут вызывается функция которая покажет видео')
+}

@@ -33,6 +33,16 @@
   }
 }
 
+.trailer-btn {
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-width: 15px;
+  border-top-width: 15px;
+  border-left: 25px solid red;
+  background-color: transparent;
+}
+
 .movie-img {
   object-fit: contain;
   width: 240px;

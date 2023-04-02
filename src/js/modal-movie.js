@@ -71,9 +71,6 @@ function renderMarkupModalMovie(object, poster, geners) {
         src="${poster}"
         alt="${object.title}"
       />
-      <button data-btn="watchTrailer" class="trailerBtn" type="button">
-          Watched trailer
-        </button>
     </div>
     <div class="movie-wrap">
       <h2 class="movie-title">${object.title}</h2>
@@ -125,6 +122,8 @@ function renderMarkupModalMovie(object, poster, geners) {
         <button data-add="queue" class="movie-btn" type="button">
           add to queue
         </button>
+        <button data-btn="watch-trailer" class="trailer-btn" type="button">
+      </button>
       </div>
     </div>`;
 }
