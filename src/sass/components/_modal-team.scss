@@ -12,20 +12,21 @@
   width: 250px;
   border-radius: 15px;
   background: $colorModalBg;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   position: absolute;
-  top: 105vh;
+  top: 365vh;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
   @include mobile {
     width: 450px;
+    top: 180vh;
   }
   @include tablet {
     width: 650px;
-    top: 50vh;
+    top: 105vh;
   }
   @include desktop {
     width: 800px;
@@ -38,16 +39,31 @@
   border: none;
   border-radius: 50%;
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 0px;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include mobile {
+    right: 8px;
+    top: 8px;
+  }
+  @include desktop {
+    right: 16px;
+    top: 16px;
+  }
 }
-.team-close:hover,
-.team-close:focus {
+
+.modal-team-close:hover,
+.modal-team-close:focus {
   transform: rotate(90deg);
-  color: $colorTextAccent;
+  fill: $colorTextAccent;
+}
+
+.team-close {
+  display: inline-block;
 }
 
 .is-hidden {
@@ -64,6 +80,7 @@
   text-align: center;
   font-size: 30px;
   color: $colorTextAccent;
+  text-transform: uppercase;
 }
 
 .team-list {
@@ -78,7 +95,6 @@
 
 .team-photo {
   display: block;
-  border-radius: 5%;
   height: 180px;
   width: 120%;
   object-fit: cover;
@@ -94,13 +110,39 @@
 
 .team-position {
   text-align: center;
-  color: $colorModalTextSecondary;
+  color: $colorTextAccent;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .team-list-item {
   width: 120px;
   height: auto;
+  transition: transform 300ms linear, box-shadow 300ms linear;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
+  border-radius: 5px;
   @include desktop {
     width: 150px;
   }
+  &:hover,
+  &:focus {
+    transform: scale(1.01) rotate(0.5deg);
+    box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.github {
+  fill: $colorTextDark;
+  display: inline-flex;
+  object-fit: contain;
+  &:hover,
+  &:focus {
+    fill: $colorTextAccent;
+  }
+}
+
+.github-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
