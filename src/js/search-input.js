@@ -19,7 +19,7 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
-  queryVal = event.currentTarget.elements.searchQuery.value.trim();
+  const queryVal = event.currentTarget.elements.searchQuery.value.trim();
   console.log(queryVal);
   if (queryVal === '') {
     return Notiflix.Notify.warning('Please, enter your search request');
