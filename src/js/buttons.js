@@ -39,7 +39,7 @@ export async function addToWatched(id) {
 
     if (findFilm) {
       watched.splice(findIndex, 1);
-      setQueueLS(watched);
+      setWatchedLS(watched);
     } else {
       watched.push(results);
       setWatchedLS(watched);
