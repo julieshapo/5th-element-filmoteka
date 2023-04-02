@@ -8,6 +8,7 @@ const form = document.querySelector('.header-form');
 const input = document.querySelector('.header-form-input');
 const filmGallery = document.querySelector('.js-film-gallery');
 const searchError = document.querySelector('.search-error');
+const searchError2 = document.querySelector('.search-error2');
 import Notiflix from 'notiflix';
 
 export let name = '';
@@ -19,10 +20,15 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
-  const queryVal = event.currentTarget.elements.searchQuery.value.trim();
+  queryVal = event.currentTarget.elements.searchQuery.value.trim();
   console.log(queryVal);
+  searchError2.style.display = 'none';
   if (queryVal === '') {
-    return Notiflix.Notify.warning('Please, enter your search request');
+    // return Notiflix.Notify.warning('Please, enter your search request');
+    searchError2.style.display = 'flex';
+    // setTimeout(() => {
+    //   searchError2.style.display = 'none';
+    // }, 5000);
   }
   if (name === input.value) {
     return;
@@ -39,9 +45,10 @@ export async function renderSearchFilms(name, currentPage, firstPage) {
       searchError.style.display = 'none';
       const response = await getMoviesByName(name, currentPage);
       if (response.results.length < 1) {
-        return Notiflix.Notify.failure(
-          'Sorry, there are no movies matching your search query. Please try again'
-        );
+        searchError.style.display = 'flex';
+        // setTimeout(() => {
+        //   searchError.style.display = 'none';
+        // }, 5000);
       }
       filmGallery.innerHTML = createMarkupOneCard(response.results);
       createPagination(response.total_results, 1, firstPage);
