@@ -1,11 +1,11 @@
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
 import 'tui-pagination/dist/tui-pagination.min.css';
-import { getMoviesByName } from './api-fetch';
 import { renderSearchFilms, name } from './search-input';
 
 const TUI_PAGES_VISIBLE = 5;
-let currentPage = 1;
+export let currentPage = 1;
+export let pagination = '';
 
 export function createPagination(totalItems, itemsPerPage) {
   const options = {
@@ -17,7 +17,7 @@ export function createPagination(totalItems, itemsPerPage) {
     // visiblePages: visiblePages < 5 ? visiblePages : TUI_PAGES_VISIBLE,
   };
 
-  const pagination = new Pagination(refs.pagination, options);
+  pagination = new Pagination(refs.pagination, options);
 
   // currentPage = pagination.getCurrentPage();
   pagination.on('beforeMove', event => {
@@ -29,6 +29,9 @@ export function createPagination(totalItems, itemsPerPage) {
     //   // return true;
     // }
   });
+
+  if (currentPage === 1) {
+  }
 
   // if (visiblePages > 1) {
   //   refs.pagination.style.display = 'block';
