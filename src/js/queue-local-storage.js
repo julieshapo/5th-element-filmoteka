@@ -29,10 +29,6 @@ btnQueue.addEventListener('click', markupQueue);
 export function markupQueue() {
   if (!libraryList) {
     return;
-  } else if (queue.length === 0) {
-    imgPlug.style.display = 'block';
   }
   libraryList.innerHTML = createMarkupOneCard(queue);
 }
-
-document.addEventListener('DOMContentLoaded', markupQueue);
