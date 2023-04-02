@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { genresFormat, genresFormatModal } from './geners';
+import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
 import { markupWatched } from './watched-local-storage';
 
@@ -37,7 +37,7 @@ async function showMovieInfo(id) {
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
-function modalClose() {
+export function modalClose() {
   markupWatched();
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
