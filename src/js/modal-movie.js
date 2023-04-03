@@ -9,6 +9,7 @@ if (!refs.filmGallery) {
 refs.filmGallery.addEventListener('click', onClickMovie);
 
 export function onClickMovie(e) {
+  const body = document.querySelector('body');
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
   if (!id) {
@@ -17,6 +18,7 @@ export function onClickMovie(e) {
   showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
+  body.style.overflow = 'hidden';
 }
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
@@ -37,8 +39,10 @@ async function showMovieInfo(id) {
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
+  const body = document.querySelector('body');
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
+  body.style.overflow = 'auto';
   refs.modalMovie.innerHTML = '';
 }
 
