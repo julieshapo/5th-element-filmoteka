@@ -16,7 +16,6 @@ const searchError2 = document.querySelector('.search-error2');
 import Notiflix from 'notiflix';
 // let firstFunctionRun = 0;
 
-
 export let name = '';
 
 if (!form) {
@@ -26,13 +25,11 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
-
-  queryVal = event.currentTarget.elements.searchQuery.value.trim();
-  console.log(queryVal);
-  searchError2.style.display = 'none';
   const queryVal = event.currentTarget.elements.searchQuery.value.trim();
 
-if (queryVal === '') {
+  searchError2.style.display = 'none';
+
+  if (queryVal === '') {
     // return Notiflix.Notify.warning('Please, enter your search request');
     searchError2.style.display = 'flex';
     // setTimeout(() => {
