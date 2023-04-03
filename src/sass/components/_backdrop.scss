@@ -8,7 +8,9 @@
   height: 100%;
 
   background: rgba(94, 99, 99, 0.7);
-  
+
+  overflow-y: auto;
+
   visibility: visible;
   opacity: 1;
   transition: opacity 250ms linear, visibility 250ms linear;
