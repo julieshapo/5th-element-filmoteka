@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   padding-top: 40px;
   padding-bottom: 62px;
   @include tablet {
@@ -19,6 +20,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  stroke: #ffffff;
+
   @include tablet {
     height: 35px;
     gap: 10px;
@@ -168,17 +171,25 @@
   cursor: pointer;
   transition: transform 300ms linear, box-shadow 300ms linear;
   box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0);
- 
+
   @include tablet {
     width: 336px;
   }
   @include desktop {
     width: 394px;
   }
+
+  &:hover,
   &:focus {
     outline: none;
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px 5px rgba(243, 178, 174, 0.1);
+    box-shadow: 0 0 0 3px #ff001b;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px 5px rgba(222, 156, 151, 0.2);
+    }
   }
 }
 
@@ -208,15 +219,17 @@
   &:hover,
   &:focus {
     outline: none;
-    transform: scale(1.5); 
+    transform: scale(1.5);
   }
 }
 
 .search-icon {
   position: absolute;
+  // top: 4px;
   margin-bottom: 6px;
 }
-.search-error {
+.search-error,
+.search-error2 {
   font-size: 14px;
   line-height: 1.16;
   align-items: center;
@@ -225,6 +238,9 @@
   justify-content: center;
   margin-top: 20px;
   display: none;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-icon {
@@ -234,7 +250,7 @@
 .logo-icon {
   animation: 1s linear 0s normal none infinite running rot;
   -webkit-animation: 2s linear 0s normal none infinite running rot;
-  animation-iteration-count: 1.5;
+  animation-iteration-count: 1;
 }
 
 @keyframes rot {

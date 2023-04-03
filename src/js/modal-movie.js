@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
-
+import { watched, queue } from './buttons';
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
 if (!refs.filmGallery) {
   return;
@@ -17,7 +17,7 @@ export function onClickMovie(e) {
   showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
-}
+};
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
@@ -31,15 +31,15 @@ async function showMovieInfo(id) {
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
-  }
-}
+  };
+};
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
-}
+};
 
 // Функция закрытия модалки при нажатии по бекдропу
 
@@ -48,8 +48,20 @@ refs.modal.addEventListener('click', onClodeModalClick);
 function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
+  };
+};
+
+// Функция которая закрывает модалку при нажатии на крестик
+
+refs.modalMovie.addEventListener('click', onBtnClickClose);
+
+function onBtnClickClose(e) {
+  const {btn} = e.target.dataset
+  if (btn === 'close') {
+    return
   }
-}
+  modalClose();
+};
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
@@ -58,11 +70,30 @@ function onCloseModalKey(e) {
     return;
   }
   modalClose();
-}
+};
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
 function renderMarkupModalMovie(object, poster, geners) {
+  let watchedBtnTxt="";
+  let watchedBtnClass ="";
+  let queueBtnTxt="";
+  let queueBtnClass="";
+  const findFilmInWatched = watched.find(item => item.id === Number(object.id));
+  const findFilmInQueue = queue.find(item => item.id === Number(object.id));
+
+  
+
+  if (findFilmInWatched) {
+    watchedBtnTxt = "Remove watched";
+    watchedBtnClass = "btn-remove";
+  } else { watchedBtnTxt = "Add to watched"; }
+  if (findFilmInQueue) {
+    queueBtnTxt = "Remove queue";
+    queueBtnClass = "btn-remove";
+  } else { queueBtnTxt = "Add to queue"; }
+
+
   return `<div class="movie-thumb">
       <img
         class="movie-img"
@@ -114,11 +145,11 @@ function renderMarkupModalMovie(object, poster, geners) {
         ${object.overview ?? '- - -'}
       </p>
       <div data-id="${object.id}" class="movie-btn-wrap">
-        <button data-add="watched" class="movie-btn" type="button">
-          add to Watched
+        <button data-add="watched" class="movie-btn ${watchedBtnClass}" type="button">
+          ${watchedBtnTxt}
         </button>
-        <button data-add="queue" class="movie-btn" type="button">
-          add to queue
+        <button data-add="queue" class="movie-btn ${queueBtnClass}" type="button">
+          ${queueBtnTxt}
         </button>
         <button data-btn="watch-trailer" class="trailer-btn" type="button">
         <svg class="youtube" width="70" height="70" viewBox="6 3 30 30" style="width: 80px; height: 44px">
@@ -127,8 +158,8 @@ function renderMarkupModalMovie(object, poster, geners) {
 </symbol>
     </svg>
       </button>
-      <button class="modal-movie-close" type="button">
-        <svg class="close-svg" width="20" height="20" viewBox="6 3 30 30" style="width: 40px; height: 35px">
+      <button data-btn="close" class="modal-movie-close" type="button">
+        <svg class="close-svg" width="28" height="28" viewBox="0 0 30 30" >
     <use xlink:href="./images/svg/symbol-defs.svg#menu-close" />
     <path d="M23.734 10.304l-1.504-1.504-5.963 5.962-5.962-5.962-1.504 1.504 5.962 5.962-5.962 5.963 1.504 1.504 5.962-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.962z"></path>
 </symbol>
@@ -136,4 +167,5 @@ function renderMarkupModalMovie(object, poster, geners) {
       </button>
       </div>
     </div>`;
-}
+};
+

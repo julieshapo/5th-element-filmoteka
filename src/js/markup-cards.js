@@ -4,6 +4,9 @@ import { refs } from './refs';
 import { createPagination } from './pagination';
 import { genresArray } from './watched-local-storage';
 
+const ITEMS_PER_PAGES = 20;
+
+let firstFunctionRun = 0;
 
 TrendingMovie();
 
@@ -51,7 +54,10 @@ export async function TrendingMovie(currentPage) {
       return;
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
-    createPagination(total_results, 2, 0);
+    if (firstFunctionRun === 0) {
+      createPagination(total_results, 2, 0, ITEMS_PER_PAGES);
+    }
+    firstFunctionRun = 1;
   } catch (error) {
     console.log(error.message);
   }
