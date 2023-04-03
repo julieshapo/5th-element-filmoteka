@@ -74,6 +74,103 @@ a:hover {
   }
 }
 
+// /* полоса прокрутки (скроллбар) /
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.237);
+  background-color: transparent;
+}
+
+// / ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.661);
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 5px $colorTextDark;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff6b08;
+}
+
+// ::-webkit-scrollbar {
+//   width: 11px;
+//   height: 200px;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: #0080ff;
+//   border: 0px none #ffffff;
+//   border-radius: 50px;
+//   background: -webkit-gradient(
+//     linear,
+//     left top,
+//     left bottom,
+//     color-stop(1, #ff8a16),
+//     color-stop(0.79, #ffae5e),
+//     color-stop(0.51, #ff8916),
+//     color-stop(0.41, #ff9d3d),
+//     color-stop(0, #ffb268)
+//   );
+//   background: -webkit-linear-gradient(
+//     top,
+//     #ffb268 0%,
+//     #ff9d3d 41%,
+//     #ff8916 51%,
+//     #ffae5e 79%,
+//     #ff8a16 100%
+//   );
+//   background: -moz-linear-gradient(
+//     top,
+//     #ffb268 0%,
+//     #ff9d3d 41%,
+//     #ff8916 51%,
+//     #ffae5e 79%,
+//     #ff8a16 100%
+//   );
+//   background: -o-linear-gradient(
+//     top,
+//     #ffb268 0%,
+//     #ff9d3d 41%,
+//     #ff8916 51%,
+//     #ffae5e 79%,
+//     #ff8a16 100%
+//   );
+//   background: -ms-linear-gradient(
+//     top,
+//     #ffb268 0%,
+//     #ff9d3d 41%,
+//     #ff8916 51%,
+//     #ffae5e 79%,
+//     #ff8a16 100%
+//   );
+//   background: linear-gradient(
+//     to bottom,
+//     #ffb268 0%,
+//     #ff9d3d 41%,
+//     #ff8916 51%,
+//     #ffae5e 79%,
+//     #ff8a16 100%
+//   );
+// }
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #ff9615;
+// }
+// ::-webkit-scrollbar-thumb:active {
+//   background: #904f00;
+// }
+// ::-webkit-scrollbar-track {
+//   background: #e2e2e2;
+// }
+// ::-webkit-scrollbar-corner {
+//   background: transparent;
+// }
+
+// ::-webkit-scrollbar-button кнопки на полосе прокрутки (стрелки, указывающие вверх и вниз).
+// ::-webkit-scrollbar-track дорожка (индикатор выполнения) полосы прокрутки.
+// ::-webkit-scrollbar-track-piece дорожка (индикатор выполнения) не покрывается ручкой.
+// ::-webkit-scrollbar-corner нижний угол полосы прокрутки, где встречаются как горизонтальные, так и veritcal полосы прокрутки.
+// ::-webkit-resizer Перетаскивание маркера изменения размера, который отображается в нижнем углу некоторых элементов.
+
 // #NotiflixNotifyWrap {
 //   position: absolute;
 //   top: 195px;

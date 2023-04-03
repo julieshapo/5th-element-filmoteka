@@ -22,6 +22,10 @@ if (!libraryList) {
   return;
 }
 libraryList.addEventListener('click', onClickMovie);
+btnQueue.addEventListener('click', () => {
+  btnWatched.classList.remove('is-active');
+  btnQueue.classList.add('is-active');
+});
 
 refs.modal.addEventListener('click', onClodeModalClick);
 
@@ -38,10 +42,11 @@ if (!btnQueue) {
 btnQueue.addEventListener('click', markupQueue);
 
 export function markupQueue(currentPage = 1) {
-  if (!btnQueue) {
+  if (!btnQueue || !btnWatched) {
     return;
   }
-  if (!btnWatched) {
+
+  if (!btnQueue.classList.contains('is-active')) {
     return;
   }
 
