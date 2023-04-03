@@ -1,6 +1,5 @@
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
-import 'tui-pagination/dist/tui-pagination.min.css';
 import { renderSearchFilms, name } from './search-input';
 import { TrendingMovie } from './markup-cards';
 import { markupWatched } from './watched-local-storage';
