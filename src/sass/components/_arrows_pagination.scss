@@ -1,269 +1,268 @@
-// .tui-pagination * {
-//   -moz-user-select: none;
-//   -webkit-user-select: none;
-//   -ms-user-select: none;
-//   user-select: none;
-// }
+.tui-pagination * {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-// .tui-ico-ellipsis,
-// .tui-ico-first,
-// .tui-ico-last,
-// .tui-ico-next,
-// .tui-ico-prev {
-//   overflow: hidden;
-// }
+.tui-ico-ellipsis,
+.tui-ico-first,
+.tui-ico-last,
+.tui-ico-next,
+.tui-ico-prev {
+  overflow: hidden;
+}
 
-// .tui-pagination {
-//   height: 40px;
-//   margin: 14px 0 12px;
-//   line-height: normal;
-//   text-align: center;
-//   font-size: 0;
-// }
+.tui-pagination {
+  height: 40px;
+  margin: 14px 0 12px;
+  line-height: normal;
+  text-align: center;
+  font-size: 0;
+}
 
-// .tui-pagination .tui-page-btn {
-//   display: inline-block;
-//   position: relative;
-//   width: 40px;
-//   border-radius: 5px;
-//   padding: 8px 0 6px;
-//   margin-left: 10px;
-//   background: #ffffffcb;
-//   color: #333;
-//   font-size: 16px;
-//   font-weight: normal;
-//   line-height: 1;
-//   text-decoration: none;
-//   vertical-align: middle;
-//   border: 1px solid #ddd;
-//   border-width: 1px 0;
-// }
-// @media screen and (max-width: 767px) {
-//   .tui-pagination .tui-page-btn {
-//     width: 20px !important;
-//     font-size: 12px !important;
-//     margin-left: 5px !important;
-//   }
-// }
+.tui-pagination .tui-page-btn {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  border-radius: 5px;
+  padding: 8px 0 6px;
+  margin-left: 10px;
+  background: #ffffffcb;
+  color: #333;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-width: 1px 0;
+}
+@media screen and (max-width: 767px) {
+  .tui-pagination .tui-page-btn {
+    width: 20px !important;
+    font-size: 12px !important;
+    margin-left: 5px !important;
+  }
+}
 
-// .tui-pagination .tui-page-btn:hover {
-//   background-color: #f4f4f4;
-// }
+.tui-pagination .tui-page-btn:hover {
+  background-color: #f4f4f4;
+}
 
-// .tui-pagination .tui-is-selected,
-// .tui-pagination strong {
-//   color: #fff;
-//   background: #ff6b08;
-//   border-color: #ff6b08;
-//   cursor: default;
-// }
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #fff;
+  background: #ff6b08;
+  border-color: #ff6b08;
+  cursor: default;
+}
 
-// .tui-pagination .tui-is-selected:hover {
-//   background-color: #ff6b08;
-// }
+.tui-pagination .tui-is-selected:hover {
+  background-color: #ff6b08;
+}
 
-// .tui-pagination .tui-first-child.tui-is-selected,
-// .tui-pagination strong.tui-first-child {
-//   margin-left: 0;
-// }
+.tui-pagination .tui-first-child.tui-is-selected,
+.tui-pagination strong.tui-first-child {
+  margin-left: 0;
+}
 
-// .tui-pagination .tui-first-child,
-// .tui-pagination .tui-prev-is-ellip {
-//   border-left: 1px solid #ddd;
-// }
+.tui-pagination .tui-first-child,
+.tui-pagination .tui-prev-is-ellip {
+  border-left: 1px solid #ddd;
+}
 
-// .tui-pagination .tui-last-child,
-// .tui-pagination .tui-next-is-ellip {
-//   border-right: 1px solid #ddd;
-// }
+.tui-pagination .tui-last-child,
+.tui-pagination .tui-next-is-ellip {
+  border-right: 1px solid #ddd;
+}
 
-// .tui-pagination .tui-first-child.tui-is-selected {
-//   border-left: 1px solid #ff6b08;
-// }
+.tui-pagination .tui-first-child.tui-is-selected {
+  border-left: 1px solid #ff6b08;
+}
 
-// .tui-pagination .tui-last-child.tui-is-selected {
-//   border-right: 1px solid #ff6b08;
-// }
+.tui-pagination .tui-last-child.tui-is-selected {
+  border-right: 1px solid #ff6b08;
+}
 
-// .tui-pagination .tui-first,
-// .tui-pagination .tui-prev,
-// .tui-pagination .tui-next,
-// .tui-pagination .tui-last,
-// .tui-pagination .tui-prev-is-ellip,
-// .tui-pagination .tui-next-is-ellip {
-//   overflow: hidden;
-//   height: 26px;
-//   padding: 0;
-//   line-height: 26px;
-//   white-space: nowrap;
-//   font-weight: normal;
-//   border: 1px solid #ddd;
-// }
+.tui-pagination .tui-first,
+.tui-pagination .tui-prev,
+.tui-pagination .tui-next,
+.tui-pagination .tui-last,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+  overflow: hidden;
+  height: 26px;
+  padding: 0;
+  line-height: 26px;
+  white-space: nowrap;
+  font-weight: normal;
+  border: 1px solid #ddd;
+}
 
-// .tui-pagination .tui-prev-is-ellip {
-//   border-right: 0;
-// }
+.tui-pagination .tui-prev-is-ellip {
+  border-right: 0;
+}
 
-// .tui-pagination .tui-next-is-ellip {
-//   border-left: 0;
-// }
+.tui-pagination .tui-next-is-ellip {
+  border-left: 0;
+}
 
-// .tui-pagination .tui-first + .tui-prev,
-// .tui-pagination .tui-next + .tui-last {
-//   border-left: 0;
-// }
+.tui-pagination .tui-first + .tui-prev,
+.tui-pagination .tui-next + .tui-last {
+  border-left: 0;
+}
 
-// .tui-pagination .tui-ico-first,
-// .tui-pagination .tui-ico-prev,
-// .tui-pagination .tui-ico-next,
-// .tui-pagination .tui-ico-last,
-// .tui-pagination .tui-ico-ellip {
-//   background: rgba(0, 0, 0, 0.174) no-repeat 0 0;
-//   vertical-align: middle;
-//   visibility: hidden;
-// }
-// .tui-pagination .tui-first,
-// .tui-pagination .tui-last {
-//   display: none;
-// }
+.tui-pagination .tui-ico-first,
+.tui-pagination .tui-ico-prev,
+.tui-pagination .tui-ico-next,
+.tui-pagination .tui-ico-last,
+.tui-pagination .tui-ico-ellip {
+  background: rgba(0, 0, 0, 0.174) no-repeat 0 0;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.tui-pagination .tui-first,
+.tui-pagination .tui-last {
+  display: none;
+}
 
-// .tui-pagination .tui-ico-first::before {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   content: '<<';
-//   visibility: visible;
-// }
+.tui-pagination .tui-ico-first::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '<<';
+  visibility: visible;
+}
 
-// .tui-pagination .tui-ico-prev::before {
-//   content: '🡨';
-//   display: flex;
-//   justify-content: center;
-//   // background-size: contain;
-//   // background-image: url('../images/svg/symbol-defs.svg#icon-arrow-left');
-//   visibility: visible;
-// }
+.tui-pagination .tui-ico-prev::before {
+  content: '🡨';
+  display: flex;
+  justify-content: center;
+  // background-size: contain;
+  // background-image: url('../images/svg/symbol-defs.svg#icon-arrow-left');
+  visibility: visible;
+}
 
-// .tui-pagination .tui-ico-ellip::before {
-//   display: flex;
-//   justify-content: center;
-//   align-items: end;
-//   padding-top: 5px;
-//   content: '...';
-//   visibility: visible;
-// }
+.tui-pagination .tui-ico-ellip::before {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-top: 5px;
+  content: '...';
+  visibility: visible;
+}
 
-// .tui-pagination .tui-ico-next::before {
-//   display: flex;
-//   justify-content: center;
-//   content: '🡪';
-//   visibility: visible;
-// }
+.tui-pagination .tui-ico-next::before {
+  display: flex;
+  justify-content: center;
+  content: '🡪';
+  visibility: visible;
+}
 
-// .tui-pagination .tui-ico-last::before {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   content: '>>';
-//   visibility: visible;
-// }
+.tui-pagination .tui-ico-last::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '>>';
+  visibility: visible;
+}
 
-// .tui-pagination .tui-prev-is-ellip,
-// .tui-pagination .tui-next-is-ellip {
-//   padding: 0;
-//   line-height: 1;
-// }
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip {
+  padding: 0;
+  line-height: 1;
+}
 
-// .tui-pagination .tui-prev {
-//   margin-right: 10px;
-// }
+.tui-pagination .tui-prev {
+  margin-right: 10px;
+}
 
-// .tui-pagination .tui-next {
-//   margin-left: 10px;
-// }
+.tui-pagination .tui-next {
+  margin-left: 10px;
+}
 
-// .tui-pagination .tui-ico-first {
-//   width: 11px;
-//   height: 10px;
-//   background-position: 0px 0px;
-// }
+.tui-pagination .tui-ico-first {
+  width: 11px;
+  height: 10px;
+  background-position: 0px 0px;
+}
 
-// .tui-pagination .tui-ico-prev {
-//   width: 6px;
-//   height: 10px;
-//   background-position: -26px 0px;
-// }
+.tui-pagination .tui-ico-prev {
+  width: 6px;
+  height: 10px;
+  background-position: -26px 0px;
+}
 
-// .tui-pagination .tui-ico-next {
-//   width: 6px;
-//   height: 10px;
-//   background-position: -13px -24px;
-// }
+.tui-pagination .tui-ico-next {
+  width: 6px;
+  height: 10px;
+  background-position: -13px -24px;
+}
 
-// .tui-pagination .tui-ico-last {
-//   width: 11px;
-//   height: 10px;
-//   background-position: 0px -12px;
-// }
+.tui-pagination .tui-ico-last {
+  width: 11px;
+  height: 10px;
+  background-position: 0px -12px;
+}
 
-// .tui-pagination .tui-ico-ellip {
-//   width: 10px;
-//   height: 2px;
-//   margin-top: 16px;
-//   vertical-align: top;
-//   background-position: 0px -24px;
-// }
+.tui-pagination .tui-ico-ellip {
+  width: 10px;
+  height: 2px;
+  margin-top: 16px;
+  vertical-align: top;
+  background-position: 0px -24px;
+}
 
-// .tui-pagination .tui-is-disabled:hover {
-//   background: #f4f4f4;
-//   cursor: default;
-// }
+.tui-pagination .tui-is-disabled:hover {
+  background: #f4f4f4;
+  cursor: default;
+}
 
-// .tui-pagination .tui-is-disabled .tui-ico-prev {
-//   background-position: -26px -12px;
-// }
+.tui-pagination .tui-is-disabled .tui-ico-prev {
+  background-position: -26px -12px;
+}
 
-// .tui-pagination .tui-is-disabled .tui-ico-first {
-//   background-position: -13px 0px;
-// }
+.tui-pagination .tui-is-disabled .tui-ico-first {
+  background-position: -13px 0px;
+}
 
-// .tui-pagination .tui-is-disabled .tui-ico-next {
-//   background-position: -21px -24px;
-// }
+.tui-pagination .tui-is-disabled .tui-ico-next {
+  background-position: -21px -24px;
+}
 
-// .tui-pagination .tui-is-disabled .tui-ico-last {
-//   background-position: -13px -12px;
-// }
+.tui-pagination .tui-is-disabled .tui-ico-last {
+  background-position: -13px -12px;
+}
 
-// .tui-page-inputs {
-//   display: inline-block;
-//   vertical-align: top;
-// }
+.tui-page-inputs {
+  display: inline-block;
+  vertical-align: top;
+}
 
-// .tui-page-inputs .tui-page-input {
-//   display: inline-block;
-//   width: 10px;
-//   height: 12px;
-//   padding: 8px 0 6px;
-//   font-size: 12px;
-//   text-align: center;
-//   color: #000000;
-//   border: 0;
-//   outline: none;
-// }
+.tui-page-inputs .tui-page-input {
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  padding: 8px 0 6px;
+  font-size: 12px;
+  text-align: center;
+  color: #000000;
+  border: 0;
+  outline: none;
+}
 
-// .tui-page-inputs .tui-page-current {
-//   color: #ff6b08;
-// }
+.tui-page-inputs .tui-page-current {
+  color: #ff6b08;
+}
 
-// .tui-page-separator {
-//   display: inline-block;
-//   font-size: 12px;
-//   height: 12px;
-//   padding: 8px 0 6px;
-//   vertical-align: top;
-// }
-
+.tui-page-separator {
+  display: inline-block;
+  font-size: 12px;
+  height: 12px;
+  padding: 8px 0 6px;
+  vertical-align: top;
+}
 //   .pagination {
 //     display: flex;
 //     justify-content: center;
