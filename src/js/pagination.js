@@ -64,13 +64,42 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
 
   const pagination = new Pagination(refs.pagination, options);
 
-  // const prevButton = document.querySelector('.left-pagin-icon');
-  // const nextButton = document.querySelector('.right-pagin-icon');
+  const leftArrow = document.querySelector('.left-pagin-icon');
+  const rightArrow = document.querySelector('.right-pagin-icon');
+  const firstButton = document.querySelector('.tui-first');
+  const prevButton = document.querySelector('.left-pagin-icon');
+  const nextButton = document.querySelector('.right-pagin-icon');
+  const lastButton = document.querySelector('.tui-last');
 
-  // prevButton.style.display = 'block';
-  // if (currentPage === 1) {
-  //   prevButton.style.display = 'none';
-  // }
+  prevButton.style.display = 'block';
+  firstButton.style.display = 'flex';
+  nextButton.style.display = 'block';
+  lastButton.style.display = 'flex';
+  rightArrow.classList.remove('move-right-arrov');
+  rightArrow.classList.remove('move-right-arrov-twice');
+  leftArrow.classList.remove('move-left-arrov');
+  leftArrow.classList.remove('move-left-arrov-twice');
+  if (currentPage < 4) {
+    prevButton.style.display = 'none';
+    firstButton.style.display = 'none';
+    rightArrow.classList.add('move-right-arrov');
+  }
+  if (currentPage > 1 && currentPage < 4) {
+    rightArrow.classList.add('move-right-arrov-twice');
+  }
+
+  if (currentPage > Math.ceil(totalItems / itemsPerPage) - 3) {
+    nextButton.style.display = 'none';
+    lastButton.style.display = 'none';
+    leftArrow.classList.add('move-left-arrov');
+  }
+
+  if (
+    currentPage > Math.ceil(totalItems / itemsPerPage) - 3 &&
+    currentPage < Math.ceil(totalItems / itemsPerPage)
+  ) {
+    leftArrow.classList.add('move-left-arrov-twice');
+  }
 
   if (firstPage === 1) {
     pagination.reset();
