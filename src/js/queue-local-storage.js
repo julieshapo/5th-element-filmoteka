@@ -34,9 +34,17 @@ function onClodeModalClick(e) {
 if (!btnQueue) {
   return;
 }
+
 btnQueue.addEventListener('click', markupQueue);
 
 export function markupQueue(currentPage = 1) {
+  if (!btnQueue) {
+    return;
+  }
+  if (!btnWatched) {
+    return;
+  }
+
   btnWatched.style.backgroundColor = '';
   btnWatched.style.border = '';
   btnQueue.style.backgroundColor = '#ff6b02';
@@ -48,6 +56,8 @@ export function markupQueue(currentPage = 1) {
     return;
   } else if (queue.length === 0) {
     imgQueuePlug.style.display = 'block';
+  } else if (queue.length > 0) {
+    imgQueuePlug.style.display = 'none';
   }
 
   imgWatchedPlug.style.display = 'none';

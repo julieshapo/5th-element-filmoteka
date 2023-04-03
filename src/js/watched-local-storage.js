@@ -36,6 +36,13 @@ if (!btnWatched) {
 btnWatched.addEventListener('click', markupWatched);
 
 export function markupWatched(currentPage = 1) {
+  if (!btnQueue) {
+    return;
+  }
+  if (!btnWatched) {
+    return;
+  }
+
   btnQueue.style.backgroundColor = '';
   btnQueue.style.border = '';
   btnWatched.style.backgroundColor = '#ff6b02';
@@ -47,6 +54,8 @@ export function markupWatched(currentPage = 1) {
     return;
   } else if (watched.length === 0) {
     imgWatchedPlug.style.display = 'block';
+  } else if (watched.length > 0) {
+    imgWatchedPlug.style.display = 'none';
   }
   imgQueuePlug.style.display = 'none';
 
