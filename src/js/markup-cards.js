@@ -1,7 +1,7 @@
 import { getMoviesTrending } from './api-fetch';
 import { genresFormat } from './geners';
 import { refs } from './refs';
-// import { createPagination } from './pagination';
+import { createPagination } from './pagination';
 import { genresArray } from './watched-local-storage';
 
 const ITEMS_PER_PAGES = 20;
