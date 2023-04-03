@@ -17,5 +17,5 @@ import './js/modal-btn-watched';
 import './js/modal-btn-queue';
 import './js/trailer';
 import './js/geners';
-
+import './js/go-top';
 import './js/change-theme';
