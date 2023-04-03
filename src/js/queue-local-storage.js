@@ -41,6 +41,8 @@ export function markupQueue(currentPage = 1) {
   btnWatched.style.border = '';
   btnQueue.style.backgroundColor = '#ff6b02';
   btnQueue.style.border = 'none';
+  btnWatched.disabled = false;
+  btnQueue.disabled = true;
 
   if (!libraryList) {
     return;
@@ -55,13 +57,11 @@ export function markupQueue(currentPage = 1) {
     startElements = (currentPage - 1) * ITEMS_PER_PAGES;
     endElements = startElements + ITEMS_PER_PAGES;
   }
-  console.log(queue);
   const totalElements = queue.length;
   const filtredQueue = queue.slice(startElements, endElements);
 
   libraryList.innerHTML = createMarkupOneCard(filtredQueue);
-  if (firstFunctionRun === 0) {
-    createPagination(totalElements, 4, 0, ITEMS_PER_PAGES);
-  }
+  createPagination(totalElements, 4, 3, ITEMS_PER_PAGES);
+
   firstFunctionRun = 1;
 }
