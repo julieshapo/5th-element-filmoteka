@@ -84,7 +84,7 @@ a:hover {
 
 // / ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(55, 32, 32);
+  background-color: rgba(0, 0, 0, 0.661);
   border-radius: 10px;
   box-shadow: inset 1px 1px 5px $colorTextDark;
 }
@@ -92,8 +92,6 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ff6b08;
 }
-
-// rgba(0, 0, 0, 0.661);
 
 // ::-webkit-scrollbar {
 //   width: 11px;
