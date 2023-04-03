@@ -39,6 +39,7 @@ async function showMovieInfo(id) {
 export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
+  refs.modalMovie.innerHTML = '';
 }
 
 // Функция закрытия модалки при нажатии по бекдропу
