@@ -2,7 +2,7 @@
 // а не масив просто айдішників.
 import { watched } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
-import { onClickMovie, modalClose } from './modal-movie';
+import { onClickMovie, onClodeModalClick, onBtnClickClose } from './modal-movie';
 import { refs } from './refs';
 import { btnQueue } from './queue-local-storage';
 import { createPagination } from './pagination';
@@ -22,13 +22,8 @@ if (!libraryList) {
 }
 libraryList.addEventListener('click', onClickMovie);
 
+refs.modalMovie.addEventListener('click', onBtnClickClose);
 refs.modal.addEventListener('click', onClodeModalClick);
-
-function onClodeModalClick(e) {
-  if (e.target === e.currentTarget) {
-    modalClose();
-  }
-}
 
 if (!btnWatched) {
   return;
