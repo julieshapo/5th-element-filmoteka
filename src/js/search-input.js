@@ -26,7 +26,6 @@ form.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
   const queryVal = event.currentTarget.elements.searchQuery.value.trim();
-
   searchError2.style.display = 'none';
 
   if (queryVal === '') {
