@@ -19,9 +19,58 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
     centerAlign: true,
     totalItems,
     visiblePages: TUI_PAGES_VISIBLE,
+    template: {
+      page: '<a href="#" class="page-btn">{{page}}</a>',
+      moveButton: type => {
+        let template = '';
+
+        const keys = Object.values(type).join('');
+        if (keys === 'first') {
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">1</span></a>`;
+        }
+        if (keys === 'last') {
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">${Math.ceil(
+            totalItems / itemsPerPage
+          )}</span></a>`;
+        }
+        if (keys === 'next') {
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">n</span></a>`;
+        }
+        if (keys === 'prev') {
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">p</span></a>`;
+        }
+        if (!template) {
+          return;
+        }
+        return template;
+      },
+
+      currentPage:
+        '<strong class="page-btn page-btn-is-selected">{{page}}</strong>',
+      // disabledMoveButton:
+      //   '<span class="page-btn tui-is-disabled castom-btn-{{type}}">' +
+      //   '<span class="custom-ico-{{type}}">{{type}}</span>' +
+      //   '</span>',
+      moreButton:
+        '<a href="#" class="page-btn castom-{{type}}-is-ellip">' +
+        '<span class="custom-ico-ellip">...</span>' +
+        '</a>',
+    },
   };
 
   const pagination = new Pagination(refs.pagination, options);
+
+  // const prevButton = document.querySelector('.left-pagin-icon');
+  // const nextButton = document.querySelector('.right-pagin-icon');
+
+  // prevButton.style.display = 'block';
+  // if (currentPage === 1) {
+  //   prevButton.style.display = 'none';
+  // }
 
   if (firstPage === 1) {
     pagination.reset();
