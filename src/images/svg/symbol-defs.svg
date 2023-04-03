@@ -6,23 +6,11 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >
 <defs>
-<symbol id="icon-arrow-right" viewBox="0 0 32 32">
-<path
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        stroke-miterlimit="4"
-        stroke-width="2.666"
-        d="M6.666 16h18.668M16 25.334l9.334-9.334-9.334-9.334"
-      />
+<<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.666" d="M25.334 16h-18.668M16 25.334l-9.334-9.334 9.334-9.334"></path>
 </symbol>
 <symbol id="icon-arrow-left" viewBox="0 0 32 32">
-<path
-        stroke-linejoin="round"
-        stroke-linecap="round"
-        stroke-miterlimit="4"
-        stroke-width="2.666"
-        d="M25.334 16h-18.668M16 25.334l-9.334-9.334 9.334-9.334"
-      />
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.666" d="M6.666 16h18.668M16 25.334l9.334-9.334-9.334-9.334"></path>
 </symbol>
 <symbol id="icon-search" viewBox="0 0 32 32">
 <path
