@@ -55,17 +55,17 @@ function onClodeModalClick(e) {
 // Функция которая закрывает модалку при нажатии на крестик
 
 
-const btnCloseModalEl = document.querySelector('.modal-movie-close');
-btnCloseModalEl.addEventListener('click', onBtnClickClose);
+// const btnCloseModalEl = document.querySelector('.modal-movie-close');
+// btnCloseModalEl.addEventListener('click', onBtnClickClose);
 
-function onBtnClickClose(e) {
+// function onBtnClickClose(e) {
 
-  const { btn } = e.target;
-  if (btn === 'close') {
-    return
-  }
-  modalClose();
-};
+//   const { btn } = e.target;
+//   if (btn === 'close') {
+//     return
+//   }
+//   modalClose();
+// };
 
 
 function onBtnClickClose(e) {
