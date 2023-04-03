@@ -6,6 +6,7 @@ const refs = {
   teamModal: document.querySelector('[data-modal]'),
   teamList: document.querySelector('.team-list'),
   body: document.querySelector('body'),
+  backdrop: document.querySelector('.backdrop-team'),
 };
 
 const teamArray = [
@@ -131,19 +132,45 @@ function createTeamGallery(array) {
   refs.teamList.insertAdjacentHTML('beforeend', markupTeam);
 }
 
-refs.openTeamModalBtn.addEventListener('click', toggleModal);
-refs.closeTeamModalBtn.addEventListener('click', toggleModal);
+refs.openTeamModalBtn.addEventListener('click', openTeamModal);
+refs.closeTeamModalBtn.addEventListener('click', closeTeamModal);
 
-function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.teamModal.classList.toggle('is-hidden');
-  refs.body.classList.toggle('no-scroll');
+function openTeamModal() {
+  refs.body.classList.add('modal-open');
+  refs.teamModal.classList.remove('is-hidden');
+  refs.body.classList.add('no-scroll');
 }
 
+function closeTeamModal() {
+  refs.body.classList.remove('modal-open');
+  refs.teamModal.classList.add('is-hidden');
+  refs.body.classList.remove('no-scroll');
+}
+
+// function toggleModal() {
+//   document.body.classList.toggle('modal-open');
+//   refs.teamModal.classList.toggle('is-hidden');
+//   refs.body.classList.toggle('no-scroll');
+// }
+
 refs.openTeamModalBtn.addEventListener('click', onTeamBtnClick);
+refs.body.addEventListener('keydown', onEscapeClick);
+refs.backdrop.addEventListener('click', onBackdropClick);
 
 function onTeamBtnClick(event) {
   refs.teamModal.classList.remove('visually-hidden');
   refs.teamList.innerHTML = '';
   createTeamGallery(teamArray);
+}
+
+function onEscapeClick(event) {
+  if (event.code === 'Escape') {
+    closeTeamModal();
+  }
+}
+
+function onBackdropClick(event) {
+  if (event.target === event.currentTarget) {
+    closeTeamModal();
+  }
 }
