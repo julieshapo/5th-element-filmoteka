@@ -53,6 +53,19 @@ function onClodeModalClick(e) {
 
 // Функция которая закрывает модалку при нажатии на крестик
 
+const btnCloseModalEl = document.querySelector('.modal-movie-close');
+btnCloseModalEl.addEventListener('click', onBtnClickClose);
+
+function onBtnClickClose(e) {
+
+  const { btn } = e.target;
+  if (btn === 'close') {
+    return
+  }
+  modalClose();
+};
+
+
 // refs.modalMovie.addEventListener('click', onBtnClickClose);
 
 // function onBtnClickClose(e) {
@@ -62,6 +75,7 @@ function onClodeModalClick(e) {
 //   }
 //   modalClose();
 // };
+
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
