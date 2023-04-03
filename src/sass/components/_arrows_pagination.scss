@@ -55,14 +55,41 @@
 .castom-ico-first {
 }
 .castom-ico-prev {
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
 }
 .castom-ico-next {
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
 }
 .castom-ico-last {
 }
 .prev-pagin-icon {
+  position: absolute;
+  top: 12px;
+  left: 18px;
 }
 .next-pagin-icon {
+  position: absolute;
+  top: 12px;
+  right: 18px;
 }
 .pagin-wrap {
+  position: relative;
+  width: 374px;
+  margin: 0 auto;
 }

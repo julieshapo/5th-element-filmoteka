@@ -37,11 +37,11 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
         }
         if (keys === 'next') {
           template = `<a href="#" class="page-btn tui-${Object.values(type)}">
-            <span class="castom-ico-${Object.values(type)}">next</span></a>`;
+            <span class="castom-ico-${Object.values(type)}">n</span></a>`;
         }
         if (keys === 'prev') {
           template = `<a href="#" class="page-btn tui-${Object.values(type)}">
-            <span class="castom-ico-${Object.values(type)}">prev</span></a>`;
+            <span class="castom-ico-${Object.values(type)}">p</span></a>`;
         }
         if (!template) {
           return;
