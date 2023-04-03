@@ -18,7 +18,6 @@ export async function getMoviesByName(name, page) {
     return response.data;
   } catch (error) {
     console.log(error);
-    Notiflix.Notify.failure('oh shit happens');
   }
 }
 
