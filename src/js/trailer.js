@@ -1,53 +1,38 @@
-// import * as basicLightbox from 'basiclightbox'
-// import { getMovieTrailer } from './api-fetch'
+import { refs } from './refs';
+import { getMovieTrailer } from './api-fetch';
+import * as basicLightbox from 'basiclightbox';
 
+refs.modalMovie.addEventListener('click', onTrailerBtnClick);
 
-// let movie_id = localStorage.getItem('movie_id');
+function onTrailerBtnClick(e) {
+  const parent = e.target.closest('div');
+  const button = e.target.closest('button');
+  const { trailer } = button?.dataset || {};
+  const { id } = parent?.dataset || {};
 
-// const trailerBtn = document.querySelector('.modal-movie');
+  if (!trailer) {
+    return
+  }
+  
+  showTrailer(id);
+};
 
-// trailerBtn.onclick = () => {
-//   // кнопка працює, але не підтягується відео з сторіджа
-//   console.log('click')
-//   basicLightbox.create(
-//     `<iframe src="${movie_id}" width="640" height="360"
-//     title="" frameborder="0"
-//     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-//   ).show();
-// };
+let key = '';
 
+async function showTrailer(id) {
+  try {
+    const { results } = await getMovieTrailer(id);
+    const trailer = results.find(item => item.type === 'Trailer');
 
+    if (trailer && trailer.type !== 'Trailer') {
+      return
+    };
+    key = trailer ? trailer.key : '';
 
-// 
-// import * as basicLightbox from 'basiclightbox';
-// import { getMovieTrailer } from './api-fetch';
+    basicLightbox.create(`
+    <iframe src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0"></iframe>`).show();
 
-// const trailerBtn = document.querySelector('.modal-movie');
-// let movie_id = localStorage.getItem('movie_id');
-
-// trailerBtn.onclick = async () => {
-//   try {
-//     const data = await getMovieTrailer(movie_id);
-//     const videoKey = data.results[0].key;
-//     const videoUrl = `https://www.youtube.com/embed/${videoKey}`;
-//     basicLightbox.create(
-//       `<iframe src="${videoUrl}" width="640" height="360"
-//       title="" frameborder="0"
-//       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-//     ).show();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// import { refs } from './refs';
-
-// refs.modalMovie.addEventListener('click', onTrailerBtnClick);
-
-// function onTrailerBtnClick(e) {
-//   const {btn} = e.target.dataset
-//   if (!btn) {
-//     return
-//   }
-//   console.log('тут вызывается функция которая покажет видео')
-// }
+  } catch (error) {
+    console.log(error.message);
+  };
+};
