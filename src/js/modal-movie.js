@@ -17,7 +17,7 @@ export function onClickMovie(e) {
   showMovieInfo(id);
   refs.modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onCloseModalKey);
-};
+}
 
 // Функция делает запрос за полной инфой по фильму и отображает её в модалке
 
@@ -31,15 +31,15 @@ async function showMovieInfo(id) {
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
   } catch (error) {
     console.log(error.message);
-  };
-};
+  }
+}
 
 // Функция которую нужно вызвать что бы закрыть модалку
 
 export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
-};
+}
 
 // Функция закрытия модалки при нажатии по бекдропу
 
@@ -48,10 +48,11 @@ refs.modal.addEventListener('click', onClodeModalClick);
 function onClodeModalClick(e) {
   if (e.target === e.currentTarget) {
     modalClose();
-  };
-};
+  }
+}
 
 // Функция которая закрывает модалку при нажатии на крестик
+
 const btnCloseModalEl = document.querySelector('.modal-movie-close');
 btnCloseModalEl.addEventListener('click', onBtnClickClose);
 
@@ -64,6 +65,18 @@ function onBtnClickClose(e) {
   modalClose();
 };
 
+
+// refs.modalMovie.addEventListener('click', onBtnClickClose);
+
+// function onBtnClickClose(e) {
+//   const {btn} = e.target.dataset
+//   if (btn === 'close') {
+//     return
+//   }
+//   modalClose();
+// };
+
+
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
 function onCloseModalKey(e) {
@@ -71,29 +84,30 @@ function onCloseModalKey(e) {
     return;
   }
   modalClose();
-};
+}
 
 // Функция которорая ожидает обьект и рендерит разметку для модалки
 
 function renderMarkupModalMovie(object, poster, geners) {
-  let watchedBtnTxt="";
-  let watchedBtnClass ="";
-  let queueBtnTxt="";
-  let queueBtnClass="";
+  let watchedBtnTxt = '';
+  let watchedBtnClass = '';
+  let queueBtnTxt = '';
+  let queueBtnClass = '';
   const findFilmInWatched = watched.find(item => item.id === Number(object.id));
   const findFilmInQueue = queue.find(item => item.id === Number(object.id));
 
-  
-
   if (findFilmInWatched) {
-    watchedBtnTxt = "Remove watched";
-    watchedBtnClass = "btn-remove";
-  } else { watchedBtnTxt = "Add to watched"; }
+    watchedBtnTxt = 'Remove watched';
+    watchedBtnClass = 'btn-remove';
+  } else {
+    watchedBtnTxt = 'Add to watched';
+  }
   if (findFilmInQueue) {
-    queueBtnTxt = "Remove queue";
-    queueBtnClass = "btn-remove";
-  } else { queueBtnTxt = "Add to queue"; }
-
+    queueBtnTxt = 'Remove queue';
+    queueBtnClass = 'btn-remove';
+  } else {
+    queueBtnTxt = 'Add to queue';
+  }
 
   return `<div class="movie-thumb">
       <img
@@ -168,5 +182,4 @@ function renderMarkupModalMovie(object, poster, geners) {
       </button>
       </div>
     </div>`;
-};
-
+}
