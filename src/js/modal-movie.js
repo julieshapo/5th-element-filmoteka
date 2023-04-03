@@ -39,6 +39,7 @@ async function showMovieInfo(id) {
 export function modalClose() {
   refs.modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onCloseModalKey);
+  refs.modalMovie.innerHTML = '';
 }
 
 // Функция закрытия модалки при нажатии по бекдропу
@@ -53,7 +54,19 @@ function onClodeModalClick(e) {
 
 // Функция которая закрывает модалку при нажатии на крестик
 
-refs.modalMovie.addEventListener('click', onBtnClickClose);
+
+const btnCloseModalEl = document.querySelector('.modal-movie-close');
+btnCloseModalEl.addEventListener('click', onBtnClickClose);
+
+function onBtnClickClose(e) {
+
+  const { btn } = e.target;
+  if (btn === 'close') {
+    return
+  }
+  modalClose();
+};
+
 
 function onBtnClickClose(e) {
   const {btn} = e.target.dataset
@@ -62,6 +75,7 @@ function onBtnClickClose(e) {
   }
   modalClose();
 };
+
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
