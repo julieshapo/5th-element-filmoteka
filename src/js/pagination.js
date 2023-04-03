@@ -114,8 +114,6 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
     leftArrow.classList.add('move-left-arrov-twice');
   }
 
-  console.log(currentPage);
-  console.log(currentWatchedPage);
   if (option === 1) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
