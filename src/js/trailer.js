@@ -30,7 +30,7 @@ async function showTrailer(id) {
     key = trailer ? trailer.key : '';
 
     basicLightbox.create(`
-    <iframe src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0"></iframe>`).show();
+    <iframe class="modal-trailer" src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0"></iframe>`).show();
 
   } catch (error) {
     console.log(error.message);
