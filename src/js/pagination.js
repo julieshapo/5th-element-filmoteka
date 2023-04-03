@@ -26,34 +26,22 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
 
         const keys = Object.values(type).join('');
         if (keys === 'first') {
-          template = `<a href="#" class="tui-page-btn tui-${Object.values(
-            type
-          )}">
-            <span class="tui-ico-${Object.values(type)}">1</span></a>`;
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">1</span></a>`;
         }
         if (keys === 'last') {
-          template = `<a href="#" class="tui-page-btn tui-${Object.values(
-            type
-          )}">
-            <span class="tui-ico-${Object.values(
-              type
-            )}">${totalItems}</span></a>`;
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">${Math.ceil(
+            totalItems / itemsPerPage
+          )}</span></a>`;
         }
         if (keys === 'next') {
-          template = `<a href="#" class="tui-page-btn tui-${Object.values(
-            type
-          )}">
-            <span class="tui-ico-${Object.values(type)}">
-            ${Object.values(type)}</span></a>`;
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">next</span></a>`;
         }
         if (keys === 'prev') {
-          template = `<a href="#" class="tui-page-btn tui-${Object.values(
-            type
-          )}">
-            <span class="tui-ico-${Object.values(type)}">
-            <svg class="logo-icon" width="24" height="24">
-          <use href="/symbol-defs.31a6e949.svg#icon-film"></use>
-        </svg></span></a>`;
+          template = `<a href="#" class="page-btn tui-${Object.values(type)}">
+            <span class="castom-ico-${Object.values(type)}">prev</span></a>`;
         }
         if (!template) {
           return;
@@ -76,6 +64,12 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
 
   const pagination = new Pagination(refs.pagination, options);
 
+  // const nextParent = document.querySelector('.tui-next');
+  // const nextButton = document.querySelector('.castom-ico-next');
+  // nextButton.innerHTML =
+  //   '';
+  // nextParent.appendChild(nextButton);
+  // console.log(nextButton);
   if (firstPage === 1) {
     pagination.reset();
   }
