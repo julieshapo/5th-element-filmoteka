@@ -17,5 +17,5 @@ export function hideSpinner() {
     window.setTimeout(function () {
       document.body.classList.add('loaded');
        hideSpinner();
-    }, 0);
+    }, 500);
   }
