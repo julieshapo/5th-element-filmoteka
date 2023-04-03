@@ -2,7 +2,11 @@
 // а не масив просто айдішників.
 import { watched } from './buttons';
 import { createMarkupOneCard } from './markup-cards';
-import { onClickMovie, onClodeModalClick, onBtnClickClose } from './modal-movie';
+import {
+  onClickMovie,
+  onClodeModalClick,
+  onBtnClickClose,
+} from './modal-movie';
 import { refs } from './refs';
 import { btnQueue } from './queue-local-storage';
 import { createPagination } from './pagination';
@@ -21,7 +25,10 @@ if (!libraryList) {
   return;
 }
 libraryList.addEventListener('click', onClickMovie);
-
+btnWatched.addEventListener('click', () => {
+  btnWatched.classList.add('is-active');
+  btnQueue.classList.remove('is-active');
+});
 refs.modalMovie.addEventListener('click', onBtnClickClose);
 refs.modal.addEventListener('click', onClodeModalClick);
 
@@ -31,10 +38,11 @@ if (!btnWatched) {
 btnWatched.addEventListener('click', markupWatched);
 
 export function markupWatched(currentPage = 1) {
-  if (!btnQueue) {
+  if (!btnQueue || !btnWatched) {
     return;
   }
-  if (!btnWatched) {
+
+  if (!btnWatched.classList.contains('is-active')) {
     return;
   }
 

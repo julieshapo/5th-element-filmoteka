@@ -19,7 +19,7 @@
 
   @include tablet {
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 40px;
   }
   @include desktop {
@@ -75,7 +75,7 @@
 
 .no-queue-img {
   width: 700px;
-  margin: 0 auto;
+  margin: 50 auto;
   flex-direction: column;
 }
 
@@ -89,7 +89,7 @@
 
   @include tablet {
     position: absolute;
-    top: -10px;
+    top: -35px;
     right: 40px;
   }
   @include desktop {
@@ -130,7 +130,7 @@
 
   @include tablet {
     position: absolute;
-    top: 70px;
+    top: 40px;
     right: 75px;
   }
   @include desktop {
