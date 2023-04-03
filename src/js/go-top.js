@@ -15,7 +15,7 @@ function trackScroll() {
 
 function goTop() {
   if (window.pageYOffset > 0) {
-    window.scrollBy(0, -150);
+    window.scrollBy(0, 150);
     setTimeout(goTop, 0);
   }
 }
