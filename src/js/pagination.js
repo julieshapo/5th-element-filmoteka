@@ -79,6 +79,19 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
   rightArrow.classList.remove('move-right-arrov-twice');
   leftArrow.classList.remove('move-left-arrov');
   leftArrow.classList.remove('move-left-arrov-twice');
+
+  if (firstPage === 1) {
+    pagination.reset();
+    currentPage = 1;
+  }
+  if (firstPage === 2) {
+    pagination.reset();
+    pagination.movePageTo(currentWatchedPage);
+  }
+  if (firstPage === 3) {
+    pagination.reset();
+    pagination.movePageTo(currentQueuePage);
+  }
   if (currentPage < 4) {
     prevButton.style.display = 'none';
     firstButton.style.display = 'none';
@@ -101,17 +114,8 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
     leftArrow.classList.add('move-left-arrov-twice');
   }
 
-  if (firstPage === 1) {
-    pagination.reset();
-  }
-  if (firstPage === 2) {
-    pagination.reset();
-    pagination.movePageTo(currentWatchedPage);
-  }
-  if (firstPage === 3) {
-    pagination.reset();
-    pagination.movePageTo(currentQueuePage);
-  }
+  console.log(currentPage);
+  console.log(currentWatchedPage);
   if (option === 1) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
