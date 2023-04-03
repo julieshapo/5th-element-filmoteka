@@ -4,6 +4,7 @@ import 'tui-pagination/dist/tui-pagination.min.css';
 import { renderSearchFilms, name } from './search-input';
 import { TrendingMovie } from './markup-cards';
 import { markupWatched } from './watched-local-storage';
+import { markupQueue } from './queue-local-storage';
 
 const TUI_PAGES_VISIBLE = 5;
 
@@ -41,6 +42,13 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
     pagination.on('beforeMove', event => {
       currentPage = event.page;
       markupWatched(currentPage);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (option === 4) {
+    pagination.on('beforeMove', event => {
+      currentPage = event.page;
+      markupQueue(currentPage);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }

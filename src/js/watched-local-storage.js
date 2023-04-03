@@ -36,7 +36,7 @@ if (!btnWatched) {
 }
 btnWatched.addEventListener('click', markupWatched);
 
-export function markupWatched(currentPage) {
+export function markupWatched(currentPage = 1) {
   btnQueue.style.backgroundColor = '';
   btnQueue.style.border = '';
   btnWatched.style.backgroundColor = '#ff6b02';

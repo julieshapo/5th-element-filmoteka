@@ -5,11 +5,18 @@ import { createMarkupOneCard } from './markup-cards';
 import { onClickMovie, modalClose } from './modal-movie';
 import { refs } from './refs';
 import { btnWatched } from './watched-local-storage';
+import { createPagination } from './pagination';
 
 export const btnQueue = document.querySelector('.js-queue');
 const libraryList = document.querySelector('.js-library_gallery');
 const imgWatchedPlug = document.querySelector('.no-watched');
 const imgQueuePlug = document.querySelector('.no-queue');
+
+const ITEMS_PER_PAGES = 9;
+
+let firstFunctionRun = 0;
+let startElements = 0;
+let endElements = ITEMS_PER_PAGES;
 
 if (!libraryList) {
   return;
@@ -29,7 +36,7 @@ if (!btnQueue) {
 }
 btnQueue.addEventListener('click', markupQueue);
 
-export function markupQueue() {
+export function markupQueue(currentPage = 1) {
   btnWatched.style.backgroundColor = '';
   btnWatched.style.border = '';
   btnQueue.style.backgroundColor = '#ff6b02';
@@ -43,5 +50,18 @@ export function markupQueue() {
 
   imgWatchedPlug.style.display = 'none';
 
-  libraryList.innerHTML = createMarkupOneCard(queue);
+  // Пагінатор
+  if (!isNaN(currentPage)) {
+    startElements = (currentPage - 1) * ITEMS_PER_PAGES;
+    endElements = startElements + ITEMS_PER_PAGES;
+  }
+  console.log(queue);
+  const totalElements = queue.length;
+  const filtredQueue = queue.slice(startElements, endElements);
+
+  libraryList.innerHTML = createMarkupOneCard(filtredQueue);
+  if (firstFunctionRun === 0) {
+    createPagination(totalElements, 4, 0, ITEMS_PER_PAGES);
+  }
+  firstFunctionRun = 1;
 }
