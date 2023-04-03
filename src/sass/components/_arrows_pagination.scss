@@ -28,6 +28,7 @@
   border-radius: 5px;
   padding: 8px 0 6px;
   margin-left: 10px;
+  background: #ffffffcb;
   color: #333;
   font-size: 16px;
   font-weight: normal;
@@ -93,7 +94,6 @@
   overflow: hidden;
   height: 26px;
   padding: 0;
-  font-size: 0;
   line-height: 26px;
   white-space: nowrap;
   font-weight: normal;
@@ -118,9 +118,53 @@
 .tui-pagination .tui-ico-next,
 .tui-pagination .tui-ico-last,
 .tui-pagination .tui-ico-ellip {
-  display: inline-block;
   vertical-align: middle;
-  font-size: 0px;
+  visibility: hidden;
+}
+.tui-pagination .tui-first,
+.tui-pagination .tui-last {
+  display: none;
+}
+
+.tui-pagination .tui-ico-first::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '<<';
+  visibility: visible;
+}
+
+.tui-pagination .tui-ico-prev::before {
+  content: '🡨';
+  display: flex;
+  justify-content: center;
+  // background-size: contain;
+  // background-image: url('../images/svg/symbol-defs.svg#icon-arrow-left');
+  visibility: visible;
+}
+
+.tui-pagination .tui-ico-ellip::before {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-top: 5px;
+  content: '...';
+  visibility: visible;
+}
+
+.tui-pagination .tui-ico-next::before {
+  display: flex;
+  justify-content: center;
+  content: '🡪';
+  visibility: visible;
+}
+
+.tui-pagination .tui-ico-last::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '>>';
+  visibility: visible;
 }
 
 .tui-pagination .tui-prev-is-ellip,
@@ -170,7 +214,7 @@
 }
 
 .tui-pagination .tui-is-disabled:hover {
-  background: #ff6b08;
+  background: #f4f4f4;
   cursor: default;
 }
 
