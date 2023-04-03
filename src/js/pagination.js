@@ -51,10 +51,10 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
 
       currentPage:
         '<strong class="page-btn page-btn-is-selected">{{page}}</strong>',
-      disabledMoveButton:
-        '<span class="page-btn tui-is-disabled castom-btn-{{type}}">' +
-        '<span class="custom-ico-{{type}}">{{type}}</span>' +
-        '</span>',
+      // disabledMoveButton:
+      //   '<span class="page-btn tui-is-disabled castom-btn-{{type}}">' +
+      //   '<span class="custom-ico-{{type}}">{{type}}</span>' +
+      //   '</span>',
       moreButton:
         '<a href="#" class="page-btn castom-{{type}}-is-ellip">' +
         '<span class="custom-ico-ellip">...</span>' +
@@ -64,12 +64,14 @@ export function createPagination(totalItems, option, firstPage, itemsPerPage) {
 
   const pagination = new Pagination(refs.pagination, options);
 
-  // const nextParent = document.querySelector('.tui-next');
-  // const nextButton = document.querySelector('.castom-ico-next');
-  // nextButton.innerHTML =
-  //   '';
-  // nextParent.appendChild(nextButton);
-  // console.log(nextButton);
+  // const prevButton = document.querySelector('.left-pagin-icon');
+  // const nextButton = document.querySelector('.right-pagin-icon');
+
+  // prevButton.style.display = 'block';
+  // if (currentPage === 1) {
+  //   prevButton.style.display = 'none';
+  // }
+
   if (firstPage === 1) {
     pagination.reset();
   }

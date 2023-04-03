@@ -37,19 +37,27 @@
 
 .tui-first {
   position: relative;
-  left: 30px;
+  left: 50px;
 }
 .tui-prev {
   position: relative;
   right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #a95e5e;
+  border-radius: 5px;
 }
 .tui-next {
   position: relative;
   left: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #794141;
+  border-radius: 5px;
 }
 .tui-last {
   position: relative;
-  right: 30px;
+  right: 50px;
 }
 
 .castom-ico-first {
@@ -78,18 +86,39 @@
 }
 .castom-ico-last {
 }
-.prev-pagin-icon {
-  position: absolute;
-  top: 12px;
-  left: 18px;
-}
-.next-pagin-icon {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-}
+
 .pagin-wrap {
   position: relative;
   width: 374px;
   margin: 0 auto;
+}
+.left-pagin-icon {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+.right-pagin-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+.tui-is-disabled {
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
 }
