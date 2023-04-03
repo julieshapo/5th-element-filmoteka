@@ -22,7 +22,7 @@
   transition: transform 250ms linear;
   @include mobile {
     width: 450px;
-    top: 250vh;
+    top: 160vh;
   }
   @include tablet {
     width: 650px;
