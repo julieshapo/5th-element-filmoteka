@@ -52,11 +52,12 @@ function onClodeModalClick(e) {
 };
 
 // Функция которая закрывает модалку при нажатии на крестик
-
-refs.modalMovie.addEventListener('click', onBtnClickClose);
+const btnCloseModalEl = document.querySelector('.modal-movie-close');
+btnCloseModalEl.addEventListener('click', onBtnClickClose);
 
 function onBtnClickClose(e) {
-  const {btn} = e.target.dataset
+
+  const { btn } = e.target;
   if (btn === 'close') {
     return
   }
