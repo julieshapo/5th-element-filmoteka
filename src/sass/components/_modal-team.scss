@@ -16,17 +16,17 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   position: absolute;
-  top: 355vh;
+  top: 250vh;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
   @include mobile {
     width: 450px;
-    top: 172vh;
+    top: 250vh;
   }
   @include tablet {
     width: 650px;
-    top: 105vh;
+    top: 200vh;
   }
   @include desktop {
     width: 800px;
