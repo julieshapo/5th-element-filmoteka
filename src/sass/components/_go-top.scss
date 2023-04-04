@@ -1,18 +1,17 @@
 .go-top {
-  padding: 0;
   position: fixed;
-  right: 50px;
-  top: 80%;
-  transform: translateY(-20%);
+  right: 25px;
+  bottom: 25px;
+  z-index: 1;
+
+  display: none;
+  padding: 0;
   font-size: 40px;
+
   cursor: pointer;
   background-color: transparent;
-  display: none;
+  transform: translateY(-20%);
   transition: transform 300ms linear;
-  @media screen and (max-width: 426px) {
-    right: 5px;
-    top: 70%;
-  }
 }
 
 .go-top--show {

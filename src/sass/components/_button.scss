@@ -112,6 +112,18 @@
   }
 }
 
+.btn-remove {
+  color: $colorBtnLight;
+  background-color: $colorBtnAccent;
+
+
+  &:hover,
+  &:focus {
+    background-color: $colorBtnAccent;
+    border: none;
+  }
+}
+
 //MAIN PAGE
 
 .logo-icon {
