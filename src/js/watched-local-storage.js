@@ -16,7 +16,16 @@ const libraryList = document.querySelector('.js-library_gallery');
 const imgWatchedPlug = document.querySelector('.no-watched');
 const imgQueuePlug = document.querySelector('.no-queue');
 
-const ITEMS_PER_PAGES = 9;
+let ITEMS_PER_PAGES = 9;
+if (document.documentElement.clientWidth < 768) {
+  ITEMS_PER_PAGES = 4;
+}
+if (
+  document.documentElement.clientWidth > 767 &&
+  document.documentElement.clientWidth < 1280
+) {
+  ITEMS_PER_PAGES = 8;
+}
 
 let startElements = 0;
 let endElements = ITEMS_PER_PAGES;

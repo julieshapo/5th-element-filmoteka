@@ -22,6 +22,7 @@
     top: 30px;
     right: 40px;
   }
+
   @include desktop {
     right: 270px;
   }
@@ -34,9 +35,7 @@
   padding: 14px 36px 12px;
   max-width: 205px;
 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
 
@@ -63,6 +62,7 @@
     top: 100px;
     right: 40px;
   }
+
   @include desktop {
     right: 270px;
   }
@@ -92,6 +92,7 @@
     top: -35px;
     right: 40px;
   }
+
   @include desktop {
     right: 290px;
   }
@@ -104,9 +105,7 @@
   padding: 14px 36px 12px;
   max-width: 205px;
 
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
 
@@ -133,6 +132,7 @@
     top: 40px;
     right: 75px;
   }
+
   @include desktop {
     right: 335px;
   }

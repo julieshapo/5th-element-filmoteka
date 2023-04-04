@@ -109,3 +109,22 @@
 .tui-pagination .tui-page-btn .tui-prev {
   visibility: hidden;
 }
+
+body.darkTheme {
+  background-color: rgba(22, 20, 20, 0.94);
+
+  .tui-pagination .tui-page-btn {
+    background-color: #333;
+    color: #ffff;
+  }
+  
+  .tui-pagination .tui-page-btn:hover {
+    background-color: #0000;
+  }
+
+  .tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  background: #ff6b08;
+  border-color: #ff6b08;
+}
+}

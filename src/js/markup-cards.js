@@ -55,10 +55,6 @@ export async function TrendingMovie(currentPage) {
     }
     refs.filmGallery.innerHTML = createMarkupOneCard(results);
     createPagination(total_results, 2, 0, ITEMS_PER_PAGES);
-    // if (firstFunctionRun === 0) {
-    //   createPagination(total_results, 2, 0, ITEMS_PER_PAGES);
-    // }
-    // firstFunctionRun = 1;
   } catch (error) {
     console.log(error.message);
   }

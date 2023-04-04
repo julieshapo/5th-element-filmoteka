@@ -22,11 +22,12 @@ input.addEventListener('focus', function () {
   // Очищаємо поле введення
   input.value = '';
 });
+
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
-
+  
   const queryVal = event.currentTarget.elements.searchQuery.value.trim();
   searchError2.style.display = 'none';
 
@@ -42,6 +43,7 @@ function onFormSubmit(event) {
   name = input.value.trim();
   input.value = name;
   renderSearchFilms(name, 1, 1);
+  input.value = '';
 }
 
 export async function renderSearchFilms(name, currentPage, firstPage) {

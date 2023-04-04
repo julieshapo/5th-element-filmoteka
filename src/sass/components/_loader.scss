@@ -1,8 +1,5 @@
 .wheel-and-hamster {
     --dur: 1s;
-   /* background-color: rgba(175, 160, 160, 0.4);
-    border-radius: 50%;  */
-    
     position: relative;
     width: 12em;
     height: 12em;
@@ -34,7 +31,6 @@
   }
 
   .hamster {
-
     animation: hamster var(--dur) ease-in-out infinite;
     top: 50%;
     left: calc(50% - 3.5em);
@@ -46,7 +42,6 @@
   }
 
   .hamster__head {
-       
     animation: hamsterHead var(--dur) ease-in-out infinite;
     background: hsl(30, 90%, 55%);
     border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
@@ -60,7 +55,6 @@
   }
 
   .hamster__ear {
- 
     animation: hamsterEar var(--dur) ease-in-out infinite;
     background: hsl(0, 90%, 85%);
     border-radius: 50%;
@@ -73,7 +67,6 @@
   }
 
   .hamster__eye {
-     
     animation: hamsterEye var(--dur) linear infinite;
     background-color: hsl(0, 0%, 0%);
     border-radius: 50%;
@@ -93,12 +86,11 @@
   }
 
   .hamster__body {
-  
     animation: hamsterBody var(--dur) ease-in-out infinite;
     background: hsl(30, 90%, 90%);
     border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
     box-shadow: 0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
-      0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+    0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
     top: 0.25em;
     left: 2em;
     width: 4.5em;
@@ -109,7 +101,6 @@
 
   .hamster__limb--fr,
   .hamster__limb--fl {
-   
     clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
     top: 2em;
     left: 0.5em;
@@ -119,14 +110,12 @@
   }
 
   .hamster__limb--fr {
-    
     animation: hamsterFRLimb var(--dur) linear infinite;
     background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
     transform: rotate(15deg) translateZ(-1px);
   }
 
   .hamster__limb--fl {
-    
     animation: hamsterFLLimb var(--dur) linear infinite;
     background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
     transform: rotate(15deg);
@@ -134,7 +123,6 @@
 
   .hamster__limb--br,
   .hamster__limb--bl {
-    
     border-radius: 0.75em 0.75em 0 0;
     clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0% 30%);
     top: 1em;
@@ -145,21 +133,18 @@
   }
 
   .hamster__limb--br {
-    
     animation: hamsterBRLimb var(--dur) linear infinite;
     background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
     transform: rotate(-25deg) translateZ(-1px);
   }
 
   .hamster__limb--bl {
-
     animation: hamsterBLLimb var(--dur) linear infinite;
     background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
     transform: rotate(-25deg);
   }
 
   .hamster__tail {
-     
     animation: hamsterTail var(--dur) linear infinite;
     background: hsl(0, 90%, 85%);
     border-radius: 0.25em 50% 50% 0.25em;
@@ -173,7 +158,6 @@
   }
 
   .spoke {
- 
     animation: spoke var(--dur) linear infinite;
     background: radial-gradient(100% 100% at center, hsl(0, 0%, 0%) 4.8%, hsla(0, 0%, 60%, 0) 5%),
       linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 0%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
