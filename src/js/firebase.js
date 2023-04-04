@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
+import Notiflix from 'notiflix';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCQY1jXT3fGgqpQ76Zdo4R9h_uAqAnLd8A',
@@ -21,8 +22,23 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const googleLogin = document.getElementById('googleLogin');
 const form = document.getElementById('auth_form');
+const libraryButton = document.getElementById('library');
+const logout = document.getElementById('logout');
+const userInfo = document.querySelector('.userInfo');
 
-console.log(auth);
+libraryButton.style.display = 'none';
+logout.style.display = 'none';
+form.style.display = 'block';
+
+let parsedSettings = '';
+parsedSettings = JSON.parse(localStorage.getItem('userSettings'));
+
+if (parsedSettings) {
+  libraryButton.style.display = 'block';
+  logout.style.display = 'block';
+  form.style.display = 'none';
+  userInfo.innerHTML = ` ${parsedSettings.email}`;
+}
 
 googleLogin.addEventListener('click', e => {
   e.preventDefault();
@@ -33,9 +49,20 @@ googleLogin.addEventListener('click', e => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      form.innerHTML = `<img src="${user.photoURL}" style="width:10%">
-          <p>Name: ${user.displayName}</p>
-          <p>Email: ${user.email}</p>`;
+      const userSettings = {
+        email: user.email,
+      };
+      localStorage.setItem('userSettings', JSON.stringify(userSettings));
+
+      Notiflix.Notify.success(`Welcome: ${user.displayName}`, {
+        timeout: 1500,
+        position: 'left-top',
+        width: '280px',
+      });
+      libraryButton.style.display = 'block';
+      logout.style.display = 'block';
+      form.style.display = 'none';
+      userInfo.innerHTML = `${user.email}`;
     })
     .catch(error => {
       // Handle Errors here.
@@ -46,17 +73,11 @@ googleLogin.addEventListener('click', e => {
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
-
-      alert(errorMessage);
+      console.log(errorMessage);
     });
 });
 
-// signOut.addEventListener('click', e => {
-//   signOut(auth)
-//     .then(() => {
-//       // Sign-out successful.
-//     })
-//     .catch(error => {
-//       // An error happened.
-//     });
-// });
+logout.addEventListener('click', e => {
+  localStorage.removeItem('userSettings');
+  window.location.href = 'index.html';
+});

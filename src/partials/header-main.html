@@ -18,24 +18,26 @@
         <li>
           <a href="./index.html" class="nav-list-item current">Home</a>
         </li>
-        <li>
+        <li id="library">
           <a href="./library-page.html" class="nav-list-item">My Library</a>
         </li>
+        <li id="auth_form">
+          <button class="google-btn" id="googleLogin">
+            <div class="google-icon-wrapper">
+              <img
+                class="google-icon"
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              />
+            </div>
+            <p class="btn-text"><b>Sign in with google</b></p>
+          </button>
+        </li>
+        <li id="logout">
+          <a href="#" class="nav-list-item">Logout</a>
+        </li>
       </ul>
-
-      <p class="modal__title">Авторизація</p>
-      <form class="modal__form" id="auth_form">
-        <button class="social-signin google" id="googleLogin">
-          Log in with Google+
-        </button>
-        <button class="social-signin facebook" id="facebookLogin">
-          Log in with facebook
-        </button>
-        <button class="social-signin twitter" id="twitterLogin">
-          Log in with Twitter
-        </button>
-      </form>
     </nav>
+    <span class="userInfo"></span>
     <form class="header-form">
       <input
         class="header-form-input"
