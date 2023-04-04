@@ -9,6 +9,10 @@
   background-color: transparent;
   display: none;
   transition: transform 300ms linear;
+  @media screen and (max-width: 426px) {
+    right: 5px;
+    top: 70%;
+  }
 }
 
 .go-top--show {
