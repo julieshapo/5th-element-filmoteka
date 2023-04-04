@@ -16,6 +16,7 @@
 }
 
 .tui-pagination .tui-page-btn {
+  // cursor: pointer;
   display: flex;
   position: relative;
   padding: 16px;
@@ -74,7 +75,8 @@
   font-size: 0;
 }
 .tui-pagination .tui-first,
-.tui-pagination .tui-last {
+.tui-pagination .tui-last,
+.tui-pagination .tui-is-disabled {
   display: none;
 }
 
@@ -103,4 +105,7 @@
   justify-content: center;
   background-size: contain;
   visibility: visible;
+}
+.tui-pagination .tui-page-btn .tui-prev {
+  visibility: hidden;
 }
