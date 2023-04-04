@@ -17,7 +17,7 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  
+
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
 }
@@ -65,9 +65,15 @@
 .modal-team-title {
   margin-bottom: 30px;
   text-align: center;
-  font-size: 30px;
+  font-size: 18px;
   color: $colorTextAccent;
   text-transform: uppercase;
+  @include tablet {
+    font-size: 25px;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
 }
 
 .team-list {
@@ -118,21 +124,29 @@
   }
 }
 
-.github {
-  fill: $colorTextDark;
+.soc-icon {
+  fill: $colorTexSecondary;
   display: inline-flex;
   object-fit: contain;
+
   &:hover,
   &:focus {
     fill: $colorTextAccent;
   }
 }
 
-.github-info {
+.soc-links {
   display: flex;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 }
+
+// .github-info {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .no-scroll {
   overflow: hidden;
