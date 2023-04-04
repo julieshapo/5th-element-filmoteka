@@ -8,6 +8,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms linear;
+  border-radius: 5px;
 
   @include tablet {
     top: 50%;
@@ -37,6 +38,16 @@
   }
 }
 
+.movie-wrap {
+  @include tablet {
+    max-width: 264px;
+  }
+
+  @include desktop {
+    max-width: 391px;
+  }
+}
+
 .trailer-btn {
   width: 50px;
   height: 44px;
@@ -55,7 +66,8 @@
 }
 
 .movie-img {
-  object-fit: contain;
+  border-radius: 5px;
+  object-fit: cover;
   width: 240px;
   height: 357px;
 
@@ -76,8 +88,6 @@
   line-height: 1.15;
   margin-bottom: 20px;
   text-transform: uppercase;
-
-  color: $colorTextDark;
 
   @include desktop {
     font-size: 30px;
@@ -109,8 +119,6 @@
 .movie-info-value {
   font-weight: 500;
   line-height: 1.33;
-
-  color: $colorTextDark;
 }
 
 .movie-info-rating {
@@ -130,16 +138,12 @@
   font-size: 12px;
   line-height: 1.33;
   text-transform: uppercase;
-
-  color: $colorTextDark;
 }
 
 .movie-desc {
   margin-bottom: 20px;
   font-weight: 500;
   line-height: 1.67;
-
-  color: $colorTextDark;
 
   @include tablet {
     width: 264px;
@@ -180,8 +184,6 @@
   background-color: transparent;
   border: 1px solid transparent;
 
-  fill: $colorTextDark;
-
   transition: color 250ms linear, transform 250ms linear;
 }
 
@@ -198,10 +200,10 @@
   top: 0;
   left: 0;
   z-index: 200;
-  
+
   width: 100%;
   height: 100%;
-  
+
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -215,4 +217,16 @@
   @media screen and (max-width: 600px) {
     width: 90%;
   }
+}
+
+.ligthModal {
+  background-color: $colorModalBg;
+  color: $colorTextDark;
+  fill: $colorTextDark;
+}
+
+.darkModal {
+  background-color: #161414;
+  color: #fff;
+  fill: #fff;
 }

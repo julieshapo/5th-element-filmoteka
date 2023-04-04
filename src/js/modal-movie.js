@@ -3,6 +3,9 @@ import { genresFormatModal } from './geners';
 import { getMovieFullInfo } from './api-fetch';
 import { watched, queue } from './buttons';
 // Функция которую которая покажет модалку при клике по карточке в списке фильмов
+
+const modalTheme = document.querySelector('.modal-movie');
+
 if (!refs.filmGallery) {
   return;
 }
@@ -31,6 +34,14 @@ async function showMovieInfo(id) {
       ? `https://image.tmdb.org/t/p/w500/${results.poster_path}`
       : 'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/no-photo/no-photo.png?raw=true';
     refs.modalMovie.innerHTML = renderMarkupModalMovie(results, poster, geners);
+    const bodyDark = document.body.classList.contains('darkTheme');
+    if (bodyDark) {
+      modalTheme.classList.add('darkModal');
+      modalTheme.classList.remove('ligthModal');
+    } else {
+      modalTheme.classList.remove('darkModal');
+      modalTheme.classList.add('ligthModal');
+    }
   } catch (error) {
     console.log(error.message);
   }
@@ -61,12 +72,12 @@ export function onClodeModalClick(e) {
 refs.modalMovie.addEventListener('click', onBtnClickClose);
 
 export function onBtnClickClose(e) {
-  const { btn } = e.target.dataset
+  const { btn } = e.target.dataset;
   if (!btn) {
-    return
+    return;
   }
   modalClose();
-};
+}
 
 // Функция закрытия модалки при нажатии на клавишу ESCAPE
 
@@ -173,4 +184,4 @@ function renderMarkupModalMovie(object, poster, geners) {
       </button>
       </div>
     </div>`;
-};
+}
