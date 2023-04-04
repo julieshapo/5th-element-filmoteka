@@ -4,9 +4,10 @@ goTopBtn.addEventListener('click', goTop);
 window.addEventListener('scroll', trackScroll);
 
 function trackScroll() {
-  const offset = window.pageYOffset;
-  const coords = document.documentElement.clientHeight;
-  if (offset > coords) {
+  const scrolled = window.pageYOffset;
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.body.clientHeight;
+  if (scrolled > fullHeight - windowHeight - 100) {
     goTopBtn.classList.add('go-top--show');
   } else {
     goTopBtn.classList.remove('go-top--show');
