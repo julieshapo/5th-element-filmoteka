@@ -1,5 +1,6 @@
 import { BasicLightBox } from 'basiclightbox';
 
+const modalTheme = document.querySelector('.modal-team');
 const refs = {
   openTeamModalBtn: document.querySelector('[data-modal-open]'),
   closeTeamModalBtn: document.querySelector('[data-modal-close]'),
@@ -151,6 +152,14 @@ function createTeamGallery(array) {
     )
     .join('');
   refs.teamList.insertAdjacentHTML('beforeend', markupTeam);
+  const bodyDark = document.body.classList.contains('darkTheme');
+  if (bodyDark) {
+    modalTheme.classList.add('darkModal');
+    modalTheme.classList.remove('ligthModal');
+  } else {
+    modalTheme.classList.remove('darkModal');
+    modalTheme.classList.add('ligthModal');
+  }
 }
 
 refs.openTeamModalBtn.addEventListener('click', openTeamModal);
