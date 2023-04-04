@@ -21,79 +21,16 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
+// полоса прокрутки (скроллбар)
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  font-style: normal;
-  color: inherit;
-  text-decoration: none;
-  outline: none;
-}
-
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-a:focus,
-a:hover {
-  text-decoration: none;
-}
-
-.container {
-  margin: 0 auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  max-width: 100%;
-
-  @media screen and (min-width: 30rem) {
-    width: 30rem;
-  }
-
-  @media screen and (min-width: 48rem) {
-    width: 48rem;
-    padding: 0 2rem;
-  }
-
-  @media screen and (min-width: 80rem) {
-    width: 80rem;
-  }
-}
-
-// /* полоса прокрутки (скроллбар) /
 ::-webkit-scrollbar {
   width: 0.45rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.237);
   background-color: transparent;
 }
 
-// / ползунок скроллбара */
+// ползунок скроллбара
+
 ::-webkit-scrollbar-thumb {
   background-color: #545454;
   border-radius: 0.2rem;
