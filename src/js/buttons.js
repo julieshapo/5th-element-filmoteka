@@ -34,7 +34,18 @@ export function onClickBtn(e) {
 
 export async function addToWatched(id) {
   try {
-    const results = await getMovieFullInfo(id);   
+
+    const response = await getMovieFullInfo(id);
+    const results = {
+      genres: response.genres,
+      genre_ids: response.genre_ids,
+      release_date: response.release_date,
+      first_air_date: response.first_air_date,
+      poster_path: response.poster_path,
+      title: response.title,
+      id: response.id,
+    };
+
     const btnWatchedEl = document.querySelector('[data-add="watched"]');  
     const findFilm = watched.find(item => item.id === Number(id));
     const findIndex = watched.findIndex(item => item.id === Number(id));
@@ -62,7 +73,17 @@ export async function addToWatched(id) {
 
 export async function addToQueue(id) {
   try {
-    const results = await getMovieFullInfo(id);
+
+    const response = await getMovieFullInfo(id);
+    const results = {
+      genres: response.genres,
+      genre_ids: response.genre_ids,
+      release_date: response.release_date,
+      first_air_date: response.first_air_date,
+      poster_path: response.poster_path,
+      title: response.title,
+      id: response.id,
+    };
 
     const btnQueueEl = document.querySelector('[data-add="queue"]'); 
     const findFilm = queue.find(item => item.id === Number(id));
