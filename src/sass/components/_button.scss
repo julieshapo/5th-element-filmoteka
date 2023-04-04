@@ -1,9 +1,8 @@
 //HEADER-LIBRARY
-.header-button{
+.header-button {
   box-sizing: border-box;
 
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -17,7 +16,7 @@
   cursor: pointer;
   background-color: transparent;
 
-  color: #FFFFFF;
+  color: #ffffff;
 
   width: 130px;
   height: 44px;
@@ -26,12 +25,11 @@
     background-color: $colorBtnAccent;
     border: none;
   }
-  @include tablet{
-      width: 152px;
-      height: 44px;
+  @include tablet {
+    width: 152px;
+    height: 44px;
   }
 }
-
 
 //MODAL BOX
 
@@ -39,6 +37,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
+
   width: 30px;
   height: 30px;
   padding: 8px;
@@ -62,6 +61,7 @@
   position: absolute;
   bottom: 12px;
   left: 12px;
+
   width: 100px;
   height: 44px;
   padding: 6px;
@@ -116,7 +116,6 @@
   color: $colorBtnLight;
   background-color: $colorBtnAccent;
 
-
   &:hover,
   &:focus {
     background-color: $colorBtnAccent;
@@ -127,7 +126,6 @@
 //MAIN PAGE
 
 .logo-icon {
-
   &:hover,
   &:focus {
     color: $colorBtnAccent;
@@ -135,7 +133,6 @@
 }
 
 .nav-title {
-
   &:hover,
   &:focus {
     color: $colorBtnAccent;

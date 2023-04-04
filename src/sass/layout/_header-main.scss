@@ -34,8 +34,7 @@
   border-right: 0;
   border-left: 0;
   background-color: transparent;
-  font-family: 'Roboto';
-  font-style: normal;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -67,8 +66,7 @@
 }
 
 .header-form-input::placeholder {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -84,7 +82,7 @@
   height: 24px;
   background: transparent;
   border: none;
-  right: 24px;
+  right: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
