@@ -1,0 +1,15 @@
+.logo {
+  transition: transform 300ms linear;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.logo-title {
+  transition: text-shadow 300ms linear;
+}
+
+.logo-title:hover {
+  text-shadow: 0 10px 30px rgba(222, 156, 151, 0.3);
+}
