@@ -10,41 +10,10 @@
 .header-nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin-bottom: 60px;
   @include tablet {
     margin-bottom: 40px;
-  }
-}
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  stroke: #ffffff;
-
-  @include tablet {
-    height: 35px;
-    gap: 10px;
-    stroke: #ffffff;
-  }
-  &:hover,
-  &:focus {
-    stroke: $colorBtnAccent;
-    color: $colorBtnAccent;
-  }
-}
-.logo-title {
-  transform: translateY(2px);
-  display: none;
-  @include tablet {
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 1.67;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
   }
 }
 
