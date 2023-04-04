@@ -12,11 +12,11 @@ function onTrailerBtnClick(e) {
   const { id } = parent?.dataset || {};
 
   if (!trailer) {
-    return
+    return;
   }
 
   showTrailer(id);
-};
+}
 
 let key = '';
 
@@ -27,35 +27,36 @@ async function showTrailer(id) {
     const trailer = results.find(item => item.type === 'Trailer');
 
     if (trailer && trailer.type !== 'Trailer') {
-      return
-    };
+      return;
+    }
     key = trailer ? trailer.key : '';
 
     showHideTrailer();
-
   } catch (error) {
     console.log(error.message);
-  };
-};
+  }
+}
 
 function showHideTrailer(e) {
-  const instance = basicLightbox.create(`
-  <iframe class="modal-trailer" src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0"></iframe>`,
+  const instance = basicLightbox.create(
+    `
+  <iframe class="modal-trailer" src="https://www.youtube.com/embed/${key}" width="560" height="315" controls allowfullscreen frameborder="0"></iframe>`,
     {
       onShow: () => {
-        document.addEventListener("keydown", closeModal);
+        document.addEventListener('keydown', closeModal);
       },
       onClose: () => {
-        document.removeEventListener("keydown", closeModal);
+        document.removeEventListener('keydown', closeModal);
       },
-    });
-  
+    }
+  );
+
   instance.show();
   hideSpinner();
-  
+
   function closeModal(e) {
     if (e.code === 'Escape') {
       instance.close();
-    };
-  };
-};
+    }
+  }
+}
