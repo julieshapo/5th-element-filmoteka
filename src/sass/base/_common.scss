@@ -88,16 +88,15 @@ a:hover {
 
 // /* полоса прокрутки (скроллбар) /
 ::-webkit-scrollbar {
-  width: 0.75rem;
-  height: 0.5rem;
+  width: 0.45rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.237);
   background-color: transparent;
 }
 
 // / ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.661);
-  border-radius: 0.625rem;
+  background-color: #545454;
+  border-radius: 0.2rem;
   box-shadow: inset 0.0625rem 0.0625rem 0.3125rem $colorTextDark;
 }
 

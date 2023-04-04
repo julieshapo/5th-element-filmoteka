@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 40px;
   padding-bottom: 62px;
+
   @include tablet {
     padding-bottom: 60px;
   }
@@ -12,6 +13,7 @@
   justify-content: space-between;
   align-items: start;
   margin-bottom: 60px;
+
   @include tablet {
     margin-bottom: 40px;
   }
@@ -52,9 +54,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+
   @include tablet {
     gap: 32px;
   }
+  
   @include desktop {
     gap: 16px;
   }

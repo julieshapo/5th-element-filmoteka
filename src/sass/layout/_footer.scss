@@ -2,7 +2,8 @@
   padding-top: 29px;
   padding-bottom: 30px;
   background-color: #f7f7f7;
-  @media screen and (min-width: 768px) {
+
+  @include tablet {
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -15,21 +16,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 768px) {
-    padding: 0px;
-  }
+  
+
   @media screen and (max-width: 320px) {
     width: 100%;
   }
-  @media screen and (min-width: 480px) {
+
+  @include mobile {
     width: 480px;
   }
-  @media screen and (min-width: 768px) {
+
+  @include tablet {
     width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px 0 32px;
   }
-  @media screen and (min-width: 1280px) {
+
+  @include desktop {
     width: 1280px;
   }
 }
@@ -41,14 +43,15 @@
   font-size: 14px;
   line-height: 1.86;
   margin: 0;
-  @media screen and (min-width: 768px) {
+
+  @include tablet {
     font-size: 16px;
     line-height: 1.19;
   }
 }
 
 .footer__gap {
-  @media screen and (min-width: 768px) {
+  @include tablet {
     display: none;
   }
 }
@@ -74,6 +77,8 @@
 .footer__link:focus {
   color: #ff6b08;
 }
+
+// Анимация сердца в футере
 
 .footer__icon-heart {
   -webkit-animation: pulsing 2.5s infinite;
