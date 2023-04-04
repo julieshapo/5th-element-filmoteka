@@ -92,7 +92,7 @@
 .tui-pagination .tui-prev-is-ellip,
 .tui-pagination .tui-next-is-ellip {
   overflow: hidden;
-  height: 26px;
+  height: 40px;
   padding: 0;
   line-height: 26px;
   white-space: nowrap;
@@ -136,12 +136,20 @@
 }
 
 .tui-pagination .tui-ico-prev::before {
-  content: '🡨';
-  display: flex;
-  justify-content: center;
-  // background-size: contain;
-  // background-image: url('../images/svg/symbol-defs.svg#icon-arrow-left');
-  visibility: visible;
+  display: inline-flex;
+  margin: 12px;
+  width: 16px;
+  height: 16px;
+  // border-radius: 8px;
+  background-image: url('../images/svg/arrow-left.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  // content: '🔆';
+  // display: flex;
+  // justify-content: center;
+  // // background-size: contain;
+  // // background-image: url('../images/svg/symbol-defs.svg#icon-arrow-left');
+  // visibility: visible;
 }
 
 .tui-pagination .tui-ico-ellip::before {
