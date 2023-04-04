@@ -3,43 +3,20 @@
   justify-content: center;
   align-items: center;
   stroke: $colorTextLight;
+  transition: transform 300ms linear;
 
   @include tablet {
     height: 35px;
     gap: 10px;
   }
-}
-
-// .logo-title {
-//   transform: translateY(2px);
-//   display: none;
-//   @include tablet {
-//     font-family: 'Roboto';
-//     font-weight: 500;
-//     font-size: 30px;
-//     line-height: 1.67;
-//     display: flex;
-//     align-items: center;
-//     text-align: center;
-//     color: #ffffff;
-//   }
-// }
-
-.logo {
-  transition: transform 300ms linear;
 
   &:hover {
     transform: scale(1.1);
+    text-shadow: 0 10px 30px rgba(222, 156, 151, 0.3);
   }
 }
 
-.logo-title {
-  transition: text-shadow 300ms linear;
-}
-
-.logo-title:hover {
-  text-shadow: 0 10px 30px rgba(222, 156, 151, 0.3);
-}
+// Анімація-хвиля для надпису Filmoteka
 
 .content {
   transform: translateY(2px);
@@ -96,5 +73,37 @@
       100% 100%,
       0% 100%
     );
+  }
+}
+
+// Анімація-обертання для логотипу
+
+.logo-icon {
+  stroke: inherit;
+}
+
+.logo-icon {
+  animation: 1s linear 0s normal none infinite running rot;
+  -webkit-animation: 2s linear 0s normal none infinite running rot;
+  animation-iteration-count: 1;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rot {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
   }
 }
