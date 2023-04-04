@@ -7,7 +7,6 @@ import './js/loader-spinner';
 import './js/markup-cards';
 import './js/modal-movie';
 import './js/pagination';
-import './js/smooth-scroll';
 import './js/notification';
 import './js/queue-local-storage';
 import './js/watched-local-storage';
