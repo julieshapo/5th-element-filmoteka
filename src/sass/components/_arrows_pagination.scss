@@ -121,4 +121,10 @@ body.darkTheme {
   .tui-pagination .tui-page-btn:hover {
     background-color: #0000;
   }
+
+  .tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  background: #ff6b08;
+  border-color: #ff6b08;
+}
 }
