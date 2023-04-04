@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { getMovieTrailer } from './api-fetch';
 import * as basicLightbox from 'basiclightbox';
+import { showSpinner, hideSpinner } from './loader-spinner';
 
 refs.modalMovie.addEventListener('click', onTrailerBtnClick);
 
@@ -13,7 +14,7 @@ function onTrailerBtnClick(e) {
   if (!trailer) {
     return
   }
-  
+
   showTrailer(id);
 };
 
@@ -21,6 +22,7 @@ let key = '';
 
 async function showTrailer(id) {
   try {
+    showSpinner();
     const { results } = await getMovieTrailer(id);
     const trailer = results.find(item => item.type === 'Trailer');
 
@@ -49,6 +51,7 @@ function showHideTrailer(e) {
     });
   
   instance.show();
+  hideSpinner();
   
   function closeModal(e) {
     if (e.code === 'Escape') {
