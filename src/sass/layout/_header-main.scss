@@ -4,14 +4,35 @@
   background-image: url('../images/header-main/hero-home-mob.jpg'),
     linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/header-main/hero-home-mob-2x.jpg');
+  }
+
   @include tablet {
     background-image: url('../images/header-main/hero-home-tab.jpg'),
       linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/header-main/hero-home-tab-2x.jpg');
+    }
   }
 
   @include desktop {
     background-image: url('../images/header-main/hero-home.jpg'),
       linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/header-main/hero-home-2x.jpg');
+    }
   }
 
   background-repeat: no-repeat;
