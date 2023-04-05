@@ -33,6 +33,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/andrew.jpg?raw=true',
     github: 'https://github.com/stark1269',
+    linkedin: 'https://www.linkedin.com/',
   },
   {
     name: 'Dmytro <br /> Melnyk',
@@ -40,8 +41,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/Dmytro.jpg?raw=true',
     github: 'https://github.com/Melnyk675',
-    linkedin:
-      'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%BE-%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA-a2b15121a/',
+    linkedin: 'https://www.linkedin.com/in/dmytro-melnyk-a2b15121a/',
   },
   {
     name: 'Vladyslav <br /> Matsala',
@@ -57,6 +57,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igoor.jpg?raw=true',
     github: 'https://github.com/IG00RA',
+    linkedin: 'https://www.linkedin.com/in/igoora',
   },
   {
     name: 'Denys <br> Kondratenko',
@@ -64,6 +65,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/denys2.jpg?raw=true',
     github: 'https://github.com/Denys-Kondratenko',
+    linkedin: 'https://www.linkedin.com/in/denys-kondratenko-6718a2270/',
   },
   {
     name: 'Kateryna <br> Verveda',
@@ -88,6 +90,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/yaroslav.jpg?raw=true',
     github: 'https://github.com/Yaroslav-Marinich',
+    linkedin: 'https://www.linkedin.com/in/yaroslav-marynych-94b884270/',
   },
   {
     name: 'Anastasia <br> Korotenko',
@@ -103,6 +106,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/vasyl2.jpg?raw=true',
     github: 'https://github.com/Kozhukh-Vasyl',
+    linkedin: 'https://www.linkedin.com/in/vasyl-kozhukh-85b43b137/',
   },
   {
     name: 'Inna <br> Artysiuk',
@@ -110,6 +114,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/inna2.jpg?raw=true',
     github: 'https://github.com/Inna-Artysiuk',
+    linkedin: 'https://www.linkedin.com/',
   },
   {
     name: 'Igor <br> Kalchyn',
@@ -117,8 +122,7 @@ const teamArray = [
     photo:
       'https://github.com/julieshapo/5th-element-filmoteka/blob/main/src/images/team/igor.jpg?raw=true',
     github: 'https://github.com/KalchIgor',
-    linkedin:
-      'https://www.linkedin.com/in/%D0%B8%D0%B3%D0%BE%D1%80%D1%8C-%D0%BA%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BD-b4861523b/',
+    linkedin: 'https://www.linkedin.com/in/igor-kalchin-b4861523b/',
   },
 ];
 function createTeamGallery(array) {
