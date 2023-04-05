@@ -32,10 +32,11 @@
   align-items: center;
   justify-content: center;
   transition: color 250ms linear, transform 250ms linear;
-  @include mobile {
+  @include tablet {
     right: 8px;
     top: 8px;
   }
+
   @include desktop {
     right: 16px;
     top: 16px;
