@@ -342,3 +342,16 @@
       transform: rotate(-1turn);
     }
   }
+
+.js-spinner {
+  background: none repeat scroll 0 0 rgb(72, 72, 78);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  
