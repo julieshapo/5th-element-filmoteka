@@ -12,10 +12,11 @@ export function hideSpinner() {
   refs.spinner.classList.add('visually-hidden');
 }
 
- window.onload = function () {
-    showSpinner();
+window.onload = function () {
     window.setTimeout(function () {
       document.body.classList.add('loaded');
        hideSpinner();
     }, 500);
   }
+
+
